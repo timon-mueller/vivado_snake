@@ -1,0 +1,758 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Feb 27 10:16:51 2025
+# Process ID: 9231
+# Current directory: /home/ces-bpti06/Schreibtisch
+# Command line: vivado
+# Log file: /home/ces-bpti06/Schreibtisch/vivado.log
+# Journal file: /home/ces-bpti06/Schreibtisch/vivado.jou
+# Running On: i83labpc02, OS: Linux, CPU Frequency: 4400.532 MHz, CPU Physical cores: 6, Host memory: 16530 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/ces-bpti06/Schreibtisch/project_final2.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /Software/xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ces-bpti06/Downloads/hdmi_tx_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/Software/xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 6579.496 ; gain = 237.410 ; free physical = 9753 ; free virtual = 15036
+update_compile_order -fileset sources_1
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd>...
+Successfully read diagram <design_1> from block design file </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd>
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+save_bd_design
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+WARNING: [Boardtcl 53-1] No current board_part set.
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+set_property -dict [list CONFIG.PRIM_IN_FREQ.VALUE_SRC PROPAGATED] [get_bd_cells clk_wiz_0]
+set_property -dict [list \
+  CONFIG.CLKOUT1_JITTER {175.402} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25.000} \
+  CONFIG.CLKOUT2_JITTER {125.247} \
+  CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
+  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {125.000} \
+  CONFIG.CLKOUT2_USED {true} \
+  CONFIG.CLK_OUT1_PORT {clk_out25} \
+  CONFIG.CLK_OUT2_PORT {clk_out125} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {40.000} \
+  CONFIG.MMCM_CLKOUT1_DIVIDE {8} \
+  CONFIG.NUM_OUT_CLKS {2} \
+] [get_bd_cells clk_wiz_0]
+save_bd_design
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+create_bd_cell -type module -reference vga_sync vga_sync_0
+startgroup
+create_bd_cell -type ip -vlnv realdigital.org:realdigital:hdmi_tx:1.0 hdmi_tx_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_0/reset]
+INFO: [BoardRule 102-10] create_bd_port -dir I reset_rtl_0 -type rst
+INFO: [BoardRule 102-7] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+INFO: [BoardRule 102-15] connect_bd_net /reset_rtl_0 /clk_wiz_0/reset
+INFO: [BoardRule 102-19] set_property CONFIG.POLARITY ACTIVE_HIGH /reset_rtl_0
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins hdmi_tx_0/pix_clk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins hdmi_tx_0/pix_clkx5]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins vga_sync_0/clk]
+endgroup
+set_property location {3 645 42} [get_bd_cells processing_system7_0]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins clk_wiz_0/clk_in1]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out25] [get_bd_pins hdmi_tx_0/pix_clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out125] [get_bd_pins hdmi_tx_0/pix_clkx5]
+connect_bd_net [get_bd_pins clk_wiz_0/locked] [get_bd_pins hdmi_tx_0/pix_clk_locked]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins vga_sync_0/clk]
+regenerate_bd_layout
+set_property location {2.5 678 501} [get_bd_cells hdmi_tx_0]
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+set_property CONFIG.PCW_UART1_PERIPHERAL_ENABLE {1} [get_bd_cells processing_system7_0]
+endgroup
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+set_property CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} [get_bd_cells processing_system7_0]
+endgroup
+connect_bd_net [get_bd_pins vga_sync_0/red] [get_bd_pins hdmi_tx_0/red]
+connect_bd_net [get_bd_pins vga_sync_0/green] [get_bd_pins hdmi_tx_0/green]
+connect_bd_net [get_bd_pins vga_sync_0/blue] [get_bd_pins hdmi_tx_0/blue]
+connect_bd_net [get_bd_pins vga_sync_0/hsync] [get_bd_pins hdmi_tx_0/hsync]
+connect_bd_net [get_bd_pins vga_sync_0/vsync] [get_bd_pins hdmi_tx_0/vsync]
+connect_bd_net [get_bd_pins vga_sync_0/video_active] [get_bd_pins hdmi_tx_0/vde]
+connect_bd_net [get_bd_ports reset_rtl_0] [get_bd_pins hdmi_tx_0/rst]
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets rst_ps7_0_50M_peripheral_aresetn]
+connect_bd_net [get_bd_ports reset_rtl_0] [get_bd_pins vga_sync_0/rst]
+save_bd_design
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+validate_bd_design
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/processing_system7_0/M_AXI_GP0'. Please either complete or remove this path to resolve.
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/processing_system7_0/M_AXI_GP0_ACLK
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+set_property CONFIG.PCW_USE_M_AXI_GP0 {0} [get_bd_cells processing_system7_0]
+endgroup
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+validate_bd_design
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1347] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_reset.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+startgroup
+make_bd_pins_external  [get_bd_cells hdmi_tx_0]
+make_bd_intf_pins_external  [get_bd_cells hdmi_tx_0]
+endgroup
+make_wrapper -files [get_files /home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd] -top
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1347] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_reset.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+add_files -norecurse /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  /home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/new/VGA_wrapper.vhd]
+set_property top design_1_wrapper [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/ces-bpti06/Schreibtisch/project_final2.srcs/utils_1/imports/synth_1/VGA_wrapper.dcp with file /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/VGA_wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hdmi_tx_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_clk_wiz_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_hdmi_tx_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_rst_ps7_0_50M_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_vga_sync_0_0
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_clk_wiz_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_hdmi_tx_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_rst_ps7_0_50M_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 10:37:14 2025] Launched design_1_vga_sync_0_0_synth_1, design_1_hdmi_tx_0_0_synth_1, design_1_rst_ps7_0_50M_0_synth_1, design_1_clk_wiz_0_0_synth_1, design_1_processing_system7_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+design_1_hdmi_tx_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_hdmi_tx_0_0_synth_1/runme.log
+design_1_rst_ps7_0_50M_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_rst_ps7_0_50M_0_synth_1/runme.log
+design_1_clk_wiz_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_clk_wiz_0_0_synth_1/runme.log
+design_1_processing_system7_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_processing_system7_0_0_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 10:37:14 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 8865.262 ; gain = 91.980 ; free physical = 8687 ; free virtual = 14076
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design -force
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1347] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_reset.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+startgroup
+make_bd_pins_external  [get_bd_cells vga_sync_0]
+make_bd_intf_pins_external  [get_bd_cells vga_sync_0]
+INFO: [BD 5-409] No interface pins to be made external for /vga_sync_0
+endgroup
+update_module_reference design_1_vga_sync_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ces-bpti06/Downloads/hdmi_tx_1.0'.
+Upgrading '/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_vga_sync_0_0 to use current project options
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1347] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_reset.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 10:47:14 2025] Launched design_1_vga_sync_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 10:47:14 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 9002.844 ; gain = 0.000 ; free physical = 7485 ; free virtual = 13913
+update_module_reference design_1_vga_sync_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ces-bpti06/Downloads/hdmi_tx_1.0'.
+Upgrading '/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_vga_sync_0_0 to use current project options
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1347] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_reset.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 10:48:31 2025] Launched design_1_vga_sync_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 10:48:31 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 9055.867 ; gain = 0.000 ; free physical = 7361 ; free virtual = 13789
+update_module_reference design_1_vga_sync_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ces-bpti06/Downloads/hdmi_tx_1.0'.
+Upgrading '/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_vga_sync_0_0 to use current project options
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'px'
+WARNING: [IP_Flow 19-4700] Upgrade has removed port 'py'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_vga_sync_0_0'. These changes may impact your design.
+CRITICAL WARNING: [BD 41-1167] The pin 'px' is not found on the upgraded version of the cell '/vga_sync_0'. Its connection to the net 'vga_sync_0_px' has been removed.
+CRITICAL WARNING: [BD 41-1167] The pin 'py' is not found on the upgraded version of the cell '/vga_sync_0'. Its connection to the net 'vga_sync_0_py' has been removed.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_vga_sync_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+WARNING: [BD 41-597] NET <vga_sync_0_px> has no source
+WARNING: [BD 41-597] NET <vga_sync_0_py> has no source
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+delete_bd_objs [get_bd_nets vga_sync_0_px] [get_bd_ports px_0]
+delete_bd_objs [get_bd_nets vga_sync_0_py] [get_bd_ports py_0]
+save_bd_design
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/ces-bpti06/Schreibtisch/project_final2.srcs/utils_1/imports/synth_1/VGA_wrapper.dcp with file /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/design_1_wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1347] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Instead it should be connected to reset source /rst_ps7_0_50M/peripheral_reset.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 10:54:05 2025] Launched design_1_vga_sync_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 10:54:05 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 9093.891 ; gain = 0.000 ; free physical = 7313 ; free virtual = 13773
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2022.2
+  **** Build date : Oct 14 2022 at 05:10:28
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-01:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2025 Xilinx, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/887100000307A
+ERROR: [Labtools 27-3244] Could not start or connect to xsdb server.
+open_hw_target: Time (s): cpu = 00:00:11 ; elapsed = 00:01:03 . Memory (MB): peak = 10819.840 ; gain = 1725.949 ; free physical = 5446 ; free virtual = 11995
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins vga_sync_0/clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out25] [get_bd_pins vga_sync_0/clk]
+validate_bd_design
+WARNING: [BD 5-700] No address spaces matched 'get_bd_addr_spaces -of_objects /processing_system7_0 -filter {path == /processing_system7_0/Data}'
+WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -of_objects {}'
+CRITICAL WARNING: [BD 41-1348] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_0/clk_out25.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+save_bd_design
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/ces-bpti06/Schreibtisch/project_final2.srcs/utils_1/imports/synth_1/VGA_wrapper.dcp with file /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/design_1_wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1171] User-interrupt detected : Generation halted successfully for IP Integrator design /home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd
+INFO: [Common 17-344] 'launch_runs' was cancelled
+reset_run design_1_hdmi_tx_0_0_synth_1
+reset_run design_1_rst_ps7_0_50M_0_synth_1
+reset_run design_1_clk_wiz_0_0_synth_1
+reset_run design_1_processing_system7_0_0_synth_1
+reset_run design_1_vga_sync_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hdmi_tx_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_clk_wiz_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_hdmi_tx_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_rst_ps7_0_50M_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_vga_sync_0_0
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_clk_wiz_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 92660c1e19ed13d1 to dir: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/9/2/92660c1e19ed13d1/design_1_clk_wiz_0_0_sim_netlist.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/9/2/92660c1e19ed13d1/design_1_clk_wiz_0_0.dcp to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/9/2/92660c1e19ed13d1/design_1_clk_wiz_0_0_stub.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/9/2/92660c1e19ed13d1/design_1_clk_wiz_0_0_sim_netlist.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/9/2/92660c1e19ed13d1/design_1_clk_wiz_0_0_stub.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_2/design_1_clk_wiz_0_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_clk_wiz_0_0, cache-ID = 92660c1e19ed13d1; cache size = 1.091 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_hdmi_tx_0_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 3b7b2bfda8d4c8af to dir: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/3/b/3b7b2bfda8d4c8af/design_1_hdmi_tx_0_0_stub.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_stub.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/3/b/3b7b2bfda8d4c8af/design_1_hdmi_tx_0_0_stub.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/3/b/3b7b2bfda8d4c8af/design_1_hdmi_tx_0_0.dcp to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/3/b/3b7b2bfda8d4c8af/design_1_hdmi_tx_0_0_sim_netlist.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/3/b/3b7b2bfda8d4c8af/design_1_hdmi_tx_0_0_sim_netlist.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_hdmi_tx_0_0_2/design_1_hdmi_tx_0_0_sim_netlist.v
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_hdmi_tx_0_0, cache-ID = 3b7b2bfda8d4c8af; cache size = 1.091 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_rst_ps7_0_50M_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 687371ef4eea3aa5 to dir: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/6/8/687371ef4eea3aa5/design_1_rst_ps7_0_50M_0_sim_netlist.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/6/8/687371ef4eea3aa5/design_1_rst_ps7_0_50M_0_stub.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/6/8/687371ef4eea3aa5/design_1_rst_ps7_0_50M_0_stub.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_stub.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/6/8/687371ef4eea3aa5/design_1_rst_ps7_0_50M_0_sim_netlist.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/6/8/687371ef4eea3aa5/design_1_rst_ps7_0_50M_0.dcp to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.dcp
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_rst_ps7_0_50M_0, cache-ID = 687371ef4eea3aa5; cache size = 1.091 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 11:03:34 2025] Launched design_1_processing_system7_0_0_synth_1, design_1_vga_sync_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_processing_system7_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_processing_system7_0_0_synth_1/runme.log
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 11:03:34 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 11168.762 ; gain = 41.988 ; free physical = 5097 ; free virtual = 11648
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/ces-bpti06/Schreibtisch/project_final2.srcs/utils_1/imports/synth_1/VGA_wrapper.dcp with file /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/design_1_wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Thu Feb 27 11:29:22 2025] Launched synth_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 11:29:22 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/ces-bpti06/Schreibtisch/project_final2.srcs/utils_1/imports/synth_1/VGA_wrapper.dcp with file /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/design_1_wrapper.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Thu Feb 27 11:40:06 2025] Launched synth_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 11:40:06 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/887100000307A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/887100000307A
+ERROR: [Labtools 27-3244] Could not start or connect to xsdb server.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-2302] Device xc7z007s (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+WARNING: [Labtools 27-1347] Unable to find Debug Probes file []. Please update hw_device property [PROBES.FILE]
+ Update of hw_probe objects, will be skipped.
+WARNING: [Labtools 27-1974] Mismatch between the design programmed into the device xc7z007s_1 and the probes file(s) .
+The device design has 1 ILA core(s) and 0 VIO core(s). 0 ILA core(s) and 0 VIO core(s) are matched in the probes file(s).
+Resolution: 
+1. Reprogram device with the correct programming file and associated probes file(s) OR
+2. Goto device properties and associate the correct probes file(s) with the programming file already programmed in the device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] design_1_axi_bram_ctrl_0_0: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] design_1_axi_bram_ctrl_0_0: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+endgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {1} [get_bd_cells axi_bram_ctrl_0]
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA]
+connect_bd_net [get_bd_pins axi_bram_ctrl_0/bram_addr_a] [get_bd_pins blk_mem_gen_0/addra]
+WARNING: [BD 41-1306] The connection to interface pin </axi_bram_ctrl_0/bram_addr_a> is being overridden by the user with net <axi_bram_ctrl_0_bram_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </blk_mem_gen_0/addra> is being overridden by the user with net <axi_bram_ctrl_0_bram_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+delete_bd_objs [get_bd_nets axi_bram_ctrl_0_bram_addr_a]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property CONFIG.Memory_Type {True_Dual_Port_RAM} [get_bd_cells blk_mem_gen_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_cells axi_bram_ctrl_0]
+delete_bd_objs [get_bd_cells blk_mem_gen_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-2] design_1_axi_bram_ctrl_0_1: In IP Integrator, please note that memory depth value gets calculated based on the Data Width of the IP and Address range selected in the Address Editor.Incase a validation error occured on the range of this parameter, please check if the selected Data width and the Address Range are valid. For valid Data width and memory depth values, please refer to the AXI BRAM Controller Product Guide.
+INFO: [xilinx.com:ip:axi_bram_ctrl:4.1-1] design_1_axi_bram_ctrl_0_1: In IP Integrator, The Maximum address range supported is 2G. Selecting the address range more than 2G in the address editor may resets the value of Memory depth to default value (1024). please refer to the AXI BRAM Controller Product Guide.
+endgroup
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+set_property CONFIG.PCW_USE_M_AXI_GP0 {1} [get_bd_cells processing_system7_0]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+Slave segment '/axi_bram_ctrl_0/S_AXI/Mem0' is being assigned into address space '/processing_system7_0/Data' at <0x4000_0000 [ 8K ]>.
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+connect_bd_intf_net [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA] [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {1} [get_bd_cells axi_bram_ctrl_0]
+endgroup
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+startgroup
+set_property CONFIG.Memory_Type {True_Dual_Port_RAM} [get_bd_cells blk_mem_gen_0]
+endgroup
+regenerate_bd_layout
+update_module_reference design_1_vga_sync_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ces-bpti06/Downloads/hdmi_tx_1.0'.
+Upgrading '/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_vga_sync_0_0 to use current project options
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/ces-bpti06/Schreibtisch/project_final2.srcs/utils_1/imports/synth_1/VGA_wrapper.dcp with file /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/design_1_wrapper.dcp
+reset_run design_1_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in High-performance Mode.
+CRITICAL WARNING: [BD 41-1348] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_0/clk_out25.
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_GP0'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_axi_bram_ctrl_0_1
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_axi_smc_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_blk_mem_gen_0_1
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_vga_sync_0_0
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_bram_ctrl_0_1
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_smc_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_blk_mem_gen_0_1
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 12:19:59 2025] Launched design_1_processing_system7_0_0_synth_1, design_1_vga_sync_0_0_synth_1, design_1_blk_mem_gen_0_1_synth_1, design_1_axi_smc_0_synth_1, design_1_axi_bram_ctrl_0_1_synth_1, synth_1...
+Run output will be captured here:
+design_1_processing_system7_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_processing_system7_0_0_synth_1/runme.log
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+design_1_blk_mem_gen_0_1_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_blk_mem_gen_0_1_synth_1/runme.log
+design_1_axi_smc_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_axi_smc_0_synth_1/runme.log
+design_1_axi_bram_ctrl_0_1_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_axi_bram_ctrl_0_1_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 12:20:00 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 11446.504 ; gain = 20.949 ; free physical = 4785 ; free virtual = 11387
+update_module_reference design_1_vga_sync_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ces-bpti06/Downloads/hdmi_tx_1.0'.
+Upgrading '/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_vga_sync_0_0 to use current project options
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in High-performance Mode.
+CRITICAL WARNING: [BD 41-1348] Reset pin /vga_sync_0/rst (associated clock /vga_sync_0/clk) is connected to asynchronous reset source /reset_rtl_0.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /clk_wiz_0/clk_out25.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+WARNING: [filemgmt 56-443] The ECC Algorithm string is empty. Setting the Memory Map to default ECC value to ECC_NONE.
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clk have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 25000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/pix_clkx5 have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	FREQ_HZ = 125000000 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+WARNING: [BD 41-927] Following properties on pin /hdmi_tx_0/rst have been updated from connected ip, but BD cell '/hdmi_tx_0' does not accept parameter changes, so they may not be synchronized with cell properties:
+	POLARITY = ACTIVE_HIGH 
+Please resolve any mismatches by directly setting properties on BD cell </hdmi_tx_0> to completely resolve these warnings.
+Wrote  : </home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_sync_0 .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+Exporting to file /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_axi_smc_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP design_1_vga_sync_0_0
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_smc_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry d82f4add98061acb to dir: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/d/8/d82f4add98061acb/design_1_axi_smc_0_sim_netlist.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/d/8/d82f4add98061acb/design_1_axi_smc_0_sim_netlist.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_sim_netlist.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/d/8/d82f4add98061acb/design_1_axi_smc_0.dcp to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/d/8/d82f4add98061acb/design_1_axi_smc_0_stub.v to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/ces-bpti06/Schreibtisch/project_final2.cache/ip/2022.2/d/8/d82f4add98061acb/design_1_axi_smc_0_stub.vhdl to /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/design_1_axi_smc_0_stub.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = d82f4add98061acb; cache size = 9.534 MB.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_vga_sync_0_0
+[Thu Feb 27 12:23:16 2025] Launched design_1_vga_sync_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_vga_sync_0_0_synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/design_1_vga_sync_0_0_synth_1/runme.log
+synth_1: /home/ces-bpti06/Schreibtisch/project_final2.runs/synth_1/runme.log
+[Thu Feb 27 12:23:16 2025] Launched impl_1...
+Run output will be captured here: /home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 11588.621 ; gain = 0.000 ; free physical = 6115 ; free virtual = 11504
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}

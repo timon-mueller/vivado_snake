@@ -1,0 +1,184 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Fri Mar 14 21:02:05 2025
+| Host         : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
+| Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z007sclg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 26
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 22         |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                       | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                      | 1          |
++-----------+------------------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock design_1_i/clk_wiz_0/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/pellet_index_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/pellet_index_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/pellet_index_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/pellet_index_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_x_reg_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/game_logic_0/U0/snake_y_reg_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock design_1_i/clk_wiz_0/inst/clk_in1 is created on an inappropriate internal pin design_1_i/clk_wiz_0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/hdmi_tx_0/inst/encr/oserdes_m_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/hdmi_tx_0/inst/encg/dout_reg[9]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/cnt_reg[1]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/cnt_reg[2]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/cnt_reg[3]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/cnt_reg[4]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[0]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[1]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[2]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[3]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[4]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[5]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[6]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[7]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[8]/CLR,
+design_1_i/hdmi_tx_0/inst/encr/dout_reg[9]/CLR
+ (the first 15 of 42 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on reset_rtl_0 relative to the rising and/or falling clock edge(s) of design_1_i/clk_wiz_0/inst/clk_in1.
+Related violations: <none>
+
+

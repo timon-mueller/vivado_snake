@@ -1,0 +1,222 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Feb 27 10:16:51 2025
+# Process ID: 9231
+# Current directory: /home/ces-bpti06/Schreibtisch
+# Command line: vivado
+# Log file: /home/ces-bpti06/Schreibtisch/vivado.log
+# Journal file: /home/ces-bpti06/Schreibtisch/vivado.jou
+# Running On: i83labpc02, OS: Linux, CPU Frequency: 4400.532 MHz, CPU Physical cores: 6, Host memory: 16530 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/ces-bpti06/Schreibtisch/project_final2.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0
+endgroup
+save_bd_design
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+set_property -dict [list CONFIG.PRIM_IN_FREQ.VALUE_SRC PROPAGATED] [get_bd_cells clk_wiz_0]
+set_property -dict [list \
+  CONFIG.CLKOUT1_JITTER {175.402} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25.000} \
+  CONFIG.CLKOUT2_JITTER {125.247} \
+  CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
+  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {125.000} \
+  CONFIG.CLKOUT2_USED {true} \
+  CONFIG.CLK_OUT1_PORT {clk_out25} \
+  CONFIG.CLK_OUT2_PORT {clk_out125} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {40.000} \
+  CONFIG.MMCM_CLKOUT1_DIVIDE {8} \
+  CONFIG.NUM_OUT_CLKS {2} \
+] [get_bd_cells clk_wiz_0]
+save_bd_design
+create_bd_cell -type module -reference vga_sync vga_sync_0
+startgroup
+create_bd_cell -type ip -vlnv realdigital.org:realdigital:hdmi_tx:1.0 hdmi_tx_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Manual_Source {Auto}}  [get_bd_pins clk_wiz_0/clk_in1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {New External Port (ACTIVE_HIGH)}}  [get_bd_pins clk_wiz_0/reset]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins hdmi_tx_0/pix_clk]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins hdmi_tx_0/pix_clkx5]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins vga_sync_0/clk]
+endgroup
+set_property location {3 645 42} [get_bd_cells processing_system7_0]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins clk_wiz_0/clk_in1]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out25] [get_bd_pins hdmi_tx_0/pix_clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out125] [get_bd_pins hdmi_tx_0/pix_clkx5]
+connect_bd_net [get_bd_pins clk_wiz_0/locked] [get_bd_pins hdmi_tx_0/pix_clk_locked]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins vga_sync_0/clk]
+regenerate_bd_layout
+set_property location {2.5 678 501} [get_bd_cells hdmi_tx_0]
+startgroup
+set_property CONFIG.PCW_UART1_PERIPHERAL_ENABLE {1} [get_bd_cells processing_system7_0]
+endgroup
+startgroup
+set_property CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} [get_bd_cells processing_system7_0]
+endgroup
+connect_bd_net [get_bd_pins vga_sync_0/red] [get_bd_pins hdmi_tx_0/red]
+connect_bd_net [get_bd_pins vga_sync_0/green] [get_bd_pins hdmi_tx_0/green]
+connect_bd_net [get_bd_pins vga_sync_0/blue] [get_bd_pins hdmi_tx_0/blue]
+connect_bd_net [get_bd_pins vga_sync_0/hsync] [get_bd_pins hdmi_tx_0/hsync]
+connect_bd_net [get_bd_pins vga_sync_0/vsync] [get_bd_pins hdmi_tx_0/vsync]
+connect_bd_net [get_bd_pins vga_sync_0/video_active] [get_bd_pins hdmi_tx_0/vde]
+connect_bd_net [get_bd_ports reset_rtl_0] [get_bd_pins hdmi_tx_0/rst]
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets rst_ps7_0_50M_peripheral_aresetn]
+connect_bd_net [get_bd_ports reset_rtl_0] [get_bd_pins vga_sync_0/rst]
+save_bd_design
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+validate_bd_design
+startgroup
+set_property CONFIG.PCW_USE_M_AXI_GP0 {0} [get_bd_cells processing_system7_0]
+endgroup
+validate_bd_design
+startgroup
+make_bd_pins_external  [get_bd_cells hdmi_tx_0]
+make_bd_intf_pins_external  [get_bd_cells hdmi_tx_0]
+endgroup
+make_wrapper -files [get_files /home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/ces-bpti06/Schreibtisch/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  /home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/new/VGA_wrapper.vhd]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top design_1_wrapper [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design -force
+startgroup
+make_bd_pins_external  [get_bd_cells vga_sync_0]
+make_bd_intf_pins_external  [get_bd_cells vga_sync_0]
+endgroup
+update_module_reference design_1_vga_sync_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+update_module_reference design_1_vga_sync_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+update_module_reference design_1_vga_sync_0_0
+delete_bd_objs [get_bd_nets vga_sync_0_px] [get_bd_ports px_0]
+delete_bd_objs [get_bd_nets vga_sync_0_py] [get_bd_ports py_0]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins vga_sync_0/clk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out25] [get_bd_pins vga_sync_0/clk]
+validate_bd_design
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+reset_run design_1_hdmi_tx_0_0_synth_1
+reset_run design_1_rst_ps7_0_50M_0_synth_1
+reset_run design_1_clk_wiz_0_0_synth_1
+reset_run design_1_processing_system7_0_0_synth_1
+reset_run design_1_vga_sync_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+endgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {1} [get_bd_cells axi_bram_ctrl_0]
+endgroup
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA]
+connect_bd_net [get_bd_pins axi_bram_ctrl_0/bram_addr_a] [get_bd_pins blk_mem_gen_0/addra]
+delete_bd_objs [get_bd_nets axi_bram_ctrl_0_bram_addr_a]
+set_property CONFIG.Memory_Type {True_Dual_Port_RAM} [get_bd_cells blk_mem_gen_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+delete_bd_objs [get_bd_intf_nets axi_bram_ctrl_0_BRAM_PORTA] [get_bd_cells axi_bram_ctrl_0]
+delete_bd_objs [get_bd_cells blk_mem_gen_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+endgroup
+startgroup
+set_property CONFIG.PCW_USE_M_AXI_GP0 {1} [get_bd_cells processing_system7_0]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+connect_bd_intf_net [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA] [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA]
+startgroup
+set_property CONFIG.SINGLE_PORT_BRAM {1} [get_bd_cells axi_bram_ctrl_0]
+endgroup
+startgroup
+set_property CONFIG.Memory_Type {True_Dual_Port_RAM} [get_bd_cells blk_mem_gen_0]
+endgroup
+regenerate_bd_layout
+update_module_reference design_1_vga_sync_0_0
+reset_run synth_1
+reset_run design_1_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+update_module_reference design_1_vga_sync_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {/home/ces-bpti06/Schreibtisch/project_final2.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+open_bd_design {/home/ces-bpti06/Schreibtisch/project_final2.srcs/sources_1/bd/design_1/design_1.bd}
