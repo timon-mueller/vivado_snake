@@ -18,7 +18,7 @@ set_property -dict { PACKAGE_PIN N18 IOSTANDARD TMDS_33 } [get_ports hdmi_tx_0_t
 set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { reset_rtl_0 }];
 set_property src_info {type:XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33 } [get_ports {i_switch_up_0}];
+set_property -dict {PACKAGE_PIN W14 IOSTANDARD LVCMOS33 } [get_ports {i_switch_up_0}];
 set_property src_info {type:XDC file:1 line:22 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports {i_switch_down_0}];
 set_property src_info {type:XDC file:1 line:23 export:INPUT save:INPUT read:READ} [current_design]

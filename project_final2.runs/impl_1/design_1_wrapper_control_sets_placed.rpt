@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Fri Mar 14 21:01:57 2025
+| Date         : Sat Mar 15 10:02:19 2025
 | Host         : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
 | Design       : design_1_wrapper
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              87 |           30 |
-| No           | No                    | Yes                    |              67 |           26 |
-| No           | Yes                   | No                     |              10 |            3 |
+| No           | No                    | No                     |              87 |           28 |
+| No           | No                    | Yes                    |              67 |           25 |
+| No           | Yes                   | No                     |              10 |            4 |
 | Yes          | No                    | No                     |              10 |            3 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              22 |            8 |
@@ -76,11 +76,11 @@ Table of Contents
 |  design_1_i/game_clock_0/U0/clk_10hz  | design_1_i/game_logic_0/U0/pellet_index[3]_i_1_n_0 | reset_rtl_0_IBUF                         |                2 |              4 |         2.00 |
 |  design_1_i/game_clock_0/U0/clk_10hz  | design_1_i/game_logic_0/U0/snake_x_reg             | reset_rtl_0_IBUF                         |                3 |              9 |         3.00 |
 |  design_1_i/game_clock_0/U0/clk_10hz  | design_1_i/game_logic_0/U0/snake_y_reg[9]_i_1_n_0  | reset_rtl_0_IBUF                         |                3 |              9 |         3.00 |
-|  design_1_i/clk_wiz_0/inst/clk_out25  |                                                    | design_1_i/vga_controller_0/U0/v_count_0 |                3 |             10 |         3.33 |
+|  design_1_i/clk_wiz_0/inst/clk_out25  |                                                    | design_1_i/vga_controller_0/U0/v_count_0 |                4 |             10 |         2.50 |
 |  design_1_i/clk_wiz_0/inst/clk_out25  | design_1_i/vga_controller_0/U0/v_count_0           |                                          |                3 |             10 |         3.33 |
 |  design_1_i/clk_wiz_0/inst/clk_out100 |                                                    | reset_rtl_0_IBUF                         |                6 |             25 |         4.17 |
-|  design_1_i/clk_wiz_0/inst/clk_out25  |                                                    | design_1_i/hdmi_tx_0/inst/encr/AR[0]     |               20 |             42 |         2.10 |
-|  design_1_i/clk_wiz_0/inst/clk_out25  |                                                    |                                          |               33 |            114 |         3.45 |
+|  design_1_i/clk_wiz_0/inst/clk_out25  |                                                    | design_1_i/hdmi_tx_0/inst/encr/AR[0]     |               19 |             42 |         2.21 |
+|  design_1_i/clk_wiz_0/inst/clk_out25  |                                                    |                                          |               31 |            114 |         3.68 |
 +---------------------------------------+----------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
 
 

@@ -18,7 +18,7 @@ set_property -dict { PACKAGE_PIN N18 IOSTANDARD TMDS_33 } [get_ports hdmi_tx_0_t
 set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { reset_rtl_0 }];
 
 #Movement switches
-set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33 } [get_ports {i_switch_up_0}];
+set_property -dict {PACKAGE_PIN W14 IOSTANDARD LVCMOS33 } [get_ports {i_switch_up_0}];
 set_property -dict {PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports {i_switch_down_0}];
 set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33 } [get_ports {i_switch_left_0}];
 set_property -dict {PACKAGE_PIN P15 IOSTANDARD LVCMOS33 } [get_ports {i_switch_right_0}];
