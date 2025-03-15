@@ -17,22 +17,23 @@ architecture Behavioral of seven_segment_display is
     -- Segment-LUT für Zahlen 0-15 (aktive LOW)
     type digit_array is array (0 to 15) of STD_LOGIC_VECTOR(6 downto 0);
     constant SEGMENT_LUT : digit_array := (
-        "0000001", -- 0
-        "1001111", -- 1
-        "0010010", -- 2
-        "0000110", -- 3
-        "1001100", -- 4
+    -- g,f,e,d,c,b,a
+        "1000000", -- 0
+        "1111001", -- 1
+        "0100100", -- 2
+        "0110000", -- 3
+        "0011001", -- 4
         "0100100", -- 5
         "0100000", -- 6
-        "0001111", -- 7
+        "1111000", -- 7
         "0000000", -- 8
-        "0000100", -- 9
+        "0010000", -- 9
         "0001000", -- A
-        "1100000", -- B
-        "0110001", -- C
-        "1000010", -- D
-        "0110000", -- E
-        "0111000"  -- F
+        "0000011", -- B
+        "1000110", -- C
+        "0100001", -- D
+        "0000110", -- E
+        "0001110"  -- F
     );
 
     signal digit_select : INTEGER range 0 to 3 := 0; -- Multiplex-Zähler

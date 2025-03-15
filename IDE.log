@@ -1140,3 +1140,127 @@ con
 16:39:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
 16:39:02 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit"
 16:41:20 INFO  : Disconnected from the channel tcfchan#1.
+18:34:49 DEBUG : Logs will be stored at '/home/timon/Documents/vivado_snake/IDE.log'.
+18:34:49 INFO  : Launching XSCT server: xsct -n  -interactive /home/timon/Documents/vivado_snake/temp_xsdb_launch_script.tcl
+18:34:50 INFO  : Platform repository initialization has completed.
+18:34:50 INFO  : XSCT server has started successfully.
+18:34:50 INFO  : plnx-install-location is set to ''
+18:34:50 INFO  : Successfully done setting XSCT server connection channel  
+18:34:50 INFO  : Successfully done setting workspace for the tool. 
+18:34:52 INFO  : Successfully done query RDI_DATADIR 
+18:34:52 INFO  : Registering command handlers for Vitis TCF services
+18:35:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:35:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
+18:35:04 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit"
+18:36:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:36:02 INFO  : Jtag cable 'RealDigital Bla 887100000305A' is selected.
+18:36:02 INFO  : 'jtag frequency' command is executed.
+18:36:02 INFO  : Context for 'APU' is selected.
+18:36:02 INFO  : System reset is completed.
+18:36:05 INFO  : 'after 3000' command is executed.
+18:36:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
+18:36:06 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit"
+18:36:06 INFO  : Context for 'APU' is selected.
+18:36:06 INFO  : Hardware design and registers information is loaded from '/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+18:36:06 INFO  : 'configparams force-mem-access 1' command is executed.
+18:36:06 INFO  : Context for 'APU' is selected.
+18:36:06 INFO  : Sourcing of '/home/timon/Documents/vivado_snake/snake2/_ide/psinit/ps7_init.tcl' is done.
+18:36:07 INFO  : 'ps7_init' command is executed.
+18:36:07 INFO  : 'ps7_post_config' command is executed.
+18:36:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:07 INFO  : The application '/home/timon/Documents/vivado_snake/snake2/Debug/snake2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:36:07 INFO  : 'configparams force-mem-access 0' command is executed.
+18:36:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}
+fpga -file /home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/timon/Documents/vivado_snake/snake2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/timon/Documents/vivado_snake/snake2/Debug/snake2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:36:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:07 INFO  : 'con' command is executed.
+18:36:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:36:07 INFO  : Launch script is exported to file '/home/timon/Documents/vivado_snake/snake2_system/_ide/scripts/debugger_snake2-default.tcl'
+19:26:44 INFO  : Disconnected from the channel tcfchan#1.
+19:26:55 DEBUG : Logs will be stored at '/home/timon/Documents/vivado_snake/IDE.log'.
+19:26:55 INFO  : Launching XSCT server: xsct -n  -interactive /home/timon/Documents/vivado_snake/temp_xsdb_launch_script.tcl
+19:26:56 INFO  : Platform repository initialization has completed.
+19:26:56 INFO  : XSCT server has started successfully.
+19:26:56 INFO  : Successfully done setting XSCT server connection channel  
+19:26:56 INFO  : plnx-install-location is set to ''
+19:26:56 INFO  : Successfully done setting workspace for the tool. 
+19:26:58 INFO  : Successfully done query RDI_DATADIR 
+19:26:58 INFO  : Registering command handlers for Vitis TCF services
+19:27:46 INFO  : Result from executing command 'getProjects': design_1_wrapper
+19:27:46 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;xilinx_zcu102_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+19:27:46 WARN  : An unexpected exception occurred in the module 'platform project logging'
+19:27:46 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+19:27:51 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+19:28:17 INFO  : Result from executing command 'getProjects': design_1_wrapper
+19:28:17 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;xilinx_zcu102_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+19:28:45 INFO  : Checking for BSP changes to sync application flags for project 'snake3'...
+19:29:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:29:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
+19:29:20 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/snake3/_ide/bitstream/design_1_wrapper.bit"
+19:29:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:29:36 INFO  : Jtag cable 'RealDigital Bla 887100000305A' is selected.
+19:29:36 INFO  : 'jtag frequency' command is executed.
+19:29:36 INFO  : Context for 'APU' is selected.
+19:29:36 INFO  : System reset is completed.
+19:29:39 INFO  : 'after 3000' command is executed.
+19:29:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
+19:29:41 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/snake3/_ide/bitstream/design_1_wrapper.bit"
+19:29:41 INFO  : Context for 'APU' is selected.
+19:29:41 INFO  : Hardware design and registers information is loaded from '/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+19:29:41 INFO  : 'configparams force-mem-access 1' command is executed.
+19:29:41 INFO  : Context for 'APU' is selected.
+19:29:41 INFO  : Sourcing of '/home/timon/Documents/vivado_snake/snake3/_ide/psinit/ps7_init.tcl' is done.
+19:29:41 INFO  : 'ps7_init' command is executed.
+19:29:41 INFO  : 'ps7_post_config' command is executed.
+19:29:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:29:41 INFO  : The application '/home/timon/Documents/vivado_snake/snake3/Debug/snake3.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:29:41 INFO  : 'configparams force-mem-access 0' command is executed.
+19:29:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}
+fpga -file /home/timon/Documents/vivado_snake/snake3/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/timon/Documents/vivado_snake/snake3/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/timon/Documents/vivado_snake/snake3/Debug/snake3.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:29:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:29:41 INFO  : 'con' command is executed.
+19:29:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:29:41 INFO  : Launch script is exported to file '/home/timon/Documents/vivado_snake/snake3_system/_ide/scripts/debugger_snake3-default.tcl'
+20:33:21 INFO  : Disconnected from the channel tcfchan#3.

@@ -27,41 +27,41 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 302278
+INFO: [Synth 8-7075] Helper process launched with PID 400773
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2046.855 ; gain = 369.797 ; free physical = 3808 ; free virtual = 12361
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2046.855 ; gain = 369.766 ; free physical = 3257 ; free virtual = 11955
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:52]
 INFO: [Synth 8-3491] module 'design_1' declared at '/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:580' bound to instance 'design_1_i' of component 'design_1' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:90]
 INFO: [Synth 8-638] synthesizing module 'design_1' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:621]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:978]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_axi_gpio_0_0_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1001]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_1_game_clock_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:6' bound to instance 'game_clock_0' of component 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1010]
-INFO: [Synth 8-638] synthesizing module 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_game_logic_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:6' bound to instance 'game_logic_0' of component 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1016]
-INFO: [Synth 8-638] synthesizing module 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'design_1_hdmi_tx_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:5' bound to instance 'hdmi_tx_0' of component 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1030]
-INFO: [Synth 8-638] synthesizing module 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:25]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1047]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:77]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_axi_gpio_0_0_stub.vhdl:6' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:978]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_axi_gpio_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1001]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_game_clock_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:6' bound to instance 'game_clock_0' of component 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1010]
+INFO: [Synth 8-638] synthesizing module 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_game_logic_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:6' bound to instance 'game_logic_0' of component 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1016]
+INFO: [Synth 8-638] synthesizing module 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'design_1_hdmi_tx_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:5' bound to instance 'hdmi_tx_0' of component 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1030]
+INFO: [Synth 8-638] synthesizing module 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1047]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:77]
 INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:393]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:79]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:260]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_auto_pc_0_stub.vhdl:71]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:260]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_auto_pc_0_stub.vhdl:71]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:79]
 INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:393]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_50M_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_rst_ps7_0_50M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_50M' of component 'design_1_rst_ps7_0_50M_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1179]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_50M_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_rst_ps7_0_50M_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'design_1_seven_segment_clock_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_seven_segment_clock_0_0_stub.vhdl:6' bound to instance 'seven_segment_clock_0' of component 'design_1_seven_segment_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1192]
-INFO: [Synth 8-638] synthesizing module 'design_1_seven_segment_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_seven_segment_clock_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_seven_segment_display_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_seven_segment_display_0_0_stub.vhdl:6' bound to instance 'seven_segment_display_0' of component 'design_1_seven_segment_display_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1198]
-INFO: [Synth 8-638] synthesizing module 'design_1_seven_segment_display_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_seven_segment_display_0_0_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'design_1_test_axi_gpio_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_test_axi_gpio_0_0_stub.vhdl:6' bound to instance 'test_axi_gpio_0' of component 'design_1_test_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1206]
-INFO: [Synth 8-638] synthesizing module 'design_1_test_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_test_axi_gpio_0_0_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'design_1_vga_controller_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:6' bound to instance 'vga_controller_0' of component 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1211]
-INFO: [Synth 8-638] synthesizing module 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-302192-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_50M_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_rst_ps7_0_50M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_50M' of component 'design_1_rst_ps7_0_50M_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1179]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_50M_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_rst_ps7_0_50M_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'design_1_seven_segment_clock_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_seven_segment_clock_0_0_stub.vhdl:6' bound to instance 'seven_segment_clock_0' of component 'design_1_seven_segment_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1192]
+INFO: [Synth 8-638] synthesizing module 'design_1_seven_segment_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_seven_segment_clock_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_seven_segment_display_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_seven_segment_display_0_0_stub.vhdl:6' bound to instance 'seven_segment_display_0' of component 'design_1_seven_segment_display_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1198]
+INFO: [Synth 8-638] synthesizing module 'design_1_seven_segment_display_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_seven_segment_display_0_0_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'design_1_test_axi_gpio_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_test_axi_gpio_0_0_stub.vhdl:6' bound to instance 'test_axi_gpio_0' of component 'design_1_test_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1206]
+INFO: [Synth 8-638] synthesizing module 'design_1_test_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_test_axi_gpio_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_vga_controller_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:6' bound to instance 'vga_controller_0' of component 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:1211]
+INFO: [Synth 8-638] synthesizing module 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-400676-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:24]
 INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:621]
 INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:52]
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_UYSKKA is either unconnected or has no load
@@ -69,18 +69,18 @@ WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_UYSKKA is eith
 WARNING: [Synth 8-7129] Port ACLK in module design_1_ps7_0_axi_periph_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ARESETN in module design_1_ps7_0_axi_periph_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2125.793 ; gain = 448.734 ; free physical = 3713 ; free virtual = 12267
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2117.793 ; gain = 440.703 ; free physical = 3167 ; free virtual = 11866
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2140.637 ; gain = 463.578 ; free physical = 3713 ; free virtual = 12267
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2132.637 ; gain = 455.547 ; free physical = 3167 ; free virtual = 11866
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2140.637 ; gain = 463.578 ; free physical = 3713 ; free virtual = 12267
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2132.637 ; gain = 455.547 ; free physical = 3167 ; free virtual = 11866
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2140.637 ; gain = 0.000 ; free physical = 3713 ; free virtual = 12267
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.637 ; gain = 0.000 ; free physical = 3167 ; free virtual = 11866
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -122,22 +122,22 @@ Parsing XDC File [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1
 Finished Parsing XDC File [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.562 ; gain = 0.000 ; free physical = 3702 ; free virtual = 12256
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2181.562 ; gain = 0.000 ; free physical = 3159 ; free virtual = 11858
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.562 ; gain = 0.000 ; free physical = 3702 ; free virtual = 12256
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2181.562 ; gain = 0.000 ; free physical = 3159 ; free virtual = 11858
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3706 ; free virtual = 12260
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3161 ; free virtual = 11860
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3706 ; free virtual = 12260
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3161 ; free virtual = 11860
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -433,10 +433,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/seven_segment_clock_0.
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/game_logic_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/seven_segment_display_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3706 ; free virtual = 12260
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3161 ; free virtual = 11860
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3706 ; free virtual = 12261
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3159 ; free virtual = 11859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -463,25 +463,25 @@ WARNING: [Synth 8-7129] Port ARESETN in module design_1_ps7_0_axi_periph_0 is ei
 WARNING: [Synth 8-7129] Port M00_ACLK in module design_1_ps7_0_axi_periph_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M00_ARESETN in module design_1_ps7_0_axi_periph_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3706 ; free virtual = 12264
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3160 ; free virtual = 11863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3710 ; free virtual = 12268
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3163 ; free virtual = 11867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3710 ; free virtual = 12268
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3163 ; free virtual = 11867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3710 ; free virtual = 12268
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3163 ; free virtual = 11867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -499,37 +499,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -573,16 +573,16 @@ Report Cell Usage:
 |14    |OBUF                                    |    11|
 +------+----------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2189.562 ; gain = 463.578 ; free physical = 3712 ; free virtual = 12270
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2189.562 ; gain = 512.504 ; free physical = 3712 ; free virtual = 12270
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2181.562 ; gain = 455.547 ; free physical = 3164 ; free virtual = 11868
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2181.562 ; gain = 504.473 ; free physical = 3164 ; free virtual = 11868
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2189.562 ; gain = 0.000 ; free physical = 3980 ; free virtual = 12538
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2181.562 ; gain = 0.000 ; free physical = 3427 ; free virtual = 12131
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.562 ; gain = 0.000 ; free physical = 3986 ; free virtual = 12545
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2181.562 ; gain = 0.000 ; free physical = 3435 ; free virtual = 12139
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -590,9 +590,9 @@ Synth Design complete | Checksum: 3d80199
 INFO: [Common 17-83] Releasing license: Synthesis
 54 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2189.562 ; gain = 707.586 ; free physical = 3986 ; free virtual = 12545
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1772.381; main = 1447.328; forked = 374.125
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3160.918; main = 2157.551; forked = 1003.367
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 2181.562 ; gain = 699.586 ; free physical = 3435 ; free virtual = 12139
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1766.669; main = 1441.995; forked = 372.278
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3152.922; main = 2149.551; forked = 1003.371
 INFO: [Common 17-1381] The checkpoint '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 15 16:31:39 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 15 19:23:45 2025...

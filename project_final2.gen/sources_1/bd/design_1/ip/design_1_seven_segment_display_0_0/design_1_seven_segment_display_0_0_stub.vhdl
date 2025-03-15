@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Sat Mar 15 16:31:07 2025
+-- Date        : Sat Mar 15 19:23:13 2025
 -- Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_seven_segment_display_0_0/design_1_seven_segment_display_0_0_stub.vhdl
