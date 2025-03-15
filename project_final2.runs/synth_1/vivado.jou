@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Mar 15 10:40:55 2025
-# Process ID: 49377
+# Start of session at: Sat Mar 15 12:23:38 2025
+# Process ID: 169512
 # Current directory: /home/timon/Documents/vivado_snake/project_final2.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/timon/Documents/vivado_snake/project_final2.runs/synth_1/design_1_wrapper.vds
 # Journal file: /home/timon/Documents/vivado_snake/project_final2.runs/synth_1/vivado.jou
-# Running On: ASUS-TUF-A15, OS: Linux, CPU Frequency: 2040.063 MHz, CPU Physical cores: 16, Host memory: 15965 MB
+# Running On: ASUS-TUF-A15, OS: Linux, CPU Frequency: 2072.256 MHz, CPU Physical cores: 16, Host memory: 15965 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

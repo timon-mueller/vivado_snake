@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xparameters.h"
+#include "xil_io.h"
+#include "sleep.h"
+
+// AXI GPIO Adresse aus dem Bild
+#define AXI_GPIO_0 0x41200000
+
+int main() {
+    init_platform();
+    xil_printf("\r\n**********************************\r\n");
+    xil_printf("*       AXI GPIO Reader         *\r\n");
+    xil_printf("**********************************\r\n");
+
+    while(1) {
+        u32 gpio_value = Xil_In32(AXI_GPIO_0); // 32-bit Wert auslesen
+        xil_printf("AXI GPIO Wert: 0x%08X\r\n", gpio_value);
+        usleep(500000); // 500ms warten
+    }
+
+    cleanup_platform();
+    return 0;
+}
+

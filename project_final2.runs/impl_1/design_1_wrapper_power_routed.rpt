@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date             : Sat Mar 15 10:41:56 2025
+| Date             : Sat Mar 15 12:24:41 2025
 | Host             : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.537        |
+| Total On-Chip Power (W)  | 1.540        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.415        |
+| Dynamic (W)              | 1.418        |
 | Device Static (W)        | 0.122        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 67.3         |
-| Junction Temperature (C) | 42.7         |
+| Max Ambient (C)          | 67.2         |
+| Junction Temperature (C) | 42.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.002 |        8 |       --- |             --- |
-| Slice Logic             |    <0.001 |      910 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      370 |     14400 |            2.57 |
-|   CARRY4                |    <0.001 |       41 |      4400 |            0.93 |
-|   Register              |    <0.001 |      196 |     28800 |            0.68 |
-|   LUT as Shift Register |    <0.001 |       15 |      6000 |            0.25 |
-|   Others                |     0.000 |      163 |       --- |             --- |
-| Signals                 |    <0.001 |      608 |       --- |             --- |
+| Clocks                  |     0.004 |        8 |       --- |             --- |
+| Slice Logic             |     0.001 |     2411 |       --- |             --- |
+|   LUT as Logic          |     0.001 |      791 |     14400 |            5.49 |
+|   CARRY4                |    <0.001 |       59 |      4400 |            1.34 |
+|   Register              |    <0.001 |     1013 |     28800 |            3.52 |
+|   LUT as Shift Register |    <0.001 |       75 |      6000 |            1.25 |
+|   Others                |     0.000 |      223 |       --- |             --- |
+| Signals                 |     0.001 |     1820 |       --- |             --- |
 | MMCM                    |     0.106 |        1 |         2 |           50.00 |
 | DSPs                    |    <0.001 |        2 |        66 |            3.03 |
 | I/O                     |     0.132 |       13 |       100 |           13.00 |
 | PS7                     |     1.173 |        1 |       --- |             --- |
 | Static Power            |     0.122 |          |           |                 |
-| Total                   |     1.537 |          |           |                 |
+| Total                   |     1.540 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.005 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.014 |       0.008 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.066 |       0.059 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -101,17 +101,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
-+-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
-| Clock nodes activity        | Medium     | More than 5% of clocks are missing user specification  | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
-| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
-| Device models               | High       | Device models are Production                           |                                                                                                                    |
-|                             |            |                                                        |                                                                                                                    |
-| Overall confidence level    | Low        |                                                        |                                                                                                                    |
-+-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -156,14 +156,16 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_1_wrapper         |     1.415 |
-|   design_1_i             |     1.415 |
+| design_1_wrapper         |     1.418 |
+|   design_1_i             |     1.418 |
 |     clk_wiz_0            |     0.106 |
 |       inst               |     0.106 |
 |     hdmi_tx_0            |     0.134 |
 |       inst               |     0.134 |
 |     processing_system7_0 |     1.173 |
 |       inst               |     1.173 |
+|     ps7_0_axi_periph     |     0.002 |
+|       s00_couplers       |     0.002 |
 +--------------------------+-----------+
 
 

@@ -1,54 +1,66 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.599787",
-   "Default View_TopLeft":"-162,-333",
+   "Default View_ScaleFactor":"0.613092",
+   "Default View_TopLeft":"-161,-210",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 6 -x 1600 -y 60 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 6 -x 1600 -y 90 -defaultsOSRD
-preplace port hdmi_tx_0 -pg 1 -lvl 6 -x 1600 -y 430 -defaultsOSRD
-preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
-preplace port port-id_i_switch_up_0 -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
-preplace port port-id_i_switch_down_0 -pg 1 -lvl 0 -x 0 -y 550 -defaultsOSRD
-preplace port port-id_i_switch_left_0 -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
-preplace port port-id_i_switch_right_0 -pg 1 -lvl 0 -x 0 -y 610 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 5 -x 1380 -y 110 -defaultsOSRD
-preplace inst hdmi_tx_0 -pg 1 -lvl 5 -x 1380 -y 430 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 130 -y 250 -defaultsOSRD
-preplace inst vga_controller_0 -pg 1 -lvl 4 -x 1030 -y 530 -defaultsOSRD
-preplace inst game_logic_0 -pg 1 -lvl 3 -x 700 -y 550 -defaultsOSRD
-preplace inst game_clock_0 -pg 1 -lvl 2 -x 380 -y 310 -defaultsOSRD
-preplace netloc clk_wiz_0_clk_out25 1 1 4 230J 210 NJ 210 890 340 N
-preplace netloc clk_wiz_0_clk_out100 1 1 1 230 260n
-preplace netloc clk_wiz_0_clk_out125 1 1 4 250J 220 NJ 220 NJ 220 1180
-preplace netloc clk_wiz_0_locked 1 1 4 260J 240 NJ 240 NJ 240 1170
-preplace netloc game_clock_0_clk_10hz 1 2 1 500 310n
-preplace netloc game_logic_0_pellet_x 1 3 1 N 560
-preplace netloc game_logic_0_pellet_y 1 3 1 N 580
-preplace netloc game_logic_0_snake_x 1 3 1 N 520
-preplace netloc game_logic_0_snake_y 1 3 1 N 540
-preplace netloc i_switch_down_0_1 1 0 3 20J 560 NJ 560 NJ
-preplace netloc i_switch_left_0_1 1 0 3 NJ 580 NJ 580 NJ
-preplace netloc i_switch_right_0_1 1 0 3 NJ 610 NJ 610 500J
-preplace netloc i_switch_up_0_1 1 0 3 NJ 520 NJ 520 500J
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 150 NJ 150 N 150 NJ 150 1190 220 1570
-preplace netloc reset_rtl_0_1 1 0 5 20 160 240 230 560 400 NJ 400 N
-preplace netloc vga_controller_0_blue 1 4 1 1190 460n
-preplace netloc vga_controller_0_green 1 4 1 1180 440n
-preplace netloc vga_controller_0_hsync 1 4 1 N 480
-preplace netloc vga_controller_0_red 1 4 1 1170 420n
-preplace netloc vga_controller_0_video_active 1 4 1 N 520
-preplace netloc vga_controller_0_vsync 1 4 1 N 500
-preplace netloc hdmi_tx_0_hdmi_tx 1 5 1 NJ 430
-preplace netloc processing_system7_0_DDR 1 5 1 NJ 60
-preplace netloc processing_system7_0_FIXED_IO 1 5 1 1570J 80n
-levelinfo -pg 1 0 130 380 700 1030 1380 1600
-pagesize -pg 1 -db -bbox -sgen -170 0 1720 660
+preplace port DDR -pg 1 -lvl 7 -x 1910 -y 270 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 1910 -y 300 -defaultsOSRD
+preplace port hdmi_tx_0 -pg 1 -lvl 7 -x 1910 -y 540 -defaultsOSRD
+preplace port GPIO_0 -pg 1 -lvl 7 -x 1910 -y 150 -defaultsOSRD
+preplace port GPIO2_0 -pg 1 -lvl 7 -x 1910 -y 190 -defaultsOSRD
+preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
+preplace port port-id_i_switch_up_0 -pg 1 -lvl 0 -x 0 -y 630 -defaultsOSRD
+preplace port port-id_i_switch_down_0 -pg 1 -lvl 0 -x 0 -y 660 -defaultsOSRD
+preplace port port-id_i_switch_left_0 -pg 1 -lvl 0 -x 0 -y 690 -defaultsOSRD
+preplace port port-id_i_switch_right_0 -pg 1 -lvl 0 -x 0 -y 720 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 220 -y 320 -defaultsOSRD
+preplace inst hdmi_tx_0 -pg 1 -lvl 6 -x 1770 -y 540 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 600 -y 380 -defaultsOSRD
+preplace inst vga_controller_0 -pg 1 -lvl 5 -x 1490 -y 640 -defaultsOSRD
+preplace inst game_logic_0 -pg 1 -lvl 4 -x 1210 -y 660 -defaultsOSRD
+preplace inst game_clock_0 -pg 1 -lvl 3 -x 920 -y 560 -defaultsOSRD
+preplace inst test_axi_gpio_0 -pg 1 -lvl 3 -x 920 -y 430 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 920 -y 170 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 600 -y 150 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 220 -y 100 -defaultsOSRD
+preplace netloc clk_wiz_0_clk_out25 1 2 4 NJ 350 NJ 350 1350 450 NJ
+preplace netloc clk_wiz_0_clk_out100 1 2 1 780 390n
+preplace netloc clk_wiz_0_clk_out125 1 2 4 NJ 370 NJ 370 NJ 370 1630
+preplace netloc clk_wiz_0_locked 1 2 4 770J 490 NJ 490 NJ 490 N
+preplace netloc game_clock_0_clk_10hz 1 3 1 1060 560n
+preplace netloc game_logic_0_pellet_x 1 4 1 N 670
+preplace netloc game_logic_0_pellet_y 1 4 1 N 690
+preplace netloc game_logic_0_snake_x 1 4 1 N 630
+preplace netloc game_logic_0_snake_y 1 4 1 N 650
+preplace netloc i_switch_down_0_1 1 0 4 NJ 660 NJ 660 NJ 660 1070J
+preplace netloc i_switch_left_0_1 1 0 4 NJ 690 NJ 690 NJ 690 NJ
+preplace netloc i_switch_right_0_1 1 0 4 NJ 720 NJ 720 NJ 720 1060J
+preplace netloc i_switch_up_0_1 1 0 4 NJ 630 NJ 630 750J 650 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 200 440 30 770
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 210 410
+preplace netloc reset_rtl_0_1 1 0 6 NJ 430 450 470 760 630 1070 510 NJ 510 NJ
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 430 20 780J
+preplace netloc test_axi_gpio_0_gpio_out 1 3 1 1060 180n
+preplace netloc vga_controller_0_blue 1 5 1 1650 570n
+preplace netloc vga_controller_0_green 1 5 1 1640 550n
+preplace netloc vga_controller_0_hsync 1 5 1 N 590
+preplace netloc vga_controller_0_red 1 5 1 1630 530n
+preplace netloc vga_controller_0_video_active 1 5 1 N 630
+preplace netloc vga_controller_0_vsync 1 5 1 N 610
+preplace netloc hdmi_tx_0_hdmi_tx 1 6 1 NJ 540
+preplace netloc processing_system7_0_DDR 1 1 6 NJ 270 NJ 270 NJ 270 NJ 270 NJ 270 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 290 NJ 290 1070J 300 NJ 300 NJ 300 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 420 90n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 N 150
+preplace netloc axi_gpio_0_GPIO 1 3 4 1060J 150 NJ 150 NJ 150 NJ
+levelinfo -pg 1 0 220 600 920 1210 1490 1770 1910
+pagesize -pg 1 -db -bbox -sgen -160 0 2030 770
 "
 }
 {
-   "da_axi4_cnt":"1",
+   "da_axi4_cnt":"2",
    "da_board_cnt":"7",
    "da_clkrst_cnt":"15",
    "da_ps7_cnt":"2"

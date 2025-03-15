@@ -1,3 +1,4 @@
 activeuserprofiles=ASUS-TUF-A15;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=timon
+useridperkey=ASUS-TUF-A15.Local\=timon;
