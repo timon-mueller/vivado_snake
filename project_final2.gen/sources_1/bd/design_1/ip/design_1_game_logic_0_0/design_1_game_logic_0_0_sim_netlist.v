@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Fri Mar 14 20:54:19 2025
+// Date        : Sat Mar 15 16:26:29 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_game_logic_0_0/design_1_game_logic_0_0_sim_netlist.v
@@ -26,7 +26,8 @@ module design_1_game_logic_0_0
     snake_x,
     snake_y,
     pellet_x,
-    pellet_y);
+    pellet_y,
+    pellet_index_out);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input rst;
   input i_switch_up;
@@ -37,6 +38,7 @@ module design_1_game_logic_0_0
   output [9:0]snake_y;
   output [9:0]pellet_x;
   output [9:0]pellet_y;
+  output [3:0]pellet_index_out;
 
   wire \<const0> ;
   wire clk;
@@ -44,6 +46,7 @@ module design_1_game_logic_0_0
   wire i_switch_left;
   wire i_switch_right;
   wire i_switch_up;
+  wire [3:0]pellet_index_out;
   wire [9:1]\^pellet_x ;
   wire [8:1]\^pellet_y ;
   wire rst;
@@ -62,7 +65,8 @@ module design_1_game_logic_0_0
   GND GND
        (.G(\<const0> ));
   design_1_game_logic_0_0_game_logic U0
-       (.clk(clk),
+       (.Q(pellet_index_out),
+        .clk(clk),
         .i_switch_down(i_switch_down),
         .i_switch_left(i_switch_left),
         .i_switch_right(i_switch_right),
@@ -76,7 +80,8 @@ endmodule
 
 (* ORIG_REF_NAME = "game_logic" *) 
 module design_1_game_logic_0_0_game_logic
-   (snake_y,
+   (Q,
+    snake_y,
     snake_x,
     pellet_y,
     pellet_x,
@@ -86,6 +91,7 @@ module design_1_game_logic_0_0_game_logic
     clk,
     i_switch_down,
     i_switch_right);
+  output [3:0]Q;
   output [8:0]snake_y;
   output [8:0]snake_x;
   output [7:0]pellet_y;
@@ -97,6 +103,7 @@ module design_1_game_logic_0_0_game_logic
   input i_switch_down;
   input i_switch_right;
 
+  wire [3:0]Q;
   wire _carry__0_i_1_n_0;
   wire _carry__0_i_2_n_0;
   wire _carry__0_i_3_n_0;
@@ -154,7 +161,6 @@ module design_1_game_logic_0_0_game_logic
   wire i_switch_right;
   wire i_switch_up;
   wire [3:0]p_1_in;
-  wire [3:0]pellet_index;
   wire pellet_index2__0_carry__0_i_1_n_0;
   wire pellet_index2__0_carry__0_i_2_n_0;
   wire pellet_index2__0_carry__0_n_3;
@@ -287,16 +293,16 @@ module design_1_game_logic_0_0_game_logic
   LUT2 #(
     .INIT(4'h9)) 
     _carry__0_i_1
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[0]),
+       (.I0(Q[3]),
+        .I1(Q[0]),
         .O(_carry__0_i_1_n_0));
   LUT6 #(
     .INIT(64'h4B4EB4B1B4B14B4E)) 
     _carry__0_i_2
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[2]),
+       (.I0(Q[3]),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(Q[2]),
         .I4(snake_x[7]),
         .I5(_carry__0_i_6_n_0),
         .O(_carry__0_i_2_n_0));
@@ -322,8 +328,8 @@ module design_1_game_logic_0_0_game_logic
   LUT5 #(
     .INIT(32'h96696969)) 
     _carry__0_i_5
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[3]),
+       (.I0(Q[0]),
+        .I1(Q[3]),
         .I2(snake_x[4]),
         .I3(snake_x[2]),
         .I4(snake_x[3]),
@@ -347,8 +353,8 @@ module design_1_game_logic_0_0_game_logic
   LUT2 #(
     .INIT(4'h8)) 
     _carry__1_i_1
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[3]),
+       (.I0(Q[0]),
+        .I1(Q[3]),
         .O(_carry__1_i_1_n_0));
   LUT3 #(
     .INIT(8'hBF)) 
@@ -360,8 +366,8 @@ module design_1_game_logic_0_0_game_logic
   LUT5 #(
     .INIT(32'h87877887)) 
     _carry__1_i_3
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[0]),
+       (.I0(Q[3]),
+        .I1(Q[0]),
         .I2(snake_x[8]),
         .I3(snake_x[7]),
         .I4(_carry__0_i_6_n_0),
@@ -369,62 +375,62 @@ module design_1_game_logic_0_0_game_logic
   LUT4 #(
     .INIT(16'h0C06)) 
     _carry_i_1
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .O(_carry_i_1_n_0));
   LUT4 #(
     .INIT(16'hCCD3)) 
     _carry_i_2
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(_carry_i_2_n_0));
   LUT4 #(
     .INIT(16'hFFA8)) 
     _carry_i_3
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[3]),
+       (.I0(Q[2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
         .O(_carry_i_3_n_0));
   LUT6 #(
     .INIT(64'hABBB54445444ABBB)) 
     _carry_i_4
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[0]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .I4(snake_x[2]),
         .I5(snake_x[3]),
         .O(_carry_i_4_n_0));
   LUT5 #(
     .INIT(32'hDECF2130)) 
     _carry_i_5
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[0]),
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .I4(snake_x[2]),
         .O(_carry_i_5_n_0));
   LUT5 #(
     .INIT(32'hE1E51E1A)) 
     _carry_i_6
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .I4(snake_x[1]),
         .O(_carry_i_6_n_0));
   LUT5 #(
     .INIT(32'hFEAA0155)) 
     _carry_i_7
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[2]),
+       (.I0(Q[3]),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(Q[2]),
         .I4(snake_x[0]),
         .O(_carry_i_7_n_0));
   CARRY4 \_inferred__0/i__carry 
@@ -451,10 +457,10 @@ module design_1_game_logic_0_0_game_logic
   LUT6 #(
     .INIT(64'h0444FBBBFBBB0444)) 
     i__carry__0_i_1
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .I4(i__carry__0_i_5_n_0),
         .I5(snake_y[7]),
         .O(i__carry__0_i_1_n_0));
@@ -480,9 +486,9 @@ module design_1_game_logic_0_0_game_logic
   LUT6 #(
     .INIT(64'h41BEBE41BE41BE41)) 
     i__carry__0_i_4
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[0]),
+       (.I0(Q[3]),
+        .I1(Q[1]),
+        .I2(Q[0]),
         .I3(snake_y[4]),
         .I4(snake_y[2]),
         .I5(snake_y[3]),
@@ -521,10 +527,10 @@ module design_1_game_logic_0_0_game_logic
   LUT4 #(
     .INIT(16'h1612)) 
     i__carry_i_1
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[0]),
+       (.I0(Q[1]),
+        .I1(Q[3]),
+        .I2(Q[2]),
+        .I3(Q[0]),
         .O(i__carry_i_1_n_0));
   LUT1 #(
     .INIT(2'h1)) 
@@ -534,46 +540,46 @@ module design_1_game_logic_0_0_game_logic
   LUT4 #(
     .INIT(16'h041C)) 
     i__carry_i_3
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .O(i__carry_i_3_n_0));
   LUT6 #(
     .INIT(64'hEDD912261226EDD9)) 
     i__carry_i_4
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[1]),
+       (.I0(Q[0]),
+        .I1(Q[3]),
+        .I2(Q[2]),
+        .I3(Q[1]),
         .I4(snake_y[2]),
         .I5(snake_y[3]),
         .O(i__carry_i_4_n_0));
   LUT5 #(
     .INIT(32'hFCD3032C)) 
     i__carry_i_5
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[1]),
+       (.I0(Q[0]),
+        .I1(Q[2]),
+        .I2(Q[3]),
+        .I3(Q[1]),
         .I4(snake_y[2]),
         .O(i__carry_i_5_n_0));
   LUT5 #(
     .INIT(32'h01D5FE2A)) 
     i__carry_i_6
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .I4(snake_y[1]),
         .O(i__carry_i_6_n_0));
   LUT5 #(
     .INIT(32'h1034EFCB)) 
     i__carry_i_7
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .I4(snake_y[0]),
         .O(i__carry_i_7_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
@@ -595,40 +601,40 @@ module design_1_game_logic_0_0_game_logic
   LUT6 #(
     .INIT(64'h0000000400040004)) 
     pellet_index2__0_carry__0_i_1
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[2]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
         .I2(snake_y[7]),
         .I3(snake_y[8]),
-        .I4(pellet_index[1]),
-        .I5(pellet_index[0]),
+        .I4(Q[1]),
+        .I5(Q[0]),
         .O(pellet_index2__0_carry__0_i_1_n_0));
   LUT6 #(
     .INIT(64'h000F000F0708000F)) 
     pellet_index2__0_carry__0_i_2
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
         .I2(snake_y[8]),
         .I3(snake_y[7]),
-        .I4(pellet_index[2]),
-        .I5(pellet_index[3]),
+        .I4(Q[2]),
+        .I5(Q[3]),
         .O(pellet_index2__0_carry__0_i_2_n_0));
   LUT6 #(
     .INIT(64'h0000131000737731)) 
     pellet_index2__0_carry_i_1
        (.I0(snake_y[5]),
         .I1(snake_y[6]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
-        .I4(pellet_index[3]),
-        .I5(pellet_index[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
+        .I4(Q[3]),
+        .I5(Q[2]),
         .O(pellet_index2__0_carry_i_1_n_0));
   LUT6 #(
     .INIT(64'h00000008009901FB)) 
     pellet_index2__0_carry_i_2
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .I4(snake_y[3]),
         .I5(snake_y[4]),
         .O(pellet_index2__0_carry_i_2_n_0));
@@ -637,37 +643,37 @@ module design_1_game_logic_0_0_game_logic
     pellet_index2__0_carry_i_3
        (.I0(snake_y[1]),
         .I1(snake_y[2]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[3]),
-        .I4(pellet_index[2]),
-        .I5(pellet_index[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
+        .I4(Q[2]),
+        .I5(Q[0]),
         .O(pellet_index2__0_carry_i_3_n_0));
   LUT5 #(
     .INIT(32'h00001034)) 
     pellet_index2__0_carry_i_4
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .I4(snake_y[0]),
         .O(pellet_index2__0_carry_i_4_n_0));
   LUT6 #(
     .INIT(64'h02000CA101FC4210)) 
     pellet_index2__0_carry_i_5
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[2]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[2]),
         .I3(snake_y[6]),
-        .I4(pellet_index[3]),
+        .I4(Q[3]),
         .I5(snake_y[5]),
         .O(pellet_index2__0_carry_i_5_n_0));
   LUT6 #(
     .INIT(64'h000809010614F0E2)) 
     pellet_index2__0_carry_i_6
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .I4(snake_y[3]),
         .I5(snake_y[4]),
         .O(pellet_index2__0_carry_i_6_n_0));
@@ -676,19 +682,19 @@ module design_1_game_logic_0_0_game_logic
     pellet_index2__0_carry_i_7
        (.I0(snake_y[2]),
         .I1(snake_y[1]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[1]),
-        .I4(pellet_index[3]),
-        .I5(pellet_index[0]),
+        .I2(Q[2]),
+        .I3(Q[1]),
+        .I4(Q[3]),
+        .I5(Q[0]),
         .O(pellet_index2__0_carry_i_7_n_0));
   LUT5 #(
     .INIT(32'h56555A65)) 
     pellet_index2__0_carry_i_8
        (.I0(snake_y[0]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[0]),
-        .I4(pellet_index[1]),
+        .I1(Q[2]),
+        .I2(Q[3]),
+        .I3(Q[0]),
+        .I4(Q[1]),
         .O(pellet_index2__0_carry_i_8_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 pellet_index3__0_carry
@@ -709,20 +715,20 @@ module design_1_game_logic_0_0_game_logic
   LUT6 #(
     .INIT(64'h0B0A0B0A02030302)) 
     pellet_index3__0_carry__0_i_1
-       (.I0(pellet_index[3]),
+       (.I0(Q[3]),
         .I1(snake_x[7]),
         .I2(snake_x[8]),
-        .I3(pellet_index[1]),
-        .I4(pellet_index[2]),
-        .I5(pellet_index[0]),
+        .I3(Q[1]),
+        .I4(Q[2]),
+        .I5(Q[0]),
         .O(pellet_index3__0_carry__0_i_1_n_0));
   LUT6 #(
     .INIT(64'h00000FA6F0000059)) 
     pellet_index3__0_carry__0_i_2
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(Q[3]),
         .I4(snake_x[8]),
         .I5(snake_x[7]),
         .O(pellet_index3__0_carry__0_i_2_n_0));
@@ -731,101 +737,101 @@ module design_1_game_logic_0_0_game_logic
     pellet_index3__0_carry_i_1
        (.I0(snake_x[6]),
         .I1(snake_x[5]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[0]),
-        .I4(pellet_index[3]),
-        .I5(pellet_index[2]),
+        .I2(Q[1]),
+        .I3(Q[0]),
+        .I4(Q[3]),
+        .I5(Q[2]),
         .O(pellet_index3__0_carry_i_1_n_0));
   LUT6 #(
     .INIT(64'h0F050F04005F000F)) 
     pellet_index3__0_carry_i_2
        (.I0(snake_x[3]),
-        .I1(pellet_index[1]),
+        .I1(Q[1]),
         .I2(snake_x[4]),
-        .I3(pellet_index[3]),
-        .I4(pellet_index[2]),
-        .I5(pellet_index[0]),
+        .I3(Q[3]),
+        .I4(Q[2]),
+        .I5(Q[0]),
         .O(pellet_index3__0_carry_i_2_n_0));
   LUT6 #(
     .INIT(64'h1010731110100731)) 
     pellet_index3__0_carry_i_3
        (.I0(snake_x[1]),
         .I1(snake_x[2]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
-        .I4(pellet_index[3]),
-        .I5(pellet_index[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
+        .I4(Q[3]),
+        .I5(Q[2]),
         .O(pellet_index3__0_carry_i_3_n_0));
   LUT5 #(
     .INIT(32'h0000FEAA)) 
     pellet_index3__0_carry_i_4
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[2]),
+       (.I0(Q[3]),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(Q[2]),
         .I4(snake_x[0]),
         .O(pellet_index3__0_carry_i_4_n_0));
   LUT6 #(
     .INIT(64'h333404080801C0C2)) 
     pellet_index3__0_carry_i_5
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .I4(snake_x[5]),
         .I5(snake_x[6]),
         .O(pellet_index3__0_carry_i_5_n_0));
   LUT6 #(
     .INIT(64'h00C300C33C000834)) 
     pellet_index3__0_carry_i_6
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
         .I2(snake_x[4]),
         .I3(snake_x[3]),
-        .I4(pellet_index[2]),
-        .I5(pellet_index[3]),
+        .I4(Q[2]),
+        .I5(Q[3]),
         .O(pellet_index3__0_carry_i_6_n_0));
   LUT6 #(
     .INIT(64'h08010600A1A8505A)) 
     pellet_index3__0_carry_i_7
        (.I0(snake_x[1]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[1]),
-        .I4(pellet_index[0]),
+        .I1(Q[2]),
+        .I2(Q[3]),
+        .I3(Q[1]),
+        .I4(Q[0]),
         .I5(snake_x[2]),
         .O(pellet_index3__0_carry_i_7_n_0));
   LUT5 #(
     .INIT(32'hAAA99999)) 
     pellet_index3__0_carry_i_8
        (.I0(snake_x[0]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[0]),
-        .I4(pellet_index[2]),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[0]),
+        .I4(Q[2]),
         .O(pellet_index3__0_carry_i_8_n_0));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \pellet_index[0]_i_1 
-       (.I0(pellet_index[0]),
+       (.I0(Q[0]),
         .O(p_1_in[0]));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h0FD0)) 
     \pellet_index[1]_i_1 
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .O(p_1_in[1]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \pellet_index[2]_i_1 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
         .O(p_1_in[2]));
   LUT4 #(
     .INIT(16'h0008)) 
@@ -839,10 +845,10 @@ module design_1_game_logic_0_0_game_logic
   LUT4 #(
     .INIT(16'h7B80)) 
     \pellet_index[3]_i_2 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(p_1_in[3]));
   FDRE #(
     .INIT(1'b0)) 
@@ -850,7 +856,7 @@ module design_1_game_logic_0_0_game_logic
        (.C(clk),
         .CE(\pellet_index[3]_i_1_n_0 ),
         .D(p_1_in[0]),
-        .Q(pellet_index[0]),
+        .Q(Q[0]),
         .R(rst));
   FDRE #(
     .INIT(1'b0)) 
@@ -858,7 +864,7 @@ module design_1_game_logic_0_0_game_logic
        (.C(clk),
         .CE(\pellet_index[3]_i_1_n_0 ),
         .D(p_1_in[1]),
-        .Q(pellet_index[1]),
+        .Q(Q[1]),
         .R(rst));
   FDRE #(
     .INIT(1'b0)) 
@@ -866,7 +872,7 @@ module design_1_game_logic_0_0_game_logic
        (.C(clk),
         .CE(\pellet_index[3]_i_1_n_0 ),
         .D(p_1_in[2]),
-        .Q(pellet_index[2]),
+        .Q(Q[2]),
         .R(rst));
   FDRE #(
     .INIT(1'b0)) 
@@ -874,146 +880,146 @@ module design_1_game_logic_0_0_game_logic
        (.C(clk),
         .CE(\pellet_index[3]_i_1_n_0 ),
         .D(p_1_in[3]),
-        .Q(pellet_index[3]),
+        .Q(Q[3]),
         .R(rst));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hFFA8)) 
     \pellet_x[1]_INST_0 
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[3]),
+       (.I0(Q[2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
         .O(pellet_x[0]));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'hCCD3)) 
     \pellet_x[2]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(pellet_x[1]));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h0C06)) 
     \pellet_x[3]_INST_0 
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .O(pellet_x[2]));
   LUT4 #(
     .INIT(16'h00F8)) 
     \pellet_x[4]_INST_0 
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(pellet_x[3]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \pellet_x[5]_INST_0 
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[0]),
+       (.I0(Q[3]),
+        .I1(Q[0]),
         .O(pellet_x[4]));
   LUT4 #(
     .INIT(16'h33A7)) 
     \pellet_x[6]_INST_0 
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[3]),
+       (.I0(Q[2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
         .O(pellet_x[5]));
   LUT4 #(
     .INIT(16'h337C)) 
     \pellet_x[7]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(pellet_x[6]));
   LUT4 #(
     .INIT(16'h33D2)) 
     \pellet_x[8]_INST_0 
-       (.I0(pellet_index[2]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[1]),
-        .I3(pellet_index[3]),
+       (.I0(Q[2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
         .O(pellet_x[7]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \pellet_x[9]_INST_0 
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[3]),
+       (.I0(Q[0]),
+        .I1(Q[3]),
         .O(pellet_x[8]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'h041C)) 
     \pellet_y[1]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .O(pellet_y[0]));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h4057)) 
     \pellet_y[2]_INST_0 
-       (.I0(pellet_index[3]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[0]),
-        .I3(pellet_index[1]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .O(pellet_y[1]));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h1612)) 
     \pellet_y[3]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[0]),
+       (.I0(Q[1]),
+        .I1(Q[3]),
+        .I2(Q[2]),
+        .I3(Q[0]),
         .O(pellet_y[2]));
   LUT4 #(
     .INIT(16'h0718)) 
     \pellet_y[4]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[2]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[0]),
+       (.I0(Q[1]),
+        .I1(Q[2]),
+        .I2(Q[3]),
+        .I3(Q[0]),
         .O(pellet_y[3]));
   LUT3 #(
     .INIT(8'h09)) 
     \pellet_y[5]_INST_0 
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[3]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[3]),
         .O(pellet_y[4]));
   LUT4 #(
     .INIT(16'h3603)) 
     \pellet_y[6]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[3]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[0]),
+       (.I0(Q[1]),
+        .I1(Q[3]),
+        .I2(Q[2]),
+        .I3(Q[0]),
         .O(pellet_y[5]));
   LUT4 #(
     .INIT(16'h043E)) 
     \pellet_y[7]_INST_0 
-       (.I0(pellet_index[0]),
-        .I1(pellet_index[1]),
-        .I2(pellet_index[3]),
-        .I3(pellet_index[2]),
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[3]),
+        .I3(Q[2]),
         .O(pellet_y[6]));
   LUT4 #(
     .INIT(16'h0070)) 
     \pellet_y[8]_INST_0 
-       (.I0(pellet_index[1]),
-        .I1(pellet_index[0]),
-        .I2(pellet_index[2]),
-        .I3(pellet_index[3]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[3]),
         .O(pellet_y[7]));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 snake_x_reg0_carry

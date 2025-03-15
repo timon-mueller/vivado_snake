@@ -31,3 +31,27 @@ set_property src_info {type:XDC file:1 line:28 export:INPUT save:INPUT read:READ
 set_property -dict {PACKAGE_PIN U20 IOSTANDARD LVCMOS33 } [get_ports {gpio_rtl_0_tri_i[3]}];
 set_property src_info {type:XDC file:1 line:29 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN R17 IOSTANDARD LVCMOS33 } [get_ports {gpio_rtl_0_tri_i[4]}];
+set_property src_info {type:XDC file:1 line:32 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K19 IOSTANDARD LVCMOS33 } [get_ports { anodes_0[0] }];
+set_property src_info {type:XDC file:1 line:33 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H17 IOSTANDARD LVCMOS33 } [get_ports { anodes_0[1] }];
+set_property src_info {type:XDC file:1 line:34 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN M18 IOSTANDARD LVCMOS33 } [get_ports { anodes_0[2] }];
+set_property src_info {type:XDC file:1 line:35 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports { anodes_0[3] }];
+set_property src_info {type:XDC file:1 line:37 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K14 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[0] }]; # Segment A
+set_property src_info {type:XDC file:1 line:38 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H15 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[1] }]; # Segment B
+set_property src_info {type:XDC file:1 line:39 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN J18 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[2] }]; # Segment C
+set_property src_info {type:XDC file:1 line:40 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[3] }]; # Segment D
+set_property src_info {type:XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN M17 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[4] }]; # Segment E
+set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN J16 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[5] }]; # Segment F
+set_property src_info {type:XDC file:1 line:43 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H18 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[6] }]; # Segment G
+set_property src_info {type:XDC file:1 line:44 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports { cathodes_0[7] }]; # Segment DP (Dezimalpunkt)

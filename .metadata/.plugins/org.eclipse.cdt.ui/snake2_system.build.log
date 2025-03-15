@@ -1,0 +1,10 @@
+16:38:22 **** Build of configuration Debug for project snake2_system ****
+make all 
+Generating bif file for the system project
+Executing command '::scw::generate_bif -xpfm /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm -domains standalone_ps7_cortexa9_0 -bifpath /home/timon/Documents/vivado_snake/snake2_system/Debug/system.bif' on XSCT
+sdcard_gen --xpfm /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif /home/timon/Documents/vivado_snake/snake2_system/Debug/system.bif --bitstream /home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit --elf /home/timon/Documents/vivado_snake/snake2/Debug/snake2.elf,ps7_cortexa9_0
+creating BOOT.BIN using /home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit
+Running /tools/Xilinx/Vitis/2023.1/bin/bootgen  -image /home/timon/Documents/vivado_snake/snake2_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+16:38:27 Build Finished (took 5s.192ms)
+

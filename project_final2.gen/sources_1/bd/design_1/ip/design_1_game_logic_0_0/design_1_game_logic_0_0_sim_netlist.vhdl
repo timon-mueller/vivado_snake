@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Fri Mar 14 20:54:19 2025
+-- Date        : Sat Mar 15 16:26:29 2025
 -- Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_game_logic_0_0/design_1_game_logic_0_0_sim_netlist.vhdl
@@ -17,6 +17,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_game_logic_0_0_game_logic is
   port (
+    Q : out STD_LOGIC_VECTOR ( 3 downto 0 );
     snake_y : out STD_LOGIC_VECTOR ( 8 downto 0 );
     snake_x : out STD_LOGIC_VECTOR ( 8 downto 0 );
     pellet_y : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -33,6 +34,7 @@ entity design_1_game_logic_0_0_game_logic is
 end design_1_game_logic_0_0_game_logic;
 
 architecture STRUCTURE of design_1_game_logic_0_0_game_logic is
+  signal \^q\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \_carry__0_i_2_n_0\ : STD_LOGIC;
   signal \_carry__0_i_3_n_0\ : STD_LOGIC;
@@ -85,7 +87,6 @@ architecture STRUCTURE of design_1_game_logic_0_0_game_logic is
   signal \i__carry_i_6_n_0\ : STD_LOGIC;
   signal \i__carry_i_7_n_0\ : STD_LOGIC;
   signal p_1_in : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal pellet_index : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \pellet_index2__0_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \pellet_index2__0_carry__0_i_2_n_0\ : STD_LOGIC;
   signal \pellet_index2__0_carry__0_n_3\ : STD_LOGIC;
@@ -225,6 +226,7 @@ architecture STRUCTURE of design_1_game_logic_0_0_game_logic is
   attribute ADDER_THRESHOLD of \snake_y_reg0_carry__0\ : label is 35;
   attribute ADDER_THRESHOLD of \snake_y_reg0_carry__1\ : label is 35;
 begin
+  Q(3 downto 0) <= \^q\(3 downto 0);
   pellet_x(8 downto 0) <= \^pellet_x\(8 downto 0);
   pellet_y(7 downto 0) <= \^pellet_y\(7 downto 0);
   snake_x(8 downto 0) <= \^snake_x\(8 downto 0);
@@ -268,8 +270,8 @@ begin
       INIT => X"9"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(0),
+      I0 => \^q\(3),
+      I1 => \^q\(0),
       O => \_carry__0_i_1_n_0\
     );
 \_carry__0_i_2\: unisim.vcomponents.LUT6
@@ -277,10 +279,10 @@ begin
       INIT => X"4B4EB4B1B4B14B4E"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(1),
-      I2 => pellet_index(0),
-      I3 => pellet_index(2),
+      I0 => \^q\(3),
+      I1 => \^q\(1),
+      I2 => \^q\(0),
+      I3 => \^q\(2),
       I4 => \^snake_x\(7),
       I5 => \_carry__0_i_6_n_0\,
       O => \_carry__0_i_2_n_0\
@@ -315,8 +317,8 @@ begin
       INIT => X"96696969"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(3),
+      I0 => \^q\(0),
+      I1 => \^q\(3),
       I2 => \^snake_x\(4),
       I3 => \^snake_x\(2),
       I4 => \^snake_x\(3),
@@ -353,8 +355,8 @@ begin
       INIT => X"8"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(3),
+      I0 => \^q\(0),
+      I1 => \^q\(3),
       O => \_carry__1_i_1_n_0\
     );
 \_carry__1_i_2\: unisim.vcomponents.LUT3
@@ -372,8 +374,8 @@ begin
       INIT => X"87877887"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(0),
+      I0 => \^q\(3),
+      I1 => \^q\(0),
       I2 => \^snake_x\(8),
       I3 => \^snake_x\(7),
       I4 => \_carry__0_i_6_n_0\,
@@ -384,10 +386,10 @@ begin
       INIT => X"0C06"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       O => \_carry_i_1_n_0\
     );
 \_carry_i_2\: unisim.vcomponents.LUT4
@@ -395,10 +397,10 @@ begin
       INIT => X"CCD3"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => \_carry_i_2_n_0\
     );
 \_carry_i_3\: unisim.vcomponents.LUT4
@@ -406,10 +408,10 @@ begin
       INIT => X"FFA8"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(0),
-      I2 => pellet_index(1),
-      I3 => pellet_index(3),
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
+      I3 => \^q\(3),
       O => \_carry_i_3_n_0\
     );
 \_carry_i_4\: unisim.vcomponents.LUT6
@@ -417,10 +419,10 @@ begin
       INIT => X"ABBB54445444ABBB"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(2),
-      I2 => pellet_index(1),
-      I3 => pellet_index(0),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      I2 => \^q\(1),
+      I3 => \^q\(0),
       I4 => \^snake_x\(2),
       I5 => \^snake_x\(3),
       O => \_carry_i_4_n_0\
@@ -430,10 +432,10 @@ begin
       INIT => X"DECF2130"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(3),
-      I2 => pellet_index(1),
-      I3 => pellet_index(0),
+      I0 => \^q\(2),
+      I1 => \^q\(3),
+      I2 => \^q\(1),
+      I3 => \^q\(0),
       I4 => \^snake_x\(2),
       O => \_carry_i_5_n_0\
     );
@@ -442,10 +444,10 @@ begin
       INIT => X"E1E51E1A"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(2),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
       I4 => \^snake_x\(1),
       O => \_carry_i_6_n_0\
     );
@@ -454,10 +456,10 @@ begin
       INIT => X"FEAA0155"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(1),
-      I2 => pellet_index(0),
-      I3 => pellet_index(2),
+      I0 => \^q\(3),
+      I1 => \^q\(1),
+      I2 => \^q\(0),
+      I3 => \^q\(2),
       I4 => \^snake_x\(0),
       O => \_carry_i_7_n_0\
     );
@@ -512,10 +514,10 @@ begin
       INIT => X"0444FBBBFBBB0444"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(2),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
       I4 => \i__carry__0_i_5_n_0\,
       I5 => \^snake_y\(7),
       O => \i__carry__0_i_1_n_0\
@@ -550,9 +552,9 @@ begin
       INIT => X"41BEBE41BE41BE41"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(1),
-      I2 => pellet_index(0),
+      I0 => \^q\(3),
+      I1 => \^q\(1),
+      I2 => \^q\(0),
       I3 => \^snake_y\(4),
       I4 => \^snake_y\(2),
       I5 => \^snake_y\(3),
@@ -606,10 +608,10 @@ begin
       INIT => X"1612"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(3),
-      I2 => pellet_index(2),
-      I3 => pellet_index(0),
+      I0 => \^q\(1),
+      I1 => \^q\(3),
+      I2 => \^q\(2),
+      I3 => \^q\(0),
       O => \i__carry_i_1_n_0\
     );
 \i__carry_i_2\: unisim.vcomponents.LUT1
@@ -625,10 +627,10 @@ begin
       INIT => X"041C"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       O => \i__carry_i_3_n_0\
     );
 \i__carry_i_4\: unisim.vcomponents.LUT6
@@ -636,10 +638,10 @@ begin
       INIT => X"EDD912261226EDD9"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(3),
-      I2 => pellet_index(2),
-      I3 => pellet_index(1),
+      I0 => \^q\(0),
+      I1 => \^q\(3),
+      I2 => \^q\(2),
+      I3 => \^q\(1),
       I4 => \^snake_y\(2),
       I5 => \^snake_y\(3),
       O => \i__carry_i_4_n_0\
@@ -649,10 +651,10 @@ begin
       INIT => X"FCD3032C"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(2),
-      I2 => pellet_index(3),
-      I3 => pellet_index(1),
+      I0 => \^q\(0),
+      I1 => \^q\(2),
+      I2 => \^q\(3),
+      I3 => \^q\(1),
       I4 => \^snake_y\(2),
       O => \i__carry_i_5_n_0\
     );
@@ -661,10 +663,10 @@ begin
       INIT => X"01D5FE2A"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       I4 => \^snake_y\(1),
       O => \i__carry_i_6_n_0\
     );
@@ -673,10 +675,10 @@ begin
       INIT => X"1034EFCB"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(3),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
+      I0 => \^q\(2),
+      I1 => \^q\(3),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
       I4 => \^snake_y\(0),
       O => \i__carry_i_7_n_0\
     );
@@ -715,12 +717,12 @@ begin
       INIT => X"0000000400040004"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(2),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
       I2 => \^snake_y\(7),
       I3 => \^snake_y\(8),
-      I4 => pellet_index(1),
-      I5 => pellet_index(0),
+      I4 => \^q\(1),
+      I5 => \^q\(0),
       O => \pellet_index2__0_carry__0_i_1_n_0\
     );
 \pellet_index2__0_carry__0_i_2\: unisim.vcomponents.LUT6
@@ -728,12 +730,12 @@ begin
       INIT => X"000F000F0708000F"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
       I2 => \^snake_y\(8),
       I3 => \^snake_y\(7),
-      I4 => pellet_index(2),
-      I5 => pellet_index(3),
+      I4 => \^q\(2),
+      I5 => \^q\(3),
       O => \pellet_index2__0_carry__0_i_2_n_0\
     );
 \pellet_index2__0_carry_i_1\: unisim.vcomponents.LUT6
@@ -743,10 +745,10 @@ begin
         port map (
       I0 => \^snake_y\(5),
       I1 => \^snake_y\(6),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
-      I4 => pellet_index(3),
-      I5 => pellet_index(2),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
+      I4 => \^q\(3),
+      I5 => \^q\(2),
       O => \pellet_index2__0_carry_i_1_n_0\
     );
 \pellet_index2__0_carry_i_2\: unisim.vcomponents.LUT6
@@ -754,10 +756,10 @@ begin
       INIT => X"00000008009901FB"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       I4 => \^snake_y\(3),
       I5 => \^snake_y\(4),
       O => \pellet_index2__0_carry_i_2_n_0\
@@ -769,10 +771,10 @@ begin
         port map (
       I0 => \^snake_y\(1),
       I1 => \^snake_y\(2),
-      I2 => pellet_index(1),
-      I3 => pellet_index(3),
-      I4 => pellet_index(2),
-      I5 => pellet_index(0),
+      I2 => \^q\(1),
+      I3 => \^q\(3),
+      I4 => \^q\(2),
+      I5 => \^q\(0),
       O => \pellet_index2__0_carry_i_3_n_0\
     );
 \pellet_index2__0_carry_i_4\: unisim.vcomponents.LUT5
@@ -780,10 +782,10 @@ begin
       INIT => X"00001034"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(3),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
+      I0 => \^q\(2),
+      I1 => \^q\(3),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
       I4 => \^snake_y\(0),
       O => \pellet_index2__0_carry_i_4_n_0\
     );
@@ -792,11 +794,11 @@ begin
       INIT => X"02000CA101FC4210"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(2),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(2),
       I3 => \^snake_y\(6),
-      I4 => pellet_index(3),
+      I4 => \^q\(3),
       I5 => \^snake_y\(5),
       O => \pellet_index2__0_carry_i_5_n_0\
     );
@@ -805,10 +807,10 @@ begin
       INIT => X"000809010614F0E2"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       I4 => \^snake_y\(3),
       I5 => \^snake_y\(4),
       O => \pellet_index2__0_carry_i_6_n_0\
@@ -820,10 +822,10 @@ begin
         port map (
       I0 => \^snake_y\(2),
       I1 => \^snake_y\(1),
-      I2 => pellet_index(2),
-      I3 => pellet_index(1),
-      I4 => pellet_index(3),
-      I5 => pellet_index(0),
+      I2 => \^q\(2),
+      I3 => \^q\(1),
+      I4 => \^q\(3),
+      I5 => \^q\(0),
       O => \pellet_index2__0_carry_i_7_n_0\
     );
 \pellet_index2__0_carry_i_8\: unisim.vcomponents.LUT5
@@ -832,10 +834,10 @@ begin
     )
         port map (
       I0 => \^snake_y\(0),
-      I1 => pellet_index(2),
-      I2 => pellet_index(3),
-      I3 => pellet_index(0),
-      I4 => pellet_index(1),
+      I1 => \^q\(2),
+      I2 => \^q\(3),
+      I3 => \^q\(0),
+      I4 => \^q\(1),
       O => \pellet_index2__0_carry_i_8_n_0\
     );
 \pellet_index3__0_carry\: unisim.vcomponents.CARRY4
@@ -873,12 +875,12 @@ begin
       INIT => X"0B0A0B0A02030302"
     )
         port map (
-      I0 => pellet_index(3),
+      I0 => \^q\(3),
       I1 => \^snake_x\(7),
       I2 => \^snake_x\(8),
-      I3 => pellet_index(1),
-      I4 => pellet_index(2),
-      I5 => pellet_index(0),
+      I3 => \^q\(1),
+      I4 => \^q\(2),
+      I5 => \^q\(0),
       O => \pellet_index3__0_carry__0_i_1_n_0\
     );
 \pellet_index3__0_carry__0_i_2\: unisim.vcomponents.LUT6
@@ -886,10 +888,10 @@ begin
       INIT => X"00000FA6F0000059"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(2),
-      I2 => pellet_index(0),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(2),
+      I2 => \^q\(0),
+      I3 => \^q\(3),
       I4 => \^snake_x\(8),
       I5 => \^snake_x\(7),
       O => \pellet_index3__0_carry__0_i_2_n_0\
@@ -901,10 +903,10 @@ begin
         port map (
       I0 => \^snake_x\(6),
       I1 => \^snake_x\(5),
-      I2 => pellet_index(1),
-      I3 => pellet_index(0),
-      I4 => pellet_index(3),
-      I5 => pellet_index(2),
+      I2 => \^q\(1),
+      I3 => \^q\(0),
+      I4 => \^q\(3),
+      I5 => \^q\(2),
       O => \pellet_index3__0_carry_i_1_n_0\
     );
 \pellet_index3__0_carry_i_2\: unisim.vcomponents.LUT6
@@ -913,11 +915,11 @@ begin
     )
         port map (
       I0 => \^snake_x\(3),
-      I1 => pellet_index(1),
+      I1 => \^q\(1),
       I2 => \^snake_x\(4),
-      I3 => pellet_index(3),
-      I4 => pellet_index(2),
-      I5 => pellet_index(0),
+      I3 => \^q\(3),
+      I4 => \^q\(2),
+      I5 => \^q\(0),
       O => \pellet_index3__0_carry_i_2_n_0\
     );
 \pellet_index3__0_carry_i_3\: unisim.vcomponents.LUT6
@@ -927,10 +929,10 @@ begin
         port map (
       I0 => \^snake_x\(1),
       I1 => \^snake_x\(2),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
-      I4 => pellet_index(3),
-      I5 => pellet_index(2),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
+      I4 => \^q\(3),
+      I5 => \^q\(2),
       O => \pellet_index3__0_carry_i_3_n_0\
     );
 \pellet_index3__0_carry_i_4\: unisim.vcomponents.LUT5
@@ -938,10 +940,10 @@ begin
       INIT => X"0000FEAA"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(1),
-      I2 => pellet_index(0),
-      I3 => pellet_index(2),
+      I0 => \^q\(3),
+      I1 => \^q\(1),
+      I2 => \^q\(0),
+      I3 => \^q\(2),
       I4 => \^snake_x\(0),
       O => \pellet_index3__0_carry_i_4_n_0\
     );
@@ -950,10 +952,10 @@ begin
       INIT => X"333404080801C0C2"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       I4 => \^snake_x\(5),
       I5 => \^snake_x\(6),
       O => \pellet_index3__0_carry_i_5_n_0\
@@ -963,12 +965,12 @@ begin
       INIT => X"00C300C33C000834"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
       I2 => \^snake_x\(4),
       I3 => \^snake_x\(3),
-      I4 => pellet_index(2),
-      I5 => pellet_index(3),
+      I4 => \^q\(2),
+      I5 => \^q\(3),
       O => \pellet_index3__0_carry_i_6_n_0\
     );
 \pellet_index3__0_carry_i_7\: unisim.vcomponents.LUT6
@@ -977,10 +979,10 @@ begin
     )
         port map (
       I0 => \^snake_x\(1),
-      I1 => pellet_index(2),
-      I2 => pellet_index(3),
-      I3 => pellet_index(1),
-      I4 => pellet_index(0),
+      I1 => \^q\(2),
+      I2 => \^q\(3),
+      I3 => \^q\(1),
+      I4 => \^q\(0),
       I5 => \^snake_x\(2),
       O => \pellet_index3__0_carry_i_7_n_0\
     );
@@ -990,10 +992,10 @@ begin
     )
         port map (
       I0 => \^snake_x\(0),
-      I1 => pellet_index(3),
-      I2 => pellet_index(1),
-      I3 => pellet_index(0),
-      I4 => pellet_index(2),
+      I1 => \^q\(3),
+      I2 => \^q\(1),
+      I3 => \^q\(0),
+      I4 => \^q\(2),
       O => \pellet_index3__0_carry_i_8_n_0\
     );
 \pellet_index[0]_i_1\: unisim.vcomponents.LUT1
@@ -1001,7 +1003,7 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => pellet_index(0),
+      I0 => \^q\(0),
       O => p_1_in(0)
     );
 \pellet_index[1]_i_1\: unisim.vcomponents.LUT4
@@ -1009,10 +1011,10 @@ begin
       INIT => X"0FD0"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(2),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
       O => p_1_in(1)
     );
 \pellet_index[2]_i_1\: unisim.vcomponents.LUT3
@@ -1020,9 +1022,9 @@ begin
       INIT => X"78"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
       O => p_1_in(2)
     );
 \pellet_index[3]_i_1\: unisim.vcomponents.LUT4
@@ -1041,10 +1043,10 @@ begin
       INIT => X"7B80"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => p_1_in(3)
     );
 \pellet_index_reg[0]\: unisim.vcomponents.FDRE
@@ -1055,7 +1057,7 @@ begin
       C => clk,
       CE => \pellet_index[3]_i_1_n_0\,
       D => p_1_in(0),
-      Q => pellet_index(0),
+      Q => \^q\(0),
       R => rst
     );
 \pellet_index_reg[1]\: unisim.vcomponents.FDRE
@@ -1066,7 +1068,7 @@ begin
       C => clk,
       CE => \pellet_index[3]_i_1_n_0\,
       D => p_1_in(1),
-      Q => pellet_index(1),
+      Q => \^q\(1),
       R => rst
     );
 \pellet_index_reg[2]\: unisim.vcomponents.FDRE
@@ -1077,7 +1079,7 @@ begin
       C => clk,
       CE => \pellet_index[3]_i_1_n_0\,
       D => p_1_in(2),
-      Q => pellet_index(2),
+      Q => \^q\(2),
       R => rst
     );
 \pellet_index_reg[3]\: unisim.vcomponents.FDRE
@@ -1088,7 +1090,7 @@ begin
       C => clk,
       CE => \pellet_index[3]_i_1_n_0\,
       D => p_1_in(3),
-      Q => pellet_index(3),
+      Q => \^q\(3),
       R => rst
     );
 \pellet_x[1]_INST_0\: unisim.vcomponents.LUT4
@@ -1096,10 +1098,10 @@ begin
       INIT => X"FFA8"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(0),
-      I2 => pellet_index(1),
-      I3 => pellet_index(3),
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
+      I3 => \^q\(3),
       O => \^pellet_x\(0)
     );
 \pellet_x[2]_INST_0\: unisim.vcomponents.LUT4
@@ -1107,10 +1109,10 @@ begin
       INIT => X"CCD3"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => \^pellet_x\(1)
     );
 \pellet_x[3]_INST_0\: unisim.vcomponents.LUT4
@@ -1118,10 +1120,10 @@ begin
       INIT => X"0C06"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       O => \^pellet_x\(2)
     );
 \pellet_x[4]_INST_0\: unisim.vcomponents.LUT4
@@ -1129,10 +1131,10 @@ begin
       INIT => X"00F8"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => \^pellet_x\(3)
     );
 \pellet_x[5]_INST_0\: unisim.vcomponents.LUT2
@@ -1140,8 +1142,8 @@ begin
       INIT => X"9"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(0),
+      I0 => \^q\(3),
+      I1 => \^q\(0),
       O => \^pellet_x\(4)
     );
 \pellet_x[6]_INST_0\: unisim.vcomponents.LUT4
@@ -1149,10 +1151,10 @@ begin
       INIT => X"33A7"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(0),
-      I2 => pellet_index(1),
-      I3 => pellet_index(3),
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
+      I3 => \^q\(3),
       O => \^pellet_x\(5)
     );
 \pellet_x[7]_INST_0\: unisim.vcomponents.LUT4
@@ -1160,10 +1162,10 @@ begin
       INIT => X"337C"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => \^pellet_x\(6)
     );
 \pellet_x[8]_INST_0\: unisim.vcomponents.LUT4
@@ -1171,10 +1173,10 @@ begin
       INIT => X"33D2"
     )
         port map (
-      I0 => pellet_index(2),
-      I1 => pellet_index(0),
-      I2 => pellet_index(1),
-      I3 => pellet_index(3),
+      I0 => \^q\(2),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
+      I3 => \^q\(3),
       O => \^pellet_x\(7)
     );
 \pellet_x[9]_INST_0\: unisim.vcomponents.LUT2
@@ -1182,8 +1184,8 @@ begin
       INIT => X"8"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(3),
+      I0 => \^q\(0),
+      I1 => \^q\(3),
       O => \^pellet_x\(8)
     );
 \pellet_y[1]_INST_0\: unisim.vcomponents.LUT4
@@ -1191,10 +1193,10 @@ begin
       INIT => X"041C"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       O => \^pellet_y\(0)
     );
 \pellet_y[2]_INST_0\: unisim.vcomponents.LUT4
@@ -1202,10 +1204,10 @@ begin
       INIT => X"4057"
     )
         port map (
-      I0 => pellet_index(3),
-      I1 => pellet_index(2),
-      I2 => pellet_index(0),
-      I3 => pellet_index(1),
+      I0 => \^q\(3),
+      I1 => \^q\(2),
+      I2 => \^q\(0),
+      I3 => \^q\(1),
       O => \^pellet_y\(1)
     );
 \pellet_y[3]_INST_0\: unisim.vcomponents.LUT4
@@ -1213,10 +1215,10 @@ begin
       INIT => X"1612"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(3),
-      I2 => pellet_index(2),
-      I3 => pellet_index(0),
+      I0 => \^q\(1),
+      I1 => \^q\(3),
+      I2 => \^q\(2),
+      I3 => \^q\(0),
       O => \^pellet_y\(2)
     );
 \pellet_y[4]_INST_0\: unisim.vcomponents.LUT4
@@ -1224,10 +1226,10 @@ begin
       INIT => X"0718"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(2),
-      I2 => pellet_index(3),
-      I3 => pellet_index(0),
+      I0 => \^q\(1),
+      I1 => \^q\(2),
+      I2 => \^q\(3),
+      I3 => \^q\(0),
       O => \^pellet_y\(3)
     );
 \pellet_y[5]_INST_0\: unisim.vcomponents.LUT3
@@ -1235,9 +1237,9 @@ begin
       INIT => X"09"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(3),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(3),
       O => \^pellet_y\(4)
     );
 \pellet_y[6]_INST_0\: unisim.vcomponents.LUT4
@@ -1245,10 +1247,10 @@ begin
       INIT => X"3603"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(3),
-      I2 => pellet_index(2),
-      I3 => pellet_index(0),
+      I0 => \^q\(1),
+      I1 => \^q\(3),
+      I2 => \^q\(2),
+      I3 => \^q\(0),
       O => \^pellet_y\(5)
     );
 \pellet_y[7]_INST_0\: unisim.vcomponents.LUT4
@@ -1256,10 +1258,10 @@ begin
       INIT => X"043E"
     )
         port map (
-      I0 => pellet_index(0),
-      I1 => pellet_index(1),
-      I2 => pellet_index(3),
-      I3 => pellet_index(2),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
+      I2 => \^q\(3),
+      I3 => \^q\(2),
       O => \^pellet_y\(6)
     );
 \pellet_y[8]_INST_0\: unisim.vcomponents.LUT4
@@ -1267,10 +1269,10 @@ begin
       INIT => X"0070"
     )
         port map (
-      I0 => pellet_index(1),
-      I1 => pellet_index(0),
-      I2 => pellet_index(2),
-      I3 => pellet_index(3),
+      I0 => \^q\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(2),
+      I3 => \^q\(3),
       O => \^pellet_y\(7)
     );
 snake_x_reg0_carry: unisim.vcomponents.CARRY4
@@ -1791,7 +1793,8 @@ entity design_1_game_logic_0_0 is
     snake_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
     snake_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
     pellet_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_y : out STD_LOGIC_VECTOR ( 9 downto 0 )
+    pellet_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_index_out : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of design_1_game_logic_0_0 : entity is true;
@@ -1833,6 +1836,7 @@ GND: unisim.vcomponents.GND
     );
 U0: entity work.design_1_game_logic_0_0_game_logic
      port map (
+      Q(3 downto 0) => pellet_index_out(3 downto 0),
       clk => clk,
       i_switch_down => i_switch_down,
       i_switch_left => i_switch_left,

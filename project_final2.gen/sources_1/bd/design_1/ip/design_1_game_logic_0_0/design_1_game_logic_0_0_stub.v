@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Fri Mar 14 20:54:19 2025
+// Date        : Sat Mar 15 16:26:29 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_game_logic_0_0/design_1_game_logic_0_0_stub.v
@@ -16,8 +16,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "game_logic,Vivado 2023.1" *)
 module design_1_game_logic_0_0(clk, rst, i_switch_up, i_switch_down, 
-  i_switch_left, i_switch_right, snake_x, snake_y, pellet_x, pellet_y)
-/* synthesis syn_black_box black_box_pad_pin="rst,i_switch_up,i_switch_down,i_switch_left,i_switch_right,snake_x[9:0],snake_y[9:0],pellet_x[9:0],pellet_y[9:0]" */
+  i_switch_left, i_switch_right, snake_x, snake_y, pellet_x, pellet_y, pellet_index_out)
+/* synthesis syn_black_box black_box_pad_pin="rst,i_switch_up,i_switch_down,i_switch_left,i_switch_right,snake_x[9:0],snake_y[9:0],pellet_x[9:0],pellet_y[9:0],pellet_index_out[3:0]" */
 /* synthesis syn_force_seq_prim="clk" */;
   input clk /* synthesis syn_isclock = 1 */;
   input rst;
@@ -29,4 +29,5 @@ module design_1_game_logic_0_0(clk, rst, i_switch_up, i_switch_down,
   output [9:0]snake_y;
   output [9:0]pellet_x;
   output [9:0]pellet_y;
+  output [3:0]pellet_index_out;
 endmodule

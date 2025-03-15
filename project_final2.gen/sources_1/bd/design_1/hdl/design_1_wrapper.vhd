@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Sat Mar 15 12:23:05 2025
+--Date        : Sat Mar 15 16:30:38 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -35,6 +35,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    anodes_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    cathodes_0 : out STD_LOGIC_VECTOR ( 6 downto 0 );
     hdmi_tx_0_tmds_clk_n : out STD_LOGIC;
     hdmi_tx_0_tmds_clk_p : out STD_LOGIC;
     hdmi_tx_0_tmds_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -79,7 +81,9 @@ architecture STRUCTURE of design_1_wrapper is
     i_switch_up_0 : in STD_LOGIC;
     i_switch_down_0 : in STD_LOGIC;
     i_switch_left_0 : in STD_LOGIC;
-    i_switch_right_0 : in STD_LOGIC
+    i_switch_right_0 : in STD_LOGIC;
+    cathodes_0 : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    anodes_0 : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1;
 begin
@@ -106,6 +110,8 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      anodes_0(3 downto 0) => anodes_0(3 downto 0),
+      cathodes_0(6 downto 0) => cathodes_0(6 downto 0),
       hdmi_tx_0_tmds_clk_n => hdmi_tx_0_tmds_clk_n,
       hdmi_tx_0_tmds_clk_p => hdmi_tx_0_tmds_clk_p,
       hdmi_tx_0_tmds_data_n(2 downto 0) => hdmi_tx_0_tmds_data_n(2 downto 0),

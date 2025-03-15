@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Sat Mar 15 12:23:05 2025
+--Date        : Sat Mar 15 16:30:38 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -600,6 +600,8 @@ entity design_1 is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    anodes_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    cathodes_0 : out STD_LOGIC_VECTOR ( 6 downto 0 );
     hdmi_tx_0_tmds_clk_n : out STD_LOGIC;
     hdmi_tx_0_tmds_clk_p : out STD_LOGIC;
     hdmi_tx_0_tmds_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -611,7 +613,7 @@ entity design_1 is
     reset_rtl_0 : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=10,numNonXlnxBlks=1,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=7,da_clkrst_cnt=15,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=14,numReposBlks=12,numNonXlnxBlks=1,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=7,da_clkrst_cnt=15,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -730,20 +732,6 @@ architecture STRUCTURE of design_1 is
     blue : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_vga_controller_0_0;
-  component design_1_game_logic_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    i_switch_up : in STD_LOGIC;
-    i_switch_down : in STD_LOGIC;
-    i_switch_left : in STD_LOGIC;
-    i_switch_right : in STD_LOGIC;
-    snake_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    snake_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_y : out STD_LOGIC_VECTOR ( 9 downto 0 )
-  );
-  end component design_1_game_logic_0_0;
   component design_1_game_clock_0_0 is
   port (
     clk_100mhz : in STD_LOGIC;
@@ -795,11 +783,43 @@ architecture STRUCTURE of design_1 is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rst_ps7_0_50M_0;
+  component design_1_seven_segment_clock_0_0 is
+  port (
+    clk_100mhz : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    clk_10khz : out STD_LOGIC
+  );
+  end component design_1_seven_segment_clock_0_0;
+  component design_1_game_logic_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
+    i_switch_up : in STD_LOGIC;
+    i_switch_down : in STD_LOGIC;
+    i_switch_left : in STD_LOGIC;
+    i_switch_right : in STD_LOGIC;
+    snake_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    snake_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_y : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_index_out : out STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component design_1_game_logic_0_0;
+  component design_1_seven_segment_display_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    input_number : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    anodes : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    cathodes : out STD_LOGIC_VECTOR ( 6 downto 0 )
+  );
+  end component design_1_seven_segment_display_0_0;
   signal clk_wiz_0_clk_out100 : STD_LOGIC;
   signal clk_wiz_0_clk_out125 : STD_LOGIC;
   signal clk_wiz_0_clk_out25 : STD_LOGIC;
   signal clk_wiz_0_locked : STD_LOGIC;
   signal game_clock_0_clk_10hz : STD_LOGIC;
+  signal game_logic_0_pellet_index_out : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal game_logic_0_pellet_x : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal game_logic_0_pellet_y : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal game_logic_0_snake_x : STD_LOGIC_VECTOR ( 9 downto 0 );
@@ -892,6 +912,9 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M00_AXI_WVALID : STD_LOGIC;
   signal reset_rtl_0_1 : STD_LOGIC;
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal seven_segment_clock_0_clk_10khz : STD_LOGIC;
+  signal seven_segment_display_0_anodes : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal seven_segment_display_0_cathodes : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal test_axi_gpio_0_gpio_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal vga_controller_0_blue : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal vga_controller_0_green : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -941,6 +964,8 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of hdmi_tx_0_tmds_data_n : signal is "xilinx.com:interface:hdmi:2.0 hdmi_tx_0 TMDS_DATA_N";
   attribute X_INTERFACE_INFO of hdmi_tx_0_tmds_data_p : signal is "xilinx.com:interface:hdmi:2.0 hdmi_tx_0 TMDS_DATA_P";
 begin
+  anodes_0(3 downto 0) <= seven_segment_display_0_anodes(3 downto 0);
+  cathodes_0(6 downto 0) <= seven_segment_display_0_cathodes(6 downto 0);
   hdmi_tx_0_tmds_clk_n <= hdmi_tx_0_hdmi_tx_TMDS_CLK_N;
   hdmi_tx_0_tmds_clk_p <= hdmi_tx_0_hdmi_tx_TMDS_CLK_P;
   hdmi_tx_0_tmds_data_n(2 downto 0) <= hdmi_tx_0_hdmi_tx_TMDS_DATA_N(2 downto 0);
@@ -995,6 +1020,7 @@ game_logic_0: component design_1_game_logic_0_0
       i_switch_left => i_switch_left_0_1,
       i_switch_right => i_switch_right_0_1,
       i_switch_up => i_switch_up_0_1,
+      pellet_index_out(3 downto 0) => game_logic_0_pellet_index_out(3 downto 0),
       pellet_x(9 downto 0) => game_logic_0_pellet_x(9 downto 0),
       pellet_y(9 downto 0) => game_logic_0_pellet_y(9 downto 0),
       rst => reset_rtl_0_1,
@@ -1162,6 +1188,20 @@ rst_ps7_0_50M: component design_1_rst_ps7_0_50M_0
       peripheral_aresetn(0) => rst_ps7_0_50M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
+    );
+seven_segment_clock_0: component design_1_seven_segment_clock_0_0
+     port map (
+      clk_100mhz => clk_wiz_0_clk_out100,
+      clk_10khz => seven_segment_clock_0_clk_10khz,
+      reset => reset_rtl_0_1
+    );
+seven_segment_display_0: component design_1_seven_segment_display_0_0
+     port map (
+      anodes(3 downto 0) => seven_segment_display_0_anodes(3 downto 0),
+      cathodes(6 downto 0) => seven_segment_display_0_cathodes(6 downto 0),
+      clk => seven_segment_clock_0_clk_10khz,
+      input_number(3 downto 0) => game_logic_0_pellet_index_out(3 downto 0),
+      reset => reset_rtl_0_1
     );
 test_axi_gpio_0: component design_1_test_axi_gpio_0_0
      port map (

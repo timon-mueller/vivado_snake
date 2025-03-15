@@ -1,6 +1,6 @@
 Nothing to build in platform 'design_1_wrapper'
 
-12:35:40 **** Build of configuration Debug for project snake ****
+16:38:21 **** Build of configuration Debug for project snake2 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -16,21 +16,21 @@ Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
 Finished building: ../src/platform.c
  
-Building target: snake.elf
+Building target: snake2.elf
 Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "snake.elf" ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: snake.elf
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "snake2.elf" ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: snake2.elf
  
 Invoking: ARM v7 Print Size
-arm-none-eabi-size snake.elf  |tee "snake.elf.size"
+arm-none-eabi-size snake2.elf  |tee "snake2.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  22349	   1144	  22568	  46061	   b3ed	snake.elf
-Finished building: snake.elf.size
+  19104	   1144	  22568	  42816	   a740	snake2.elf
+Finished building: snake2.elf.size
  
-12:35:41 **** Build of configuration Debug for project snake_system ****
+16:38:22 **** Build of configuration Debug for project snake2_system ****
 make all 
 Generating bif file for the system project
-Executing command '::scw::generate_bif -xpfm /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm -domains standalone_ps7_cortexa9_0 -bifpath /home/timon/Documents/vivado_snake/snake_system/Debug/system.bif' on XSCT
-sdcard_gen --xpfm /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif /home/timon/Documents/vivado_snake/snake_system/Debug/system.bif --bitstream /home/timon/Documents/vivado_snake/snake/_ide/bitstream/design_1_wrapper.bit --elf /home/timon/Documents/vivado_snake/snake/Debug/snake.elf,ps7_cortexa9_0
-creating BOOT.BIN using /home/timon/Documents/vivado_snake/snake/_ide/bitstream/design_1_wrapper.bit
-Running /tools/Xilinx/Vitis/2023.1/bin/bootgen  -image /home/timon/Documents/vivado_snake/snake_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+Executing command '::scw::generate_bif -xpfm /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm -domains standalone_ps7_cortexa9_0 -bifpath /home/timon/Documents/vivado_snake/snake2_system/Debug/system.bif' on XSCT
+sdcard_gen --xpfm /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif /home/timon/Documents/vivado_snake/snake2_system/Debug/system.bif --bitstream /home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit --elf /home/timon/Documents/vivado_snake/snake2/Debug/snake2.elf,ps7_cortexa9_0
+creating BOOT.BIN using /home/timon/Documents/vivado_snake/snake2/_ide/bitstream/design_1_wrapper.bit
+Running /tools/Xilinx/Vitis/2023.1/bin/bootgen  -image /home/timon/Documents/vivado_snake/snake2_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

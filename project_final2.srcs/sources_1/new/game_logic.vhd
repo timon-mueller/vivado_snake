@@ -15,7 +15,9 @@ entity game_logic is
          snake_y       : out std_logic_vector(9 downto 0);
          -- Ausgabe: Aktuelle Pellet-Position (als 10-Bit Vektor)
          pellet_x      : out std_logic_vector(9 downto 0);
-         pellet_y      : out std_logic_vector(9 downto 0)
+         pellet_y      : out std_logic_vector(9 downto 0);
+         -- Pellet-Index als Output
+         pellet_index_out : out std_logic_vector(3 downto 0)  
     );
 end game_logic;
 
@@ -29,33 +31,24 @@ architecture Behavioral of game_logic is
 
     -- Definition eines Arrays für 10 Pelletpositionen (je 10 Bit breit)
     type pellet_array is array (0 to 9) of unsigned(9 downto 0);
+    
     constant pellet_x_const : pellet_array := (
-        to_unsigned(100, 10),
-        to_unsigned(200, 10),
-        to_unsigned(300, 10),
-        to_unsigned(400, 10),
-        to_unsigned(500, 10),
-        to_unsigned(150, 10),
-        to_unsigned(250, 10),
-        to_unsigned(350, 10),
-        to_unsigned(450, 10),
+        to_unsigned(100, 10), to_unsigned(200, 10), to_unsigned(300, 10),
+        to_unsigned(400, 10), to_unsigned(500, 10), to_unsigned(150, 10),
+        to_unsigned(250, 10), to_unsigned(350, 10), to_unsigned(450, 10),
         to_unsigned(550, 10)
     );
+    
     constant pellet_y_const : pellet_array := (
-        to_unsigned(100, 10),
-        to_unsigned(150, 10),
-        to_unsigned(200, 10),
-        to_unsigned(250, 10),
-        to_unsigned(300, 10),
-        to_unsigned(350, 10),
-        to_unsigned(400, 10),
-        to_unsigned(100, 10),
-        to_unsigned(150, 10),
+        to_unsigned(100, 10), to_unsigned(150, 10), to_unsigned(200, 10),
+        to_unsigned(250, 10), to_unsigned(300, 10), to_unsigned(350, 10),
+        to_unsigned(400, 10), to_unsigned(100, 10), to_unsigned(150, 10),
         to_unsigned(200, 10)
     );
 
     -- Zeiger auf das aktuell aktive Pellet (Index 0 bis 9)
-    signal pellet_index : integer range 0 to 9 := 0;
+    signal pellet_index : unsigned(3 downto 0) := "0000"; -- 4 Bit für 0 bis 9
+
 begin
     process(clk)
     begin
@@ -63,7 +56,7 @@ begin
             if rst = '1' then
                 snake_x_reg <= to_unsigned(300, 10);
                 snake_y_reg <= to_unsigned(220, 10);
-                pellet_index <= 0;
+                pellet_index <= "0000"; -- Reset auf 0
             else
                 -- Bewegungslogik der Schlange
                 if i_switch_up = '1' then
@@ -79,25 +72,30 @@ begin
                 -- Kollisionsabfrage:
                 -- Wenn der Mittelpunkt des aktuellen Pellets innerhalb des Schlangenrechtecks liegt,
                 -- wird das Pellet „eingesammelt" und der Index zum nächsten Pellet erhöht.
-                if (to_integer(snake_x_reg) <= to_integer(pellet_x_const(pellet_index))) and
-                   (to_integer(pellet_x_const(pellet_index)) < to_integer(snake_x_reg) + snake_size) and
-                   (to_integer(snake_y_reg) <= to_integer(pellet_y_const(pellet_index))) and
-                   (to_integer(pellet_y_const(pellet_index)) < to_integer(snake_y_reg) + snake_size)
+                if (to_integer(snake_x_reg) <= to_integer(pellet_x_const(to_integer(pellet_index)))) and
+                   (to_integer(pellet_x_const(to_integer(pellet_index))) < to_integer(snake_x_reg) + snake_size) and
+                   (to_integer(snake_y_reg) <= to_integer(pellet_y_const(to_integer(pellet_index)))) and
+                   (to_integer(pellet_y_const(to_integer(pellet_index))) < to_integer(snake_y_reg) + snake_size)
                 then
-                    if pellet_index = 9 then
-                        pellet_index <= 0;
+                    if pellet_index = "1001" then  -- 9 in Binär
+                        pellet_index <= "0000";
                     else
                         pellet_index <= pellet_index + 1;
                     end if;
                 end if;
             end if;
         end if;
+
+        -- Ausgabe der Schlangenposition
         snake_x <= std_logic_vector(snake_x_reg);
         snake_y <= std_logic_vector(snake_y_reg);
+
+        -- Ausgabe der Pelletpositionen
+        pellet_x <= std_logic_vector(pellet_x_const(to_integer(pellet_index)));
+        pellet_y <= std_logic_vector(pellet_y_const(to_integer(pellet_index)));
+
+        -- Pellet-Index als std_logic_vector ausgeben
+        pellet_index_out <= std_logic_vector(pellet_index);
     end process;
 
-    -- Ausgabe der aktuellen Positionen (Konvertierung in std_logic_vector)
-    
-    pellet_x <= std_logic_vector(pellet_x_const(pellet_index));
-    pellet_y <= std_logic_vector(pellet_y_const(pellet_index));
 end Behavioral;

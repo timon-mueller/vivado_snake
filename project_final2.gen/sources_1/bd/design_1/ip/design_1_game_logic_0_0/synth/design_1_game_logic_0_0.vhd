@@ -64,7 +64,8 @@ ENTITY design_1_game_logic_0_0 IS
     snake_x : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
     snake_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
     pellet_x : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
-    pellet_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
+    pellet_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+    pellet_index_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
   );
 END design_1_game_logic_0_0;
 
@@ -82,7 +83,8 @@ ARCHITECTURE design_1_game_logic_0_0_arch OF design_1_game_logic_0_0 IS
       snake_x : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
       snake_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
       pellet_x : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
-      pellet_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
+      pellet_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+      pellet_index_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
   END COMPONENT game_logic;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -111,6 +113,7 @@ BEGIN
       snake_x => snake_x,
       snake_y => snake_y,
       pellet_x => pellet_x,
-      pellet_y => pellet_y
+      pellet_y => pellet_y,
+      pellet_index_out => pellet_index_out
     );
 END design_1_game_logic_0_0_arch;

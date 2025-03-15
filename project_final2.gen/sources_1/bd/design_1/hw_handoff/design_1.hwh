@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Mar 15 12:23:05 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Mar 15 16:30:39 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -133,8 +133,10 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="hdmi_tx_0" PORT="rst"/>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="reset"/>
-        <CONNECTION INSTANCE="game_logic_0" PORT="rst"/>
         <CONNECTION INSTANCE="game_clock_0" PORT="reset"/>
+        <CONNECTION INSTANCE="seven_segment_clock_0" PORT="reset"/>
+        <CONNECTION INSTANCE="game_logic_0" PORT="rst"/>
+        <CONNECTION INSTANCE="seven_segment_display_0" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="i_switch_up_0" SIGIS="undef" SIGNAME="External_Ports_i_switch_up_0">
@@ -162,9 +164,18 @@
         <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_i"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="GPIO2_0_tri_o" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="31" NAME="GPIO_0_tri_o" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="31" NAME="GPIO_0_tri_t" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="6" NAME="cathodes_0" RIGHT="0" SIGIS="undef" SIGNAME="seven_segment_display_0_cathodes">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="seven_segment_display_0" PORT="cathodes"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="anodes_0" RIGHT="0" SIGIS="undef" SIGNAME="seven_segment_display_0_anodes">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="seven_segment_display_0" PORT="anodes"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -225,11 +236,6 @@
         <PORTMAP LOGICAL="TRI_I" PHYSICAL="GPIO_0_tri_i"/>
         <PORTMAP LOGICAL="TRI_O" PHYSICAL="GPIO_0_tri_o"/>
         <PORTMAP LOGICAL="TRI_T" PHYSICAL="GPIO_0_tri_t"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="__NOC__" NAME="GPIO2_0" TYPE="INITIATOR">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="TRI_O" PHYSICAL="GPIO2_0_tri_o"/>
       </PORTMAPS>
     </BUSINTERFACE>
   </EXTERNALINTERFACES>
@@ -1197,6 +1203,7 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="game_clock_0" PORT="clk_100mhz"/>
             <CONNECTION INSTANCE="test_axi_gpio_0" PORT="clk"/>
+            <CONNECTION INSTANCE="seven_segment_clock_0" PORT="clk_100mhz"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="clk_wiz_0_locked">
@@ -1287,6 +1294,11 @@
         <PORT DIR="O" LEFT="9" NAME="pellet_y" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_pellet_y">
           <CONNECTIONS>
             <CONNECTION INSTANCE="vga_controller_0" PORT="pellet_y"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="pellet_index_out" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_pellet_index_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="seven_segment_display_0" PORT="input_number"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3522,6 +3534,66 @@
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ARESETN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/seven_segment_clock_0" HWVERSION="1.0" INSTANCE="seven_segment_clock_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="seven_segment_clock" VLNV="xilinx.com:module_ref:seven_segment_clock:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_seven_segment_clock_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_100mhz" SIGIS="undef" SIGNAME="clk_wiz_0_clk_out100">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out100"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_rtl_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_10khz" SIGIS="undef" SIGNAME="seven_segment_clock_0_clk_10khz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="seven_segment_display_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/seven_segment_display_0" HWVERSION="1.0" INSTANCE="seven_segment_display_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="seven_segment_display" VLNV="xilinx.com:module_ref:seven_segment_display:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_seven_segment_display_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="seven_segment_clock_0_clk_10khz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="seven_segment_clock_0" PORT="clk_10khz"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_rtl_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="input_number" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_pellet_index_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="game_logic_0" PORT="pellet_index_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="anodes" RIGHT="0" SIGIS="undef" SIGNAME="seven_segment_display_0_anodes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="anodes_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="cathodes" RIGHT="0" SIGIS="undef" SIGNAME="seven_segment_display_0_cathodes">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="cathodes_0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

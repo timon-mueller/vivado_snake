@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x68F444F46528F30B",
+      "boundary_crc": "0x6C3A05391E071AFC",
       "device": "xc7z007sclg400-1",
       "gen_directory": "../../../../project_final2.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -15,7 +15,6 @@
       "hdmi_tx_0": "",
       "clk_wiz_0": "",
       "vga_controller_0": "",
-      "game_logic_0": "",
       "game_clock_0": "",
       "test_axi_gpio_0": "",
       "axi_gpio_0": "",
@@ -24,7 +23,10 @@
           "auto_pc": ""
         }
       },
-      "rst_ps7_0_50M": ""
+      "rst_ps7_0_50M": "",
+      "seven_segment_clock_0": "",
+      "game_logic_0": "",
+      "seven_segment_display_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -226,11 +228,6 @@
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
         "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
-      },
-      "GPIO2_0": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0"
       }
     },
     "ports": {
@@ -258,6 +255,16 @@
       },
       "i_switch_right_0": {
         "direction": "I"
+      },
+      "cathodes_0": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "anodes_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -1323,71 +1330,6 @@
           }
         }
       },
-      "game_logic_0": {
-        "vlnv": "xilinx.com:module_ref:game_logic:1.0",
-        "xci_name": "design_1_game_logic_0_0",
-        "xci_path": "ip/design_1_game_logic_0_0/design_1_game_logic_0_0.xci",
-        "inst_hier_path": "game_logic_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "game_logic",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "i_switch_up": {
-            "direction": "I"
-          },
-          "i_switch_down": {
-            "direction": "I"
-          },
-          "i_switch_left": {
-            "direction": "I"
-          },
-          "i_switch_right": {
-            "direction": "I"
-          },
-          "snake_x": {
-            "direction": "O",
-            "left": "9",
-            "right": "0"
-          },
-          "snake_y": {
-            "direction": "O",
-            "left": "9",
-            "right": "0"
-          },
-          "pellet_x": {
-            "direction": "O",
-            "left": "9",
-            "right": "0"
-          },
-          "pellet_y": {
-            "direction": "O",
-            "left": "9",
-            "right": "0"
-          }
-        }
-      },
       "game_clock_0": {
         "vlnv": "xilinx.com:module_ref:game_clock:1.0",
         "xci_name": "design_1_game_clock_0_0",
@@ -1699,6 +1641,167 @@
         "xci_name": "design_1_rst_ps7_0_50M_0",
         "xci_path": "ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xci",
         "inst_hier_path": "rst_ps7_0_50M"
+      },
+      "seven_segment_clock_0": {
+        "vlnv": "xilinx.com:module_ref:seven_segment_clock:1.0",
+        "xci_name": "design_1_seven_segment_clock_0_0",
+        "xci_path": "ip/design_1_seven_segment_clock_0_0/design_1_seven_segment_clock_0_0.xci",
+        "inst_hier_path": "seven_segment_clock_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "seven_segment_clock",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_100mhz": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "clk_10khz": {
+            "direction": "O"
+          }
+        }
+      },
+      "game_logic_0": {
+        "vlnv": "xilinx.com:module_ref:game_logic:1.0",
+        "xci_name": "design_1_game_logic_0_0",
+        "xci_path": "ip/design_1_game_logic_0_0/design_1_game_logic_0_0.xci",
+        "inst_hier_path": "game_logic_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "game_logic",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "i_switch_up": {
+            "direction": "I"
+          },
+          "i_switch_down": {
+            "direction": "I"
+          },
+          "i_switch_left": {
+            "direction": "I"
+          },
+          "i_switch_right": {
+            "direction": "I"
+          },
+          "snake_x": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "snake_y": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "pellet_x": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "pellet_y": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          },
+          "pellet_index_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "seven_segment_display_0": {
+        "vlnv": "xilinx.com:module_ref:seven_segment_display:1.0",
+        "xci_name": "design_1_seven_segment_display_0_0",
+        "xci_path": "ip/design_1_seven_segment_display_0_0/design_1_seven_segment_display_0_0.xci",
+        "inst_hier_path": "seven_segment_display_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "seven_segment_display",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "input_number": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "anodes": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "cathodes": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1751,7 +1854,8 @@
         "ports": [
           "clk_wiz_0/clk_out100",
           "game_clock_0/clk_100mhz",
-          "test_axi_gpio_0/clk"
+          "test_axi_gpio_0/clk",
+          "seven_segment_clock_0/clk_100mhz"
         ]
       },
       "clk_wiz_0_clk_out125": {
@@ -1770,6 +1874,12 @@
         "ports": [
           "game_clock_0/clk_10hz",
           "game_logic_0/clk"
+        ]
+      },
+      "game_logic_0_pellet_index_out": {
+        "ports": [
+          "game_logic_0/pellet_index_out",
+          "seven_segment_display_0/input_number"
         ]
       },
       "game_logic_0_pellet_x": {
@@ -1843,8 +1953,10 @@
           "reset_rtl_0",
           "hdmi_tx_0/rst",
           "clk_wiz_0/reset",
+          "game_clock_0/reset",
+          "seven_segment_clock_0/reset",
           "game_logic_0/rst",
-          "game_clock_0/reset"
+          "seven_segment_display_0/reset"
         ]
       },
       "rst_ps7_0_50M_peripheral_aresetn": {
@@ -1854,6 +1966,24 @@
           "axi_gpio_0/s_axi_aresetn",
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN"
+        ]
+      },
+      "seven_segment_clock_0_clk_10khz": {
+        "ports": [
+          "seven_segment_clock_0/clk_10khz",
+          "seven_segment_display_0/clk"
+        ]
+      },
+      "seven_segment_display_0_anodes": {
+        "ports": [
+          "seven_segment_display_0/anodes",
+          "anodes_0"
+        ]
+      },
+      "seven_segment_display_0_cathodes": {
+        "ports": [
+          "seven_segment_display_0/cathodes",
+          "cathodes_0"
         ]
       },
       "test_axi_gpio_0_gpio_out": {

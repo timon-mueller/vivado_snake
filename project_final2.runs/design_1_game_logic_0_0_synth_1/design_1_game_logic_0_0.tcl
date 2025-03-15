@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_1_game_logic_0_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/mref
@@ -81,7 +82,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/timon/Documents/vivado_snake/project_final2.cache/wt [current_project]
 set_property parent.project_path /home/timon/Documents/vivado_snake/project_final2.xpr [current_project]
-set_property XPM_LIBRARIES XPM_CDC [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_repo_paths /home/timon/home/ces-bpti06/Downloads/hdmi_tx_1.0 [current_project]
