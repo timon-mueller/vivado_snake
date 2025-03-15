@@ -462,3 +462,77 @@ loadhw -hw /tmp/Project_aktuell/platform_test/export/platform_test/hw/design_1_w
 ----------------End of Script----------------
 
 10:44:46 ERROR : can't read "map": no such variable
+10:43:45 DEBUG : Logs will be stored at '/home/timon/Documents/vivado_snake/IDE.log'.
+10:43:50 INFO  : Launching XSCT server: xsct -n  -interactive /home/timon/Documents/vivado_snake/temp_xsdb_launch_script.tcl
+10:43:50 INFO  : Registering command handlers for Vitis TCF services
+10:43:51 INFO  : Platform repository initialization has completed.
+10:43:52 INFO  : XSCT server has started successfully.
+10:43:53 INFO  : Successfully done setting XSCT server connection channel  
+10:43:53 INFO  : plnx-install-location is set to ''
+10:43:53 INFO  : Successfully done query RDI_DATADIR 
+10:43:53 INFO  : Successfully done setting workspace for the tool. 
+10:44:23 ERROR : (XSDB Server)ERROR: [Hsi 55-1403] /home/timon/Documents/vivado_snake/design_1_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss line 21 - No IP instance named axi_bram_ctrl_0 present in hardware design
+ERROR: [Hsi 55-1403] /home/timon/Documents/vivado_snake/design_1_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss line 27 - No IP instance named axi_gpio_0 present in hardware design
+
+10:44:23 ERROR : (XSDB Server)ERROR: [Hsi 55-1592] Current Software Design is not set
+
+10:44:23 ERROR : Failed to create platform for application project
+Reason: Failed to create platform.
+10:44:23 WARN  : An unexpected exception occurred in the module 'platform project logging'
+10:44:23 INFO  : Platform creation cancelled by the user.
+10:45:26 INFO  : Result from executing command 'getProjects': design_1_wrapper
+10:45:26 INFO  : Result from executing command 'getPlatforms': xilinx_zcu102_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+10:45:26 WARN  : An unexpected exception occurred in the module 'platform project logging'
+10:45:26 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+10:45:31 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+10:45:48 INFO  : Result from executing command 'getProjects': design_1_wrapper
+10:45:48 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm;xilinx_zcu102_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_202310_1/xilinx_zcu102_base_202310_1.xpfm;xilinx_zcu102_base_dfx_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu102_base_dfx_202310_1/xilinx_zcu102_base_dfx_202310_1.xpfm;xilinx_zcu104_base_202310_1|/tools/Xilinx/Vitis/2023.1/base_platforms/xilinx_zcu104_base_202310_1/xilinx_zcu104_base_202310_1.xpfm
+10:46:00 INFO  : Checking for BSP changes to sync application flags for project 'testApp'...
+10:46:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:46:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
+10:46:20 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/testApp/_ide/bitstream/design_1_wrapper.bit"
+10:46:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:46:32 INFO  : Jtag cable 'RealDigital Bla 887100000305A' is selected.
+10:46:32 INFO  : 'jtag frequency' command is executed.
+10:46:32 INFO  : Context for 'APU' is selected.
+10:46:33 INFO  : System reset is completed.
+10:46:36 INFO  : 'after 3000' command is executed.
+10:46:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}' command is executed.
+10:46:37 INFO  : Device configured successfully with "/home/timon/Documents/vivado_snake/testApp/_ide/bitstream/design_1_wrapper.bit"
+10:46:37 INFO  : Context for 'APU' is selected.
+10:46:37 INFO  : Hardware design and registers information is loaded from '/home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+10:46:37 INFO  : 'configparams force-mem-access 1' command is executed.
+10:46:37 INFO  : Context for 'APU' is selected.
+10:46:37 INFO  : Sourcing of '/home/timon/Documents/vivado_snake/testApp/_ide/psinit/ps7_init.tcl' is done.
+10:46:37 INFO  : 'ps7_init' command is executed.
+10:46:37 INFO  : 'ps7_post_config' command is executed.
+10:46:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:46:37 INFO  : The application '/home/timon/Documents/vivado_snake/testApp/Debug/testApp.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:46:37 INFO  : 'configparams force-mem-access 0' command is executed.
+10:46:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "RealDigital Bla 887100000305A" && level==0 && jtag_device_ctx=="jsn1-13723093-0"}
+fpga -file /home/timon/Documents/vivado_snake/testApp/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/timon/Documents/vivado_snake/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/timon/Documents/vivado_snake/testApp/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/timon/Documents/vivado_snake/testApp/Debug/testApp.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:46:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:46:37 INFO  : 'con' command is executed.
+10:46:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:46:37 INFO  : Launch script is exported to file '/home/timon/Documents/vivado_snake/testApp_system/_ide/scripts/debugger_testapp-default.tcl'

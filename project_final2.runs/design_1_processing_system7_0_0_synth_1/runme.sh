@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/timon/Documents/Snake/vivado_screensaver/project_final2.runs/design_1_processing_system7_0_0_synth_1'
+HD_PWD='/home/timon/Documents/vivado_snake/project_final2.runs/design_1_processing_system7_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -27,40 +27,40 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 5091
+INFO: [Synth 8-7075] Helper process launched with PID 49450
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2046.883 ; gain = 371.734 ; free physical = 9191 ; free virtual = 15455
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2045.918 ; gain = 372.734 ; free physical = 5148 ; free virtual = 12671
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:50]
 INFO: [Synth 8-3491] module 'design_1' declared at '/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:15' bound to instance 'design_1_i' of component 'design_1' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:86]
 INFO: [Synth 8-638] synthesizing module 'design_1' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:54]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:305]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_1_game_clock_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:6' bound to instance 'game_clock_0' of component 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:314]
-INFO: [Synth 8-638] synthesizing module 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'design_1_game_logic_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:6' bound to instance 'game_logic_0' of component 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:320]
-INFO: [Synth 8-638] synthesizing module 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'design_1_hdmi_tx_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:5' bound to instance 'hdmi_tx_0' of component 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:333]
-INFO: [Synth 8-638] synthesizing module 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:25]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:350]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:74]
-INFO: [Synth 8-3491] module 'design_1_vga_controller_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:6' bound to instance 'vga_controller_0' of component 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:415]
-INFO: [Synth 8-638] synthesizing module 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-5000-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:24]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:6' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:310]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_clk_wiz_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_game_clock_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:6' bound to instance 'game_clock_0' of component 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:319]
+INFO: [Synth 8-638] synthesizing module 'design_1_game_clock_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_game_clock_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_game_logic_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:6' bound to instance 'game_logic_0' of component 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:325]
+INFO: [Synth 8-638] synthesizing module 'design_1_game_logic_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_game_logic_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'design_1_hdmi_tx_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:5' bound to instance 'hdmi_tx_0' of component 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:338]
+INFO: [Synth 8-638] synthesizing module 'design_1_hdmi_tx_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_hdmi_tx_0_0_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:355]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_processing_system7_0_0_stub.vhdl:77]
+INFO: [Synth 8-3491] module 'design_1_vga_controller_0_0' declared at '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:6' bound to instance 'vga_controller_0' of component 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:423]
+INFO: [Synth 8-638] synthesizing module 'design_1_vga_controller_0_0' [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/.Xil/Vivado-49377-ASUS-TUF-A15/realtime/design_1_vga_controller_0_0_stub.vhdl:24]
 INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/synth/design_1.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:50]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2111.852 ; gain = 436.703 ; free physical = 9104 ; free virtual = 15372
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2111.887 ; gain = 438.703 ; free physical = 5061 ; free virtual = 12586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2129.664 ; gain = 454.516 ; free physical = 9104 ; free virtual = 15372
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2129.699 ; gain = 456.516 ; free physical = 5061 ; free virtual = 12586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2129.664 ; gain = 454.516 ; free physical = 9104 ; free virtual = 15372
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2129.699 ; gain = 456.516 ; free physical = 5061 ; free virtual = 12586
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2129.664 ; gain = 0.000 ; free physical = 9104 ; free virtual = 15372
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2129.699 ; gain = 0.000 ; free physical = 5061 ; free virtual = 12586
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -89,22 +89,22 @@ Parsing XDC File [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1
 Finished Parsing XDC File [/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.590 ; gain = 0.000 ; free physical = 9081 ; free virtual = 15364
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.625 ; gain = 0.000 ; free physical = 5055 ; free virtual = 12579
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.590 ; gain = 0.000 ; free physical = 9081 ; free virtual = 15364
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.625 ; gain = 0.000 ; free physical = 5055 ; free virtual = 12579
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9080 ; free virtual = 15363
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5048 ; free virtual = 12573
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9080 ; free virtual = 15363
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5050 ; free virtual = 12574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -393,10 +393,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/vga_controller_0. (con
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/game_logic_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/game_clock_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9080 ; free virtual = 15363
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5050 ; free virtual = 12575
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9078 ; free virtual = 15362
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5050 ; free virtual = 12575
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -419,25 +419,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9076 ; free virtual = 15364
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5048 ; free virtual = 12577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5057 ; free virtual = 12587
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5057 ; free virtual = 12587
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5057 ; free virtual = 12587
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -455,37 +455,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -516,26 +516,26 @@ Report Cell Usage:
 |7     |IBUF                                 |     5|
 +------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2178.590 ; gain = 454.516 ; free physical = 9063 ; free virtual = 15358
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.590 ; gain = 503.441 ; free physical = 9063 ; free virtual = 15358
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2178.625 ; gain = 456.516 ; free physical = 5072 ; free virtual = 12601
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2178.625 ; gain = 505.441 ; free physical = 5072 ; free virtual = 12601
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.590 ; gain = 0.000 ; free physical = 9233 ; free virtual = 15530
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.625 ; gain = 0.000 ; free physical = 5346 ; free virtual = 12876
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.590 ; gain = 0.000 ; free physical = 9336 ; free virtual = 15634
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2178.625 ; gain = 0.000 ; free physical = 5363 ; free virtual = 12892
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 2bf39de
+Synth Design complete | Checksum: 56b1a38a
 INFO: [Common 17-83] Releasing license: Synthesis
 38 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2178.590 ; gain = 752.613 ; free physical = 9336 ; free virtual = 15634
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1770.250; main = 1444.223; forked = 378.054
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3152.949; main = 2146.578; forked = 1006.371
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2178.625 ; gain = 752.645 ; free physical = 5363 ; free virtual = 12892
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1760.860; main = 1436.595; forked = 374.064
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3149.984; main = 2146.613; forked = 1003.371
 INFO: [Common 17-1381] The checkpoint '/home/timon/Documents/vivado_snake/project_final2.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 15 10:01:51 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 15 10:41:19 2025...

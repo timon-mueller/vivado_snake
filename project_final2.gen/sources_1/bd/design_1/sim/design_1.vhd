@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Fri Mar 14 21:01:02 2025
+--Date        : Sat Mar 15 10:40:14 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -54,6 +54,9 @@ end design_1;
 architecture STRUCTURE of design_1 is
   component design_1_processing_system7_0_0 is
   port (
+    USB0_PORT_INDCTL : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    USB0_VBUS_PWRSELECT : out STD_LOGIC;
+    USB0_VBUS_PWRFAULT : in STD_LOGIC;
     M_AXI_GP0_ARVALID : out STD_LOGIC;
     M_AXI_GP0_AWVALID : out STD_LOGIC;
     M_AXI_GP0_BREADY : out STD_LOGIC;
@@ -142,8 +145,8 @@ architecture STRUCTURE of design_1 is
     clk_in1 : in STD_LOGIC;
     clk_out25 : out STD_LOGIC;
     clk_out125 : out STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk_out100 : out STD_LOGIC
+    clk_out100 : out STD_LOGIC;
+    locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
   component design_1_vga_controller_0_0 is
@@ -236,6 +239,7 @@ architecture STRUCTURE of design_1 is
   signal NLW_processing_system7_0_M_AXI_GP0_RREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_WLAST_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_WVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_ARBURST_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_ARCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -257,6 +261,7 @@ architecture STRUCTURE of design_1 is
   signal NLW_processing_system7_0_M_AXI_GP0_WDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_WID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute BMM_INFO_PROCESSOR : string;
   attribute BMM_INFO_PROCESSOR of processing_system7_0 : label is "arm > design_1 axi_bram_ctrl_0";
   attribute KEEP_HIERARCHY : string;
@@ -410,7 +415,10 @@ processing_system7_0: component design_1_processing_system7_0_0
       M_AXI_GP0_WVALID => NLW_processing_system7_0_M_AXI_GP0_WVALID_UNCONNECTED,
       PS_CLK => FIXED_IO_ps_clk,
       PS_PORB => FIXED_IO_ps_porb,
-      PS_SRSTB => FIXED_IO_ps_srstb
+      PS_SRSTB => FIXED_IO_ps_srstb,
+      USB0_PORT_INDCTL(1 downto 0) => NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED(1 downto 0),
+      USB0_VBUS_PWRFAULT => '0',
+      USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
     );
 vga_controller_0: component design_1_vga_controller_0_0
      port map (

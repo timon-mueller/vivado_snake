@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Sat Mar 15 10:02:27 2025
+| Date         : Sat Mar 15 10:41:55 2025
 | Host         : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 26
+             Violations found: 25
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
@@ -31,7 +31,6 @@ Table of Contents
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 22         |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                       | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                      | 1          |
 +-----------+------------------+----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -174,11 +173,6 @@ design_1_i/hdmi_tx_0/inst/encr/dout_reg[7]/CLR,
 design_1_i/hdmi_tx_0/inst/encr/dout_reg[8]/CLR,
 design_1_i/hdmi_tx_0/inst/encr/dout_reg[9]/CLR
  (the first 15 of 42 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-TIMING-18#1 Warning
-Missing input or output delay  
-An input delay is missing on reset_rtl_0 relative to the rising and/or falling clock edge(s) of design_1_i/clk_wiz_0/inst/clk_in1.
 Related violations: <none>
 
 
