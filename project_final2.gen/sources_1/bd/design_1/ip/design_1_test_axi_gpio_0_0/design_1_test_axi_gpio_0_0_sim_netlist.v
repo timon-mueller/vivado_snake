@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sun Mar 16 11:31:07 2025
+// Date        : Sun Mar 16 13:30:41 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/design_1_test_axi_gpio_0_0_sim_netlist.v
@@ -21,17 +21,26 @@ module design_1_test_axi_gpio_0_0
     snake_x,
     snake_y,
     pellet_index,
-    gpio_out);
+    gpio_out,
+    data_in,
+    pellet_x,
+    pellet_y);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
   input [9:0]snake_x;
   input [9:0]snake_y;
   input [3:0]pellet_index;
   output [31:0]gpio_out;
+  input [31:0]data_in;
+  output [9:0]pellet_x;
+  output [9:0]pellet_y;
 
   wire \<const0> ;
   wire clk;
+  wire [31:0]data_in;
   wire [23:0]\^gpio_out ;
   wire [3:0]pellet_index;
+  wire [9:0]pellet_x;
+  wire [9:0]pellet_y;
   wire [9:0]snake_x;
   wire [9:0]snake_y;
 
@@ -49,21 +58,33 @@ module design_1_test_axi_gpio_0_0
   design_1_test_axi_gpio_0_0_test_axi_gpio U0
        (.D({snake_x,snake_y,pellet_index}),
         .clk(clk),
-        .gpio_out(\^gpio_out ));
+        .data_in(data_in[19:0]),
+        .gpio_out(\^gpio_out ),
+        .pellet_x(pellet_x),
+        .pellet_y(pellet_y));
 endmodule
 
 (* ORIG_REF_NAME = "test_axi_gpio" *) 
 module design_1_test_axi_gpio_0_0_test_axi_gpio
    (gpio_out,
+    pellet_x,
+    pellet_y,
     D,
-    clk);
+    clk,
+    data_in);
   output [23:0]gpio_out;
+  output [9:0]pellet_x;
+  output [9:0]pellet_y;
   input [23:0]D;
   input clk;
+  input [19:0]data_in;
 
   wire [23:0]D;
   wire clk;
+  wire [19:0]data_in;
   wire [23:0]gpio_out;
+  wire [9:0]pellet_x;
+  wire [9:0]pellet_y;
 
   FDRE \gpio_out_reg[0] 
        (.C(clk),
@@ -208,6 +229,126 @@ module design_1_test_axi_gpio_0_0_test_axi_gpio
         .CE(1'b1),
         .D(D[9]),
         .Q(gpio_out[9]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[0]),
+        .Q(pellet_x[0]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[1] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[1]),
+        .Q(pellet_x[1]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[2] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[2]),
+        .Q(pellet_x[2]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[3] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[3]),
+        .Q(pellet_x[3]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[4] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[4]),
+        .Q(pellet_x[4]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[5] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[5]),
+        .Q(pellet_x[5]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[6] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[6]),
+        .Q(pellet_x[6]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[7] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[7]),
+        .Q(pellet_x[7]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[8] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[8]),
+        .Q(pellet_x[8]),
+        .R(1'b0));
+  FDRE \pellet_x_reg[9] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[9]),
+        .Q(pellet_x[9]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[10]),
+        .Q(pellet_y[0]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[1] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[11]),
+        .Q(pellet_y[1]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[2] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[12]),
+        .Q(pellet_y[2]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[3] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[13]),
+        .Q(pellet_y[3]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[4] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[14]),
+        .Q(pellet_y[4]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[5] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[15]),
+        .Q(pellet_y[5]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[6] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[16]),
+        .Q(pellet_y[6]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[7] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[17]),
+        .Q(pellet_y[7]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[8] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[18]),
+        .Q(pellet_y[8]),
+        .R(1'b0));
+  FDRE \pellet_y_reg[9] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data_in[19]),
+        .Q(pellet_y[9]),
         .R(1'b0));
 endmodule
 `ifndef GLBL

@@ -101,6 +101,10 @@ set_property used_in_implementation false [get_files -all /home/timon/Documents/
 set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0.xdc]
 set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 

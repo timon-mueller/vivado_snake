@@ -59,7 +59,10 @@ ENTITY design_1_test_axi_gpio_0_0 IS
     snake_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     snake_y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     pellet_index : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    gpio_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    gpio_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    data_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    pellet_x : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+    pellet_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
   );
 END design_1_test_axi_gpio_0_0;
 
@@ -72,7 +75,10 @@ ARCHITECTURE design_1_test_axi_gpio_0_0_arch OF design_1_test_axi_gpio_0_0 IS
       snake_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       snake_y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       pellet_index : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      gpio_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      gpio_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      data_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      pellet_x : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+      pellet_y : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
     );
   END COMPONENT test_axi_gpio;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -86,6 +92,9 @@ BEGIN
       snake_x => snake_x,
       snake_y => snake_y,
       pellet_index => pellet_index,
-      gpio_out => gpio_out
+      gpio_out => gpio_out,
+      data_in => data_in,
+      pellet_x => pellet_x,
+      pellet_y => pellet_y
     );
 END design_1_test_axi_gpio_0_0_arch;

@@ -1,69 +1,76 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.662974",
-   "Default View_TopLeft":"-161,17",
+   "Default View_ScaleFactor":"0.91866",
+   "Default View_TopLeft":"111,441",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 7 -x 2140 -y 730 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 7 -x 2140 -y 760 -defaultsOSRD
-preplace port hdmi_tx_0 -pg 1 -lvl 7 -x 2140 -y 260 -defaultsOSRD
-preplace port GPIO_0 -pg 1 -lvl 7 -x 2140 -y 610 -defaultsOSRD
-preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
-preplace port port-id_i_switch_up_0 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
-preplace port port-id_i_switch_down_0 -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
-preplace port port-id_i_switch_left_0 -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
-preplace port port-id_i_switch_right_0 -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD
-preplace portBus cathodes_0 -pg 1 -lvl 7 -x 2140 -y 80 -defaultsOSRD
-preplace portBus anodes_0 -pg 1 -lvl 7 -x 2140 -y 50 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 220 -y 790 -defaultsOSRD
-preplace inst hdmi_tx_0 -pg 1 -lvl 6 -x 2000 -y 260 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 590 -y 230 -defaultsOSRD
-preplace inst vga_controller_0 -pg 1 -lvl 5 -x 1700 -y 360 -defaultsOSRD
-preplace inst game_clock_0 -pg 1 -lvl 3 -x 960 -y 290 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 960 -y 650 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 590 -y 600 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 220 -y 570 -defaultsOSRD
-preplace inst seven_segment_clock_0 -pg 1 -lvl 3 -x 960 -y 70 -defaultsOSRD
-preplace inst game_logic_0 -pg 1 -lvl 4 -x 1330 -y 390 -defaultsOSRD
-preplace inst seven_segment_display_0 -pg 1 -lvl 5 -x 1700 -y 90 -defaultsOSRD
-preplace inst test_axi_gpio_0 -pg 1 -lvl 3 -x 960 -y 500 -defaultsOSRD
-preplace netloc clk_wiz_0_clk_out25 1 2 4 NJ 200 NJ 200 1530 200 1860J
-preplace netloc clk_wiz_0_clk_out100 1 2 1 770 60n
-preplace netloc clk_wiz_0_clk_out125 1 2 4 740 190 NJ 190 NJ 190 NJ
-preplace netloc clk_wiz_0_locked 1 2 4 760J 210 NJ 210 NJ 210 N
-preplace netloc game_clock_0_clk_10hz 1 3 1 1140 290n
-preplace netloc game_logic_0_pellet_index_out 1 2 3 790 360 1110 260 1520
-preplace netloc game_logic_0_pellet_x 1 4 1 N 390
-preplace netloc game_logic_0_pellet_y 1 4 1 N 410
-preplace netloc game_logic_0_snake_x 1 2 3 810 390 1150 280 1500
-preplace netloc game_logic_0_snake_y 1 2 3 800 370 1130 270 1510
-preplace netloc i_switch_down_0_1 1 0 4 NJ 390 NJ 390 740J 400 NJ
-preplace netloc i_switch_left_0_1 1 0 4 NJ 420 NJ 420 780J 410 1110J
-preplace netloc i_switch_right_0_1 1 0 4 20J 130 NJ 130 800J 180 1120J
-preplace netloc i_switch_up_0_1 1 0 4 NJ 360 NJ 360 740J 380 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 460 420 470 760J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 470 410
-preplace netloc reset_rtl_0_1 1 0 6 NJ 140 410 140 810 220 1160 220 1540 230 NJ
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 440 480 740
-preplace netloc seven_segment_clock_0_clk_10khz 1 3 2 NJ 70 N
-preplace netloc seven_segment_display_0_anodes 1 5 2 1860J 50 N
-preplace netloc seven_segment_display_0_cathodes 1 5 2 1880 80 NJ
-preplace netloc test_axi_gpio_0_gpio_out 1 3 1 1110 500n
-preplace netloc vga_controller_0_blue 1 5 1 1880 290n
-preplace netloc vga_controller_0_green 1 5 1 1870 270n
-preplace netloc vga_controller_0_hsync 1 5 1 N 310
-preplace netloc vga_controller_0_red 1 5 1 1860 250n
-preplace netloc vga_controller_0_video_active 1 5 1 N 350
-preplace netloc vga_controller_0_vsync 1 5 1 N 330
-preplace netloc axi_gpio_0_GPIO 1 3 4 1160J 610 NJ 610 NJ 610 NJ
-preplace netloc hdmi_tx_0_hdmi_tx 1 6 1 NJ 260
-preplace netloc processing_system7_0_DDR 1 1 6 440J 730 NJ 730 NJ 730 NJ 730 NJ 730 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 760 NJ 760 NJ 760 NJ 760 NJ 760 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 430 540n
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 750 600n
-levelinfo -pg 1 0 220 590 960 1330 1700 2000 2140
-pagesize -pg 1 -db -bbox -sgen -170 0 2300 900
+preplace port DDR -pg 1 -lvl 7 -x 2220 -y 760 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2220 -y 920 -defaultsOSRD
+preplace port hdmi_tx_0 -pg 1 -lvl 7 -x 2220 -y 150 -defaultsOSRD
+preplace port GPIO_0 -pg 1 -lvl 7 -x 2220 -y 670 -defaultsOSRD
+preplace port GPIO_1 -pg 1 -lvl 7 -x 2220 -y 830 -defaultsOSRD
+preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x 0 -y 510 -defaultsOSRD
+preplace port port-id_i_switch_up_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_i_switch_down_0 -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace port port-id_i_switch_left_0 -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port port-id_i_switch_right_0 -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
+preplace portBus cathodes_0 -pg 1 -lvl 7 -x 2220 -y 550 -defaultsOSRD
+preplace portBus anodes_0 -pg 1 -lvl 7 -x 2220 -y 520 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 220 -y 950 -defaultsOSRD
+preplace inst hdmi_tx_0 -pg 1 -lvl 6 -x 2040 -y 150 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 600 -y 520 -defaultsOSRD
+preplace inst vga_controller_0 -pg 1 -lvl 5 -x 1680 -y 130 -defaultsOSRD
+preplace inst game_clock_0 -pg 1 -lvl 3 -x 950 -y 450 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 950 -y 680 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 600 -y 750 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 220 -y 760 -defaultsOSRD
+preplace inst seven_segment_clock_0 -pg 1 -lvl 5 -x 1680 -y 450 -defaultsOSRD
+preplace inst seven_segment_display_0 -pg 1 -lvl 6 -x 2040 -y 530 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 950 -y 840 -defaultsOSRD
+preplace inst test_axi_gpio_0 -pg 1 -lvl 3 -x 950 -y 270 -defaultsOSRD
+preplace inst game_logic_0 -pg 1 -lvl 4 -x 1350 -y 150 -defaultsOSRD
+preplace netloc clk_wiz_0_clk_out25 1 2 4 800 520 NJ 520 1530 20 1820J
+preplace netloc clk_wiz_0_clk_out100 1 2 3 750 140 1130J 380 1520
+preplace netloc clk_wiz_0_clk_out125 1 2 4 770J 530 NJ 530 NJ 530 1840
+preplace netloc clk_wiz_0_locked 1 2 4 760J 370 NJ 370 NJ 370 1860
+preplace netloc game_clock_0_clk_10hz 1 3 1 1150 80n
+preplace netloc game_logic_0_pellet_index_out 1 2 4 780 170 1120J 280 1520 360 1820J
+preplace netloc game_logic_0_pellet_x 1 4 1 1540 150n
+preplace netloc game_logic_0_pellet_y 1 4 1 1520 170n
+preplace netloc game_logic_0_snake_x 1 2 3 790 10 NJ 10 1540
+preplace netloc game_logic_0_snake_y 1 2 3 800 20 NJ 20 1520
+preplace netloc i_switch_down_0_1 1 0 4 NJ 130 NJ 130 NJ 130 1180J
+preplace netloc i_switch_left_0_1 1 0 4 NJ 160 NJ 160 NJ 160 NJ
+preplace netloc i_switch_right_0_1 1 0 4 NJ 190 NJ 190 760J 150 1140J
+preplace netloc i_switch_up_0_1 1 0 4 NJ 100 NJ 100 NJ 100 1130J
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 650 430 900 770
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 660 410
+preplace netloc reset_rtl_0_1 1 0 6 NJ 510 410 430 770 120 1170 460 1540 520 1880
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 450 890 780
+preplace netloc seven_segment_clock_0_clk_10khz 1 5 1 1830 450n
+preplace netloc seven_segment_display_0_anodes 1 6 1 NJ 520
+preplace netloc seven_segment_display_0_cathodes 1 6 1 2200J 540n
+preplace netloc test_axi_gpio_0_gpio_out 1 3 1 1110 250n
+preplace netloc vga_controller_0_blue 1 5 1 N 180
+preplace netloc vga_controller_0_green 1 5 1 N 160
+preplace netloc vga_controller_0_hsync 1 5 1 1820 80n
+preplace netloc vga_controller_0_red 1 5 1 N 140
+preplace netloc vga_controller_0_video_active 1 5 1 1870 120n
+preplace netloc vga_controller_0_vsync 1 5 1 1850 100n
+preplace netloc axi_gpio_1_gpio_io_o 1 2 2 780 380 1100
+preplace netloc test_axi_gpio_0_pellet_x 1 3 1 1160 200n
+preplace netloc test_axi_gpio_0_pellet_y 1 3 1 1180 220n
+preplace netloc axi_gpio_0_GPIO 1 3 4 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc hdmi_tx_0_hdmi_tx 1 6 1 NJ 150
+preplace netloc processing_system7_0_DDR 1 1 6 420J 610 780J 600 NJ 600 NJ 600 1880J 610 2200J
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 920 NJ 920 NJ 920 NJ 920 NJ 920 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 440 670n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 750 660n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 750 760n
+preplace netloc axi_gpio_1_GPIO 1 3 4 NJ 830 NJ 830 NJ 830 NJ
+levelinfo -pg 1 0 220 600 950 1350 1680 2040 2220
+pagesize -pg 1 -db -bbox -sgen -160 0 2380 1080
 "
 }
 {

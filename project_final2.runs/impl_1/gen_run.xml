@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1742121045">
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1742128359">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="design_1_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="design_1_wrapper_routed.rqs"/>
@@ -193,14 +193,16 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_seven_segment_display_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_seven_segment_clock_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_game_logic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_test_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_game_logic_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_seven_segment_clock_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_50M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_game_clock_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_vga_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_seven_segment_display_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
 </GenRun>

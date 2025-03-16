@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sun Mar 16 11:31:07 2025
+// Date        : Sun Mar 16 13:30:41 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/design_1_test_axi_gpio_0_0_stub.v
@@ -15,12 +15,16 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "test_axi_gpio,Vivado 2023.1" *)
-module design_1_test_axi_gpio_0_0(clk, snake_x, snake_y, pellet_index, gpio_out)
-/* synthesis syn_black_box black_box_pad_pin="snake_x[9:0],snake_y[9:0],pellet_index[3:0],gpio_out[31:0]" */
+module design_1_test_axi_gpio_0_0(clk, snake_x, snake_y, pellet_index, gpio_out, 
+  data_in, pellet_x, pellet_y)
+/* synthesis syn_black_box black_box_pad_pin="snake_x[9:0],snake_y[9:0],pellet_index[3:0],gpio_out[31:0],data_in[31:0],pellet_x[9:0],pellet_y[9:0]" */
 /* synthesis syn_force_seq_prim="clk" */;
   input clk /* synthesis syn_isclock = 1 */;
   input [9:0]snake_x;
   input [9:0]snake_y;
   input [3:0]pellet_index;
   output [31:0]gpio_out;
+  input [31:0]data_in;
+  output [9:0]pellet_x;
+  output [9:0]pellet_y;
 endmodule

@@ -23,58 +23,70 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16401
+INFO: [Synth 8-7075] Helper process launched with PID 102223
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2010.965 ; gain = 376.801 ; free physical = 7087 ; free virtual = 14306
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2012.934 ; gain = 378.770 ; free physical = 176 ; free virtual = 6749
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_test_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/synth/design_1_test_axi_gpio_0_0.vhd:66]
-INFO: [Synth 8-3491] module 'test_axi_gpio' declared at '/home/timon/Documents/vivado_snake/project_final2.srcs/sources_1/new/test_axi_gpio.vhd:6' bound to instance 'U0' of component 'test_axi_gpio' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/synth/design_1_test_axi_gpio_0_0.vhd:91]
-INFO: [Synth 8-638] synthesizing module 'test_axi_gpio' [/home/timon/Documents/vivado_snake/project_final2.srcs/sources_1/new/test_axi_gpio.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'test_axi_gpio' (0#1) [/home/timon/Documents/vivado_snake/project_final2.srcs/sources_1/new/test_axi_gpio.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'design_1_test_axi_gpio_0_0' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/synth/design_1_test_axi_gpio_0_0.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'design_1_test_axi_gpio_0_0' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/synth/design_1_test_axi_gpio_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'test_axi_gpio' declared at '/home/timon/Documents/vivado_snake/project_final2.srcs/sources_1/new/test_axi_gpio.vhd:6' bound to instance 'U0' of component 'test_axi_gpio' [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/synth/design_1_test_axi_gpio_0_0.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'test_axi_gpio' [/home/timon/Documents/vivado_snake/project_final2.srcs/sources_1/new/test_axi_gpio.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'test_axi_gpio' (0#1) [/home/timon/Documents/vivado_snake/project_final2.srcs/sources_1/new/test_axi_gpio.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'design_1_test_axi_gpio_0_0' (0#1) [/home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/synth/design_1_test_axi_gpio_0_0.vhd:69]
+WARNING: [Synth 8-7129] Port data_in[31] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[30] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[29] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[28] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[27] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[26] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[25] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[24] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[23] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[22] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[21] in module test_axi_gpio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[20] in module test_axi_gpio is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2086.902 ; gain = 452.738 ; free physical = 6999 ; free virtual = 14219
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2078.871 ; gain = 444.707 ; free physical = 159 ; free virtual = 6588
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2101.746 ; gain = 467.582 ; free physical = 6998 ; free virtual = 14219
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2093.715 ; gain = 459.551 ; free physical = 131 ; free virtual = 6560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2101.746 ; gain = 467.582 ; free physical = 6998 ; free virtual = 14219
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2093.715 ; gain = 459.551 ; free physical = 131 ; free virtual = 6560
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2101.746 ; gain = 0.000 ; free physical = 6997 ; free virtual = 14218
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2093.715 ; gain = 0.000 ; free physical = 131 ; free virtual = 6560
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2228.496 ; gain = 0.000 ; free physical = 6863 ; free virtual = 14113
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2237.465 ; gain = 0.000 ; free physical = 237 ; free virtual = 6498
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2228.496 ; gain = 0.000 ; free physical = 6863 ; free virtual = 14113
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2237.465 ; gain = 0.000 ; free physical = 235 ; free virtual = 6496
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6860 ; free virtual = 14113
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 331 ; free virtual = 6377
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6860 ; free virtual = 14113
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 331 ; free virtual = 6377
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6860 ; free virtual = 14113
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 331 ; free virtual = 6377
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6858 ; free virtual = 14112
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 325 ; free virtual = 6373
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -82,6 +94,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -106,26 +119,38 @@ INFO: [Synth 8-3917] design design_1_test_axi_gpio_0_0 has port gpio_out[27] dri
 INFO: [Synth 8-3917] design design_1_test_axi_gpio_0_0 has port gpio_out[26] driven by constant 0
 INFO: [Synth 8-3917] design design_1_test_axi_gpio_0_0 has port gpio_out[25] driven by constant 0
 INFO: [Synth 8-3917] design design_1_test_axi_gpio_0_0 has port gpio_out[24] driven by constant 0
+WARNING: [Synth 8-7129] Port data_in[31] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[30] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[29] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[28] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[27] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[26] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[25] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[24] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[23] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[22] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[21] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_in[20] in module design_1_test_axi_gpio_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6851 ; free virtual = 14107
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 273 ; free virtual = 6339
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6842 ; free virtual = 14105
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 214 ; free virtual = 6284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6842 ; free virtual = 14105
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 214 ; free virtual = 6284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6842 ; free virtual = 14105
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 214 ; free virtual = 6284
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -143,37 +168,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -189,31 +214,31 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-|1     |FDRE |    24|
+|1     |FDRE |    44|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6729 ; free virtual = 14006
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2228.496 ; gain = 467.582 ; free physical = 6724 ; free virtual = 14001
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2228.496 ; gain = 594.332 ; free physical = 6724 ; free virtual = 14001
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2237.465 ; gain = 459.551 ; free physical = 476 ; free virtual = 6550
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2237.465 ; gain = 603.301 ; free physical = 476 ; free virtual = 6550
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2228.496 ; gain = 0.000 ; free physical = 6710 ; free virtual = 13988
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2237.465 ; gain = 0.000 ; free physical = 486 ; free virtual = 6560
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2228.496 ; gain = 0.000 ; free physical = 6927 ; free virtual = 14205
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2237.465 ; gain = 0.000 ; free physical = 738 ; free virtual = 6812
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: d566cb4c
+Synth Design complete | Checksum: cae9f938
 INFO: [Common 17-83] Releasing license: Synthesis
-29 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2228.496 ; gain = 911.605 ; free physical = 6927 ; free virtual = 14205
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1762.956; main = 1434.704; forked = 379.070
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3202.852; main = 2196.484; forked = 1006.367
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 2237.465 ; gain = 919.605 ; free physical = 736 ; free virtual = 6811
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1550.680; main = 1251.702; forked = 306.123
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3208.820; main = 2205.453; forked = 1003.367
 INFO: [Common 17-1381] The checkpoint '/home/timon/Documents/vivado_snake/project_final2.runs/design_1_test_axi_gpio_0_0_synth_1/design_1_test_axi_gpio_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_test_axi_gpio_0_0, cache-ID = 8a6e1d1e06da6d5b
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_test_axi_gpio_0_0, cache-ID = b8e8f64200d6c4dc
 INFO: [Common 17-1381] The checkpoint '/home/timon/Documents/vivado_snake/project_final2.runs/design_1_test_axi_gpio_0_0_synth_1/design_1_test_axi_gpio_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_test_axi_gpio_0_0_utilization_synth.rpt -pb design_1_test_axi_gpio_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 16 11:31:07 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 16 13:30:41 2025...

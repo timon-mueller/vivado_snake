@@ -6,7 +6,7 @@
 	<item key="testApp_system-device" value="Auto Detect"/>
 	<item key="testApp_system-partial_bit" value="false"/>
 	<item key="testApp_system-skip_rev_check" value="false"/>
-	<item key="programfpga.sdxproject" value="snake3_system"/>
+	<item key="programfpga.sdxproject" value="snake4_system"/>
 	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;RealDigital Bla 887100000305A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn1-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn1-13723093-0&quot;}}]}"/>
 	<item key="test_system-bitFile" value="${project_loc:test}/_ide/bitstream/design_1_wrapper.bit"/>
 	<item key="test_system-bmmFile" value=""/>
@@ -38,4 +38,10 @@
 	<item key="snake3_system-device" value="Auto Detect"/>
 	<item key="snake3_system-partial_bit" value="false"/>
 	<item key="snake3_system-skip_rev_check" value="false"/>
+	<item key="snake4_system-bitFile" value="${project_loc:snake4}/_ide/bitstream/design_1_wrapper.bit"/>
+	<item key="snake4_system-bmmFile" value=""/>
+	<item key="snake4_system-target" value="Local"/>
+	<item key="snake4_system-device" value="Auto Detect"/>
+	<item key="snake4_system-partial_bit" value="false"/>
+	<item key="snake4_system-skip_rev_check" value="false"/>
 </section>

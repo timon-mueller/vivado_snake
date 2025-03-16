@@ -9,7 +9,10 @@ entity test_axi_gpio is
         snake_x      : in  STD_LOGIC_VECTOR(9 downto 0);  -- 10-Bit X-Koordinate der Schlange
         snake_y      : in  STD_LOGIC_VECTOR(9 downto 0);  -- 10-Bit Y-Koordinate der Schlange
         pellet_index : in  STD_LOGIC_VECTOR(3 downto 0);  -- 4-Bit Pellet-Index
-        gpio_out     : out STD_LOGIC_VECTOR(31 downto 0)  -- 32-Bit Ausgang für AXI GPIO
+        gpio_out     : out STD_LOGIC_VECTOR(31 downto 0);  -- 32-Bit Ausgang für AXI GPIO
+        data_in      : in  STD_LOGIC_VECTOR(31 downto 0); -- 32-Bit Eingang
+        pellet_x     : out STD_LOGIC_VECTOR(9 downto 0);  -- 10-Bit X-Koordinate des Pellets
+        pellet_y     : out STD_LOGIC_VECTOR(9 downto 0)   -- 10-Bit Y-Koordinate des Pellets
     );
 end test_axi_gpio;
 
@@ -19,6 +22,10 @@ begin
     begin
         if rising_edge(clk) then
             gpio_out <= ("00000000" & snake_x & snake_y & pellet_index);  -- Zusammensetzen der 32-Bit-Ausgabe
+            -- extract pellet_x und y
+            pellet_x <= data_in(9 downto 0);
+            -- Extrahiere pellet_y aus den Bits 10-19 von data_in
+            pellet_y <= data_in(19 downto 10);
         end if;
     end process;
 end Behavioral;
