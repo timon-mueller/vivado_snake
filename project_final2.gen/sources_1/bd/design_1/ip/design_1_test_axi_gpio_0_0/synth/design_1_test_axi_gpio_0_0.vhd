@@ -56,6 +56,9 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_test_axi_gpio_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
+    snake_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    snake_y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    pellet_index : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     gpio_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END design_1_test_axi_gpio_0_0;
@@ -66,6 +69,9 @@ ARCHITECTURE design_1_test_axi_gpio_0_0_arch OF design_1_test_axi_gpio_0_0 IS
   COMPONENT test_axi_gpio IS
     PORT (
       clk : IN STD_LOGIC;
+      snake_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+      snake_y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+      pellet_index : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       gpio_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT test_axi_gpio;
@@ -85,6 +91,9 @@ BEGIN
   U0 : test_axi_gpio
     PORT MAP (
       clk => clk,
+      snake_x => snake_x,
+      snake_y => snake_y,
+      pellet_index => pellet_index,
       gpio_out => gpio_out
     );
 END design_1_test_axi_gpio_0_0_arch;

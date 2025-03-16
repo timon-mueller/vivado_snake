@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sat Mar 15 10:54:45 2025
+// Date        : Sun Mar 16 11:31:07 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_test_axi_gpio_0_0/design_1_test_axi_gpio_0_0_sim_netlist.v
@@ -18,49 +18,197 @@
 (* NotValidForBitStream *)
 module design_1_test_axi_gpio_0_0
    (clk,
+    snake_x,
+    snake_y,
+    pellet_index,
     gpio_out);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  input [9:0]snake_x;
+  input [9:0]snake_y;
+  input [3:0]pellet_index;
   output [31:0]gpio_out;
 
   wire \<const0> ;
-  wire \<const1> ;
+  wire clk;
+  wire [23:0]\^gpio_out ;
+  wire [3:0]pellet_index;
+  wire [9:0]snake_x;
+  wire [9:0]snake_y;
 
-  assign gpio_out[31] = \<const1> ;
-  assign gpio_out[30] = \<const1> ;
+  assign gpio_out[31] = \<const0> ;
+  assign gpio_out[30] = \<const0> ;
   assign gpio_out[29] = \<const0> ;
-  assign gpio_out[28] = \<const1> ;
-  assign gpio_out[27] = \<const1> ;
-  assign gpio_out[26] = \<const1> ;
-  assign gpio_out[25] = \<const1> ;
+  assign gpio_out[28] = \<const0> ;
+  assign gpio_out[27] = \<const0> ;
+  assign gpio_out[26] = \<const0> ;
+  assign gpio_out[25] = \<const0> ;
   assign gpio_out[24] = \<const0> ;
-  assign gpio_out[23] = \<const1> ;
-  assign gpio_out[22] = \<const0> ;
-  assign gpio_out[21] = \<const1> ;
-  assign gpio_out[20] = \<const0> ;
-  assign gpio_out[19] = \<const1> ;
-  assign gpio_out[18] = \<const1> ;
-  assign gpio_out[17] = \<const0> ;
-  assign gpio_out[16] = \<const1> ;
-  assign gpio_out[15] = \<const1> ;
-  assign gpio_out[14] = \<const0> ;
-  assign gpio_out[13] = \<const1> ;
-  assign gpio_out[12] = \<const1> ;
-  assign gpio_out[11] = \<const1> ;
-  assign gpio_out[10] = \<const1> ;
-  assign gpio_out[9] = \<const1> ;
-  assign gpio_out[8] = \<const0> ;
-  assign gpio_out[7] = \<const1> ;
-  assign gpio_out[6] = \<const1> ;
-  assign gpio_out[5] = \<const1> ;
-  assign gpio_out[4] = \<const0> ;
-  assign gpio_out[3] = \<const1> ;
-  assign gpio_out[2] = \<const1> ;
-  assign gpio_out[1] = \<const1> ;
-  assign gpio_out[0] = \<const1> ;
+  assign gpio_out[23:0] = \^gpio_out [23:0];
   GND GND
        (.G(\<const0> ));
-  VCC VCC
-       (.P(\<const1> ));
+  design_1_test_axi_gpio_0_0_test_axi_gpio U0
+       (.D({snake_x,snake_y,pellet_index}),
+        .clk(clk),
+        .gpio_out(\^gpio_out ));
+endmodule
+
+(* ORIG_REF_NAME = "test_axi_gpio" *) 
+module design_1_test_axi_gpio_0_0_test_axi_gpio
+   (gpio_out,
+    D,
+    clk);
+  output [23:0]gpio_out;
+  input [23:0]D;
+  input clk;
+
+  wire [23:0]D;
+  wire clk;
+  wire [23:0]gpio_out;
+
+  FDRE \gpio_out_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[0]),
+        .Q(gpio_out[0]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[10] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[10]),
+        .Q(gpio_out[10]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[11] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[11]),
+        .Q(gpio_out[11]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[12] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[12]),
+        .Q(gpio_out[12]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[13] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[13]),
+        .Q(gpio_out[13]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[14] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[14]),
+        .Q(gpio_out[14]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[15] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[15]),
+        .Q(gpio_out[15]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[16] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[16]),
+        .Q(gpio_out[16]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[17] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[17]),
+        .Q(gpio_out[17]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[18] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[18]),
+        .Q(gpio_out[18]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[19] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[19]),
+        .Q(gpio_out[19]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[1] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[1]),
+        .Q(gpio_out[1]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[20] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[20]),
+        .Q(gpio_out[20]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[21] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[21]),
+        .Q(gpio_out[21]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[22] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[22]),
+        .Q(gpio_out[22]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[23] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[23]),
+        .Q(gpio_out[23]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[2] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[2]),
+        .Q(gpio_out[2]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[3] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[3]),
+        .Q(gpio_out[3]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[4] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[4]),
+        .Q(gpio_out[4]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[5] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[5]),
+        .Q(gpio_out[5]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[6] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[6]),
+        .Q(gpio_out[6]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[7] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[7]),
+        .Q(gpio_out[7]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[8] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[8]),
+        .Q(gpio_out[8]),
+        .R(1'b0));
+  FDRE \gpio_out_reg[9] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(D[9]),
+        .Q(gpio_out[9]),
+        .R(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

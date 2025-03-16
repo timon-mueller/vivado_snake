@@ -16,7 +16,6 @@
       "clk_wiz_0": "",
       "vga_controller_0": "",
       "game_clock_0": "",
-      "test_axi_gpio_0": "",
       "axi_gpio_0": "",
       "ps7_0_axi_periph": {
         "s00_couplers": {
@@ -26,7 +25,8 @@
       "rst_ps7_0_50M": "",
       "seven_segment_clock_0": "",
       "game_logic_0": "",
-      "seven_segment_display_0": ""
+      "seven_segment_display_0": "",
+      "test_axi_gpio_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1373,42 +1373,6 @@
           }
         }
       },
-      "test_axi_gpio_0": {
-        "vlnv": "xilinx.com:module_ref:test_axi_gpio:1.0",
-        "xci_name": "design_1_test_axi_gpio_0_0",
-        "xci_path": "ip/design_1_test_axi_gpio_0_0/design_1_test_axi_gpio_0_0.xci",
-        "inst_hier_path": "test_axi_gpio_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "test_axi_gpio",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "gpio_out": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "axi_gpio_0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
         "xci_name": "design_1_axi_gpio_0_0",
@@ -1802,6 +1766,57 @@
             "right": "0"
           }
         }
+      },
+      "test_axi_gpio_0": {
+        "vlnv": "xilinx.com:module_ref:test_axi_gpio:1.0",
+        "xci_name": "design_1_test_axi_gpio_0_0",
+        "xci_path": "ip/design_1_test_axi_gpio_0_0/design_1_test_axi_gpio_0_0.xci",
+        "inst_hier_path": "test_axi_gpio_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "test_axi_gpio",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "snake_x": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "snake_y": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pellet_index": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "gpio_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1854,8 +1869,8 @@
         "ports": [
           "clk_wiz_0/clk_out100",
           "game_clock_0/clk_100mhz",
-          "test_axi_gpio_0/clk",
-          "seven_segment_clock_0/clk_100mhz"
+          "seven_segment_clock_0/clk_100mhz",
+          "test_axi_gpio_0/clk"
         ]
       },
       "clk_wiz_0_clk_out125": {
@@ -1879,7 +1894,8 @@
       "game_logic_0_pellet_index_out": {
         "ports": [
           "game_logic_0/pellet_index_out",
-          "seven_segment_display_0/input_number"
+          "seven_segment_display_0/input_number",
+          "test_axi_gpio_0/pellet_index"
         ]
       },
       "game_logic_0_pellet_x": {
@@ -1897,13 +1913,15 @@
       "game_logic_0_snake_x": {
         "ports": [
           "game_logic_0/snake_x",
-          "vga_controller_0/snake_x"
+          "vga_controller_0/snake_x",
+          "test_axi_gpio_0/snake_x"
         ]
       },
       "game_logic_0_snake_y": {
         "ports": [
           "game_logic_0/snake_y",
-          "vga_controller_0/snake_y"
+          "vga_controller_0/snake_y",
+          "test_axi_gpio_0/snake_y"
         ]
       },
       "i_switch_down_0_1": {

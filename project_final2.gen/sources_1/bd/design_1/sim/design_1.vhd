@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Sat Mar 15 19:22:47 2025
+--Date        : Sun Mar 16 11:30:41 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -739,12 +739,6 @@ architecture STRUCTURE of design_1 is
     clk_10hz : out STD_LOGIC
   );
   end component design_1_game_clock_0_0;
-  component design_1_test_axi_gpio_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    gpio_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component design_1_test_axi_gpio_0_0;
   component design_1_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -814,6 +808,15 @@ architecture STRUCTURE of design_1 is
     cathodes : out STD_LOGIC_VECTOR ( 6 downto 0 )
   );
   end component design_1_seven_segment_display_0_0;
+  component design_1_test_axi_gpio_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    snake_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    snake_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_index : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component design_1_test_axi_gpio_0_0;
   signal clk_wiz_0_clk_out100 : STD_LOGIC;
   signal clk_wiz_0_clk_out125 : STD_LOGIC;
   signal clk_wiz_0_clk_out25 : STD_LOGIC;
@@ -1206,7 +1209,10 @@ seven_segment_display_0: component design_1_seven_segment_display_0_0
 test_axi_gpio_0: component design_1_test_axi_gpio_0_0
      port map (
       clk => clk_wiz_0_clk_out100,
-      gpio_out(31 downto 0) => test_axi_gpio_0_gpio_out(31 downto 0)
+      gpio_out(31 downto 0) => test_axi_gpio_0_gpio_out(31 downto 0),
+      pellet_index(3 downto 0) => game_logic_0_pellet_index_out(3 downto 0),
+      snake_x(9 downto 0) => game_logic_0_snake_x(9 downto 0),
+      snake_y(9 downto 0) => game_logic_0_snake_y(9 downto 0)
     );
 vga_controller_0: component design_1_vga_controller_0_0
      port map (

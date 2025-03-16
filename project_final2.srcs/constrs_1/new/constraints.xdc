@@ -1,3 +1,5 @@
+
+
 # HDMI Clock Signals
 set_property -dict { PACKAGE_PIN U19 IOSTANDARD TMDS_33 } [get_ports hdmi_tx_0_tmds_clk_n];
 set_property -dict { PACKAGE_PIN U18 IOSTANDARD TMDS_33 } [get_ports hdmi_tx_0_tmds_clk_p];

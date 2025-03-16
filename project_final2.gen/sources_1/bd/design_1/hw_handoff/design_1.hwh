@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Mar 15 19:22:47 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Mar 16 11:30:41 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1198,8 +1198,8 @@
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out100" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out100">
           <CONNECTIONS>
             <CONNECTION INSTANCE="game_clock_0" PORT="clk_100mhz"/>
-            <CONNECTION INSTANCE="test_axi_gpio_0" PORT="clk"/>
             <CONNECTION INSTANCE="seven_segment_clock_0" PORT="clk_100mhz"/>
+            <CONNECTION INSTANCE="test_axi_gpio_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="clk_wiz_0_locked">
@@ -1275,11 +1275,13 @@
         <PORT DIR="O" LEFT="9" NAME="snake_x" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_snake_x">
           <CONNECTIONS>
             <CONNECTION INSTANCE="vga_controller_0" PORT="snake_x"/>
+            <CONNECTION INSTANCE="test_axi_gpio_0" PORT="snake_x"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="9" NAME="snake_y" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_snake_y">
           <CONNECTIONS>
             <CONNECTION INSTANCE="vga_controller_0" PORT="snake_y"/>
+            <CONNECTION INSTANCE="test_axi_gpio_0" PORT="snake_y"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="9" NAME="pellet_x" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_pellet_x">
@@ -1295,6 +1297,7 @@
         <PORT DIR="O" LEFT="3" NAME="pellet_index_out" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_pellet_index_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="seven_segment_display_0" PORT="input_number"/>
+            <CONNECTION INSTANCE="test_axi_gpio_0" PORT="pellet_index"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3605,6 +3608,21 @@
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out100">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out100"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="9" NAME="snake_x" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_snake_x">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="game_logic_0" PORT="snake_x"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="9" NAME="snake_y" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_snake_y">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="game_logic_0" PORT="snake_y"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="pellet_index" RIGHT="0" SIGIS="undef" SIGNAME="game_logic_0_pellet_index_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="game_logic_0" PORT="pellet_index_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="gpio_out" RIGHT="0" SIGIS="undef" SIGNAME="test_axi_gpio_0_gpio_out">
