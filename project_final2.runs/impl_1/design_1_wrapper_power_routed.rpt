@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date             : Sun Mar 16 13:34:22 2025
+| Date             : Mon Mar 17 20:23:45 2025
 | Host             : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.005 |        8 |       --- |             --- |
-| Slice Logic             |     0.001 |     3108 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      975 |     14400 |            6.77 |
-|   CARRY4                |    <0.001 |       63 |      4400 |            1.43 |
-|   Register              |    <0.001 |     1454 |     28800 |            5.05 |
-|   LUT as Shift Register |    <0.001 |       77 |      6000 |            1.28 |
-|   Others                |     0.000 |      247 |       --- |             --- |
-| Signals                 |     0.002 |     2380 |       --- |             --- |
+| Slice Logic             |     0.002 |     3111 |       --- |             --- |
+|   LUT as Logic          |     0.001 |      985 |     14400 |            6.84 |
+|   Register              |    <0.001 |     1455 |     28800 |            5.05 |
+|   CARRY4                |    <0.001 |       60 |      4400 |            1.36 |
+|   LUT as Shift Register |    <0.001 |       78 |      6000 |            1.30 |
+|   Others                |     0.000 |      245 |       --- |             --- |
+| Signals                 |     0.002 |     2384 |       --- |             --- |
 | MMCM                    |     0.106 |        1 |         2 |           50.00 |
 | DSPs                    |     0.002 |        2 |        66 |            3.03 |
-| I/O                     |     0.132 |       24 |       100 |           24.00 |
+| I/O                     |     0.132 |       25 |       100 |           25.00 |
 | PS7                     |     1.173 |        1 |       --- |             --- |
 | Static Power            |     0.122 |          |           |                 |
 | Total                   |     1.544 |          |           |                 |
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.012 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.019 |       0.012 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.066 |       0.059 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -160,8 +160,8 @@ Table of Contents
 |   design_1_i             |     1.422 |
 |     clk_wiz_0            |     0.106 |
 |       inst               |     0.106 |
-|     hdmi_tx_0            |     0.134 |
-|       inst               |     0.134 |
+|     hdmi_tx_0            |     0.135 |
+|       inst               |     0.135 |
 |     processing_system7_0 |     1.173 |
 |       inst               |     1.173 |
 |     ps7_0_axi_periph     |     0.002 |

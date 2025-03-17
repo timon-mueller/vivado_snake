@@ -26,11 +26,17 @@ end game_logic;
 
 architecture Behavioral of game_logic is
     constant snake_size : integer := 40;
-    constant step_size  : integer := 10;
+    constant step_size  : integer := 1;
+    constant screen_width  : integer := 640;
+    constant screen_height : integer := 480;
 
     -- Interne Register für die Schlangeposition
     signal snake_x_reg : unsigned(9 downto 0) := to_unsigned(300, 10);
     signal snake_y_reg : unsigned(9 downto 0) := to_unsigned(220, 10);
+    
+    -- Richtungssignale
+    type direction_type is (UP, DOWN, LEFT, RIGHT);
+    signal current_direction : direction_type := RIGHT;
 
     -- Zeiger auf das aktuell aktive Pellet (Index 0 bis 9)
     signal pellet_index : unsigned(3 downto 0) := "0000"; -- 4 Bit für 0 bis 9
@@ -43,16 +49,33 @@ begin
                 snake_x_reg <= to_unsigned(300, 10);
                 snake_y_reg <= to_unsigned(220, 10);
                 pellet_index <= "0000"; -- Reset auf 0
+                current_direction <= RIGHT; -- Startbewegung nach rechts
             else
-                -- Bewegungslogik der Schlange
-                if i_switch_up = '1' then
-                    snake_y_reg <= snake_y_reg - to_unsigned(step_size, 10);
-                elsif i_switch_down = '1' then
-                    snake_y_reg <= snake_y_reg + to_unsigned(step_size, 10);
-                elsif i_switch_left = '1' then
-                    snake_x_reg <= snake_x_reg - to_unsigned(step_size, 10);
-                elsif i_switch_right = '1' then
-                    snake_x_reg <= snake_x_reg + to_unsigned(step_size, 10);
+                -- Richtung ändern, wenn eine Taste gedrückt wird
+                if i_switch_up = '1' and current_direction /= DOWN then
+                    current_direction <= UP;
+                elsif i_switch_down = '1' and current_direction /= UP then
+                    current_direction <= DOWN;
+                elsif i_switch_left = '1' and current_direction /= RIGHT then
+                    current_direction <= LEFT;
+                elsif i_switch_right = '1' and current_direction /= LEFT then
+                    current_direction <= RIGHT;
+                end if;
+                
+                -- Bewegung basierend auf der aktuellen Richtung
+                case current_direction is
+                    when UP    => snake_y_reg <= snake_y_reg - to_unsigned(step_size, 10);
+                    when DOWN  => snake_y_reg <= snake_y_reg + to_unsigned(step_size, 10);
+                    when LEFT  => snake_x_reg <= snake_x_reg - to_unsigned(step_size, 10);
+                    when RIGHT => snake_x_reg <= snake_x_reg + to_unsigned(step_size, 10);
+                end case;
+                
+                -- Randkollision prüfen und zurücksetzen
+                if (to_integer(snake_x_reg) < 0 or to_integer(snake_x_reg) + snake_size > screen_width or
+                    to_integer(snake_y_reg) < 0 or to_integer(snake_y_reg) + snake_size > screen_height) then
+                    snake_x_reg <= to_unsigned(300, 10);
+                    snake_y_reg <= to_unsigned(220, 10);
+                    pellet_index <= "0000";
                 end if;
                 
                 -- Kollisionsabfrage:

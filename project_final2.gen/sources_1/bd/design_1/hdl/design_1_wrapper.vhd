@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Sun Mar 16 13:32:36 2025
+--Date        : Mon Mar 17 20:21:57 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -45,7 +45,8 @@ entity design_1_wrapper is
     i_switch_left_0 : in STD_LOGIC;
     i_switch_right_0 : in STD_LOGIC;
     i_switch_up_0 : in STD_LOGIC;
-    reset_rtl_0 : in STD_LOGIC
+    reset_rtl_0 : in STD_LOGIC;
+    rst_0 : in STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -83,7 +84,8 @@ architecture STRUCTURE of design_1_wrapper is
     i_switch_left_0 : in STD_LOGIC;
     i_switch_right_0 : in STD_LOGIC;
     cathodes_0 : out STD_LOGIC_VECTOR ( 6 downto 0 );
-    anodes_0 : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    anodes_0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    rst_0 : in STD_LOGIC
   );
   end component design_1;
 begin
@@ -120,6 +122,7 @@ design_1_i: component design_1
       i_switch_left_0 => i_switch_left_0,
       i_switch_right_0 => i_switch_right_0,
       i_switch_up_0 => i_switch_up_0,
-      reset_rtl_0 => reset_rtl_0
+      reset_rtl_0 => reset_rtl_0,
+      rst_0 => rst_0
     );
 end STRUCTURE;

@@ -57,7 +57,7 @@ ENTITY design_1_game_clock_0_0 IS
   PORT (
     clk_100mhz : IN STD_LOGIC;
     reset : IN STD_LOGIC;
-    clk_10hz : OUT STD_LOGIC
+    clk_100hz : OUT STD_LOGIC
   );
 END design_1_game_clock_0_0;
 
@@ -68,7 +68,7 @@ ARCHITECTURE design_1_game_clock_0_0_arch OF design_1_game_clock_0_0 IS
     PORT (
       clk_100mhz : IN STD_LOGIC;
       reset : IN STD_LOGIC;
-      clk_10hz : OUT STD_LOGIC
+      clk_100hz : OUT STD_LOGIC
     );
   END COMPONENT game_clock;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -80,6 +80,6 @@ BEGIN
     PORT MAP (
       clk_100mhz => clk_100mhz,
       reset => reset,
-      clk_10hz => clk_10hz
+      clk_100hz => clk_100hz
     );
 END design_1_game_clock_0_0_arch;

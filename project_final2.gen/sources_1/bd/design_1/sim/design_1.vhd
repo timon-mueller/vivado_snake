@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Sun Mar 16 13:32:36 2025
+--Date        : Mon Mar 17 20:21:57 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1108,7 +1108,8 @@ entity design_1 is
     i_switch_left_0 : in STD_LOGIC;
     i_switch_right_0 : in STD_LOGIC;
     i_switch_up_0 : in STD_LOGIC;
-    reset_rtl_0 : in STD_LOGIC
+    reset_rtl_0 : in STD_LOGIC;
+    rst_0 : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=14,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=7,da_clkrst_cnt=15,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
@@ -1214,29 +1215,6 @@ architecture STRUCTURE of design_1 is
     locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
-  component design_1_vga_controller_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    snake_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    snake_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    hsync : out STD_LOGIC;
-    vsync : out STD_LOGIC;
-    video_active : out STD_LOGIC;
-    red : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    green : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    blue : out STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component design_1_vga_controller_0_0;
-  component design_1_game_clock_0_0 is
-  port (
-    clk_100mhz : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    clk_10hz : out STD_LOGIC
-  );
-  end component design_1_game_clock_0_0;
   component design_1_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -1282,15 +1260,18 @@ architecture STRUCTURE of design_1 is
     clk_10khz : out STD_LOGIC
   );
   end component design_1_seven_segment_clock_0_0;
-  component design_1_seven_segment_display_0_0 is
+  component design_1_test_axi_gpio_0_0 is
   port (
     clk : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    input_number : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    anodes : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    cathodes : out STD_LOGIC_VECTOR ( 6 downto 0 )
+    snake_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    snake_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_index : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    gpio_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    data_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    pellet_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_y : out STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  end component design_1_seven_segment_display_0_0;
+  end component design_1_test_axi_gpio_0_0;
   component design_1_axi_gpio_1_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -1315,18 +1296,31 @@ architecture STRUCTURE of design_1 is
     gpio_io_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_axi_gpio_1_0;
-  component design_1_test_axi_gpio_0_0 is
+  component design_1_vga_controller_0_0 is
   port (
     clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
     snake_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
     snake_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_index : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    gpio_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    data_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    pellet_x : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_y : out STD_LOGIC_VECTOR ( 9 downto 0 )
+    pellet_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    hsync : out STD_LOGIC;
+    vsync : out STD_LOGIC;
+    video_active : out STD_LOGIC;
+    red : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    green : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    blue : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  end component design_1_test_axi_gpio_0_0;
+  end component design_1_vga_controller_0_0;
+  component design_1_seven_segment_display_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    input_number : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    anodes : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    cathodes : out STD_LOGIC_VECTOR ( 6 downto 0 )
+  );
+  end component design_1_seven_segment_display_0_0;
   component design_1_game_logic_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -1344,6 +1338,13 @@ architecture STRUCTURE of design_1 is
     pellet_index_out : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component design_1_game_logic_0_0;
+  component design_1_game_clock_0_0 is
+  port (
+    clk_100mhz : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    clk_100hz : out STD_LOGIC
+  );
+  end component design_1_game_clock_0_0;
   signal axi_gpio_1_gpio_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal clk_wiz_0_clk_out100 : STD_LOGIC;
   signal clk_wiz_0_clk_out125 : STD_LOGIC;
@@ -1459,6 +1460,7 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M01_AXI_WVALID : STD_LOGIC;
   signal reset_rtl_0_1 : STD_LOGIC;
+  signal rst_0_1 : STD_LOGIC;
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal seven_segment_clock_0_clk_10khz : STD_LOGIC;
   signal seven_segment_display_0_anodes : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1503,6 +1505,8 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of hdmi_tx_0_tmds_clk_p : signal is "xilinx.com:interface:hdmi:2.0 hdmi_tx_0 TMDS_CLK_P";
   attribute X_INTERFACE_INFO of reset_rtl_0 : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST";
   attribute X_INTERFACE_PARAMETER of reset_rtl_0 : signal is "XIL_INTERFACENAME RST.RESET_RTL_0, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
+  attribute X_INTERFACE_INFO of rst_0 : signal is "xilinx.com:signal:reset:1.0 RST.RST_0 RST";
+  attribute X_INTERFACE_PARAMETER of rst_0 : signal is "XIL_INTERFACENAME RST.RST_0, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
   attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
   attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
@@ -1525,6 +1529,7 @@ begin
   i_switch_right_0_1 <= i_switch_right_0;
   i_switch_up_0_1 <= i_switch_up_0;
   reset_rtl_0_1 <= reset_rtl_0;
+  rst_0_1 <= rst_0;
 axi_gpio_0: component design_1_axi_gpio_0_0
      port map (
       gpio_io_i(31 downto 0) => test_axi_gpio_0_gpio_out(31 downto 0),
@@ -1582,8 +1587,8 @@ clk_wiz_0: component design_1_clk_wiz_0_0
     );
 game_clock_0: component design_1_game_clock_0_0
      port map (
+      clk_100hz => game_clock_0_clk_10hz,
       clk_100mhz => clk_wiz_0_clk_out100,
-      clk_10hz => game_clock_0_clk_10hz,
       reset => reset_rtl_0_1
     );
 game_logic_0: component design_1_game_logic_0_0
@@ -1598,7 +1603,7 @@ game_logic_0: component design_1_game_logic_0_0
       pellet_x_in(9 downto 0) => test_axi_gpio_0_pellet_x(9 downto 0),
       pellet_y(9 downto 0) => game_logic_0_pellet_y(9 downto 0),
       pellet_y_in(9 downto 0) => test_axi_gpio_0_pellet_y(9 downto 0),
-      rst => reset_rtl_0_1,
+      rst => rst_0_1,
       snake_x(9 downto 0) => game_logic_0_snake_x(9 downto 0),
       snake_y(9 downto 0) => game_logic_0_snake_y(9 downto 0)
     );

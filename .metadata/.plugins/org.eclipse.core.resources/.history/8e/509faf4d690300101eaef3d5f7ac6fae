@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xparameters.h"
+#include "xil_io.h"
+#include "sleep.h"
+
+// AXI GPIO Adresse aus dem Bild
+#define AXI_BRAM_0 0x40000000
+#define AXI_GPIO_0 0x41200000
+#define AXI_GPIO_1 0x41210000
+
+int getRandomNumber(int min, int max) {
+    return min + rand() % (max - min + 1);
+}
+
+int main() {
+    init_platform();
+    xil_printf("\r\n**********************************\r\n");
+    xil_printf("*       AXI GPIO Reader         *\r\n");
+    xil_printf("**********************************\r\n");
+    u32 last_pellet_index = 20;
+    u32 pellet_x = 0;
+    u32 pellet_y = 0;
+
+    u32 print_when_zero = 0;
+
+    while(1) {
+        u32 gpio_value = Xil_In32(AXI_GPIO_0); // 32-bit Wert auslesen
+
+        // Snake_x: Bits 23-14 (10 Bit)
+        u32 snake_x = (gpio_value >> 14) & 0x3FF;
+
+        // Snake_y: Bits 13-4 (10 Bit)
+        u32 snake_y = (gpio_value >> 4) & 0x3FF;
+
+        // Pellet_index: Bits 3-0 (4 Bit)
+        u32 pellet_index = gpio_value & 0xF;
+
+        if (last_pellet_index != pellet_index) {
+        	last_pellet_index = pellet_index;
+        	// genrate new pellet positions
+        	pellet_x = getRandomNumber(10, 630);
+        	pellet_y = getRandomNumber(10, 430);
+        	// Setze die Bits 19-10 für pellet_y und 9-0 für pellet_x
+			u32 new_pellet_value = ((pellet_y & 0x3FF) << 10) | (pellet_x & 0x3FF);
+
+			// Schreibe den neuen Wert in AXI GPIO 1
+			Xil_Out32(AXI_GPIO_1, new_pellet_value);
+			xil_printf("neuer Pellet Wert");
+			xil_printf("pellet_x: %d\r\n", pellet_x);
+			xil_printf("pellet_y: %d\r\n", pellet_y);
+			//test bram write
+			//Xil_Out32(AXI_BRAM_0, new_pellet_value);
+        }
+
+        int count = 0;
+        if (count % 1000000 == 0) {
+			xil_printf("AXI GPIO Wert: 0x%08X\r\n", count);
+			xil_printf("snake_x: %d\r\n", snake_x);
+			xil_printf("snake_y: %d\r\n", snake_y);
+			xil_printf("pellet_index: %d\r\n", pellet_index);
+        }
+        count = count + 1;
+
+
+        usleep(5000); // 50ms warten
+    }
+
+    cleanup_platform();
+    return 0;
+}

@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sat Mar 15 19:23:13 2025
+// Date        : Mon Mar 17 20:12:20 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_seven_segment_display_0_0/design_1_seven_segment_display_0_0_sim_netlist.v
@@ -28,21 +28,15 @@ module design_1_seven_segment_display_0_0
   output [3:0]anodes;
   output [6:0]cathodes;
 
-  wire \<const0> ;
   wire [3:0]anodes;
-  wire [6:0]\^cathodes ;
+  wire [6:0]cathodes;
   wire clk;
   wire [3:0]input_number;
   wire reset;
 
-  assign cathodes[6:2] = \^cathodes [6:2];
-  assign cathodes[1] = \<const0> ;
-  assign cathodes[0] = \^cathodes [0];
-  GND GND
-       (.G(\<const0> ));
   design_1_seven_segment_display_0_0_seven_segment_display U0
        (.anodes(anodes),
-        .cathodes({\^cathodes [6:2],\^cathodes [0]}),
+        .cathodes(cathodes),
         .clk(clk),
         .input_number(input_number),
         .reset(reset));
@@ -56,7 +50,7 @@ module design_1_seven_segment_display_0_0_seven_segment_display
     clk,
     input_number);
   output [3:0]anodes;
-  output [5:0]cathodes;
+  output [6:0]cathodes;
   input reset;
   input clk;
   input [3:0]input_number;
@@ -66,8 +60,9 @@ module design_1_seven_segment_display_0_0_seven_segment_display
   wire \anodes[1]_i_1_n_0 ;
   wire \anodes[2]_i_1_n_0 ;
   wire \anodes[3]_i_1_n_0 ;
-  wire [5:0]cathodes;
+  wire [6:0]cathodes;
   wire \cathodes[0]_i_1_n_0 ;
+  wire \cathodes[1]_i_1_n_0 ;
   wire \cathodes[2]_i_1_n_0 ;
   wire \cathodes[3]_i_1_n_0 ;
   wire \cathodes[4]_i_1_n_0 ;
@@ -82,14 +77,14 @@ module design_1_seven_segment_display_0_0_seven_segment_display
   wire [1:0]p_0_in;
   wire reset;
 
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \anodes[0]_i_1 
        (.I0(digit_select[0]),
         .I1(digit_select[1]),
         .O(\anodes[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \anodes[1]_i_1 
@@ -102,7 +97,7 @@ module design_1_seven_segment_display_0_0_seven_segment_display
        (.I0(digit_select[0]),
         .I1(digit_select[1]),
         .O(\anodes[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \anodes[3]_i_1 
@@ -133,45 +128,55 @@ module design_1_seven_segment_display_0_0_seven_segment_display
         .D(\anodes[3]_i_1_n_0 ),
         .PRE(reset),
         .Q(anodes[3]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
-    .INIT(32'hB0E0A104)) 
+    .INIT(32'hBA01E004)) 
     \cathodes[0]_i_1 
        (.I0(digit_select[0]),
         .I1(number_value[0]),
-        .I2(number_value[3]),
-        .I3(number_value[2]),
-        .I4(number_value[1]),
+        .I2(number_value[1]),
+        .I3(number_value[3]),
+        .I4(number_value[2]),
         .O(\cathodes[0]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h00008224)) 
-    \cathodes[2]_i_1 
+    .INIT(32'h00008208)) 
+    \cathodes[1]_i_1 
        (.I0(number_value[2]),
         .I1(number_value[1]),
         .I2(number_value[3]),
         .I3(number_value[0]),
         .I4(digit_select[0]),
+        .O(\cathodes[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h00000410)) 
+    \cathodes[2]_i_1 
+       (.I0(number_value[0]),
+        .I1(number_value[2]),
+        .I2(number_value[1]),
+        .I3(number_value[3]),
+        .I4(digit_select[0]),
         .O(\cathodes[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'hB4E0A104)) 
+    .INIT(32'hBA41E004)) 
     \cathodes[3]_i_1 
        (.I0(digit_select[0]),
         .I1(number_value[0]),
-        .I2(number_value[3]),
-        .I3(number_value[2]),
-        .I4(number_value[1]),
+        .I2(number_value[1]),
+        .I3(number_value[3]),
+        .I4(number_value[2]),
         .O(\cathodes[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
-    .INIT(32'hB4E4E144)) 
+    .INIT(32'hF5D5E084)) 
     \cathodes[4]_i_1 
        (.I0(digit_select[0]),
-        .I1(number_value[0]),
+        .I1(number_value[2]),
         .I2(number_value[3]),
-        .I3(number_value[2]),
-        .I4(number_value[1]),
+        .I3(number_value[1]),
+        .I4(number_value[0]),
         .O(\cathodes[4]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'h2)) 
@@ -179,14 +184,15 @@ module design_1_seven_segment_display_0_0_seven_segment_display
        (.I0(digit_select[1]),
         .I1(reset),
         .O(\cathodes[5]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'hEE55F044)) 
+    .INIT(32'hAEF04504)) 
     \cathodes[5]_i_2 
        (.I0(digit_select[0]),
         .I1(number_value[0]),
         .I2(number_value[2]),
-        .I3(number_value[3]),
-        .I4(number_value[1]),
+        .I3(number_value[1]),
+        .I4(number_value[3]),
         .O(\cathodes[5]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -194,12 +200,12 @@ module design_1_seven_segment_display_0_0_seven_segment_display
        (.I0(reset),
         .O(\cathodes[6]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFAEAAFAAF)) 
+    .INIT(64'hFFFFFFFFAAEAFAAF)) 
     \cathodes[6]_i_2 
        (.I0(digit_select[0]),
         .I1(number_value[0]),
-        .I2(number_value[3]),
-        .I3(number_value[1]),
+        .I2(number_value[1]),
+        .I3(number_value[3]),
         .I4(number_value[2]),
         .I5(digit_select[1]),
         .O(\cathodes[6]_i_2_n_0 ));
@@ -209,42 +215,48 @@ module design_1_seven_segment_display_0_0_seven_segment_display
         .D(\cathodes[0]_i_1_n_0 ),
         .Q(cathodes[0]),
         .R(\cathodes[5]_i_1_n_0 ));
+  FDRE \cathodes_reg[1] 
+       (.C(clk),
+        .CE(\cathodes[6]_i_1_n_0 ),
+        .D(\cathodes[1]_i_1_n_0 ),
+        .Q(cathodes[1]),
+        .R(\cathodes[5]_i_1_n_0 ));
   FDRE \cathodes_reg[2] 
        (.C(clk),
         .CE(\cathodes[6]_i_1_n_0 ),
         .D(\cathodes[2]_i_1_n_0 ),
-        .Q(cathodes[1]),
+        .Q(cathodes[2]),
         .R(\cathodes[5]_i_1_n_0 ));
   FDRE \cathodes_reg[3] 
        (.C(clk),
         .CE(\cathodes[6]_i_1_n_0 ),
         .D(\cathodes[3]_i_1_n_0 ),
-        .Q(cathodes[2]),
+        .Q(cathodes[3]),
         .R(\cathodes[5]_i_1_n_0 ));
   FDRE \cathodes_reg[4] 
        (.C(clk),
         .CE(\cathodes[6]_i_1_n_0 ),
         .D(\cathodes[4]_i_1_n_0 ),
-        .Q(cathodes[3]),
+        .Q(cathodes[4]),
         .R(\cathodes[5]_i_1_n_0 ));
   FDRE \cathodes_reg[5] 
        (.C(clk),
         .CE(\cathodes[6]_i_1_n_0 ),
         .D(\cathodes[5]_i_2_n_0 ),
-        .Q(cathodes[4]),
+        .Q(cathodes[5]),
         .R(\cathodes[5]_i_1_n_0 ));
   FDRE \cathodes_reg[6] 
        (.C(clk),
         .CE(\cathodes[6]_i_1_n_0 ),
         .D(\cathodes[6]_i_2_n_0 ),
-        .Q(cathodes[5]),
+        .Q(cathodes[6]),
         .R(1'b0));
   LUT1 #(
     .INIT(2'h1)) 
     \digit_select[0]_i_1 
        (.I0(digit_select[0]),
         .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \digit_select[1]_i_1 

@@ -7,13 +7,13 @@ entity game_clock is
     Port (
         clk_100mhz : in  STD_LOGIC;  -- 100 MHz Eingangstakt
         reset      : in  STD_LOGIC;  -- Asynchroner Reset
-        clk_10hz   : out STD_LOGIC   -- 10 Hz Ausgangstakt
+        clk_100hz   : out STD_LOGIC   -- 10 Hz Ausgangstakt
     );
 end game_clock;
 
 architecture Behavioral of game_clock is
     
-    constant DIVISOR : integer := 10_000_000; -- 100 MHz / 10 Hz = 10.000.000 Taktzyklen
+    constant DIVISOR : integer := 10_000_00; -- 100 MHz / 10 Hz = 10.000.000 Taktzyklen
     signal counter   : integer range 0 to DIVISOR := 0;
     signal clk_state : STD_LOGIC := '0';
     
@@ -34,6 +34,6 @@ begin
         end if;
     end process;
     
-    clk_10hz <= clk_state;
+    clk_100hz <= clk_state;
     
 end Behavioral;

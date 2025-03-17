@@ -38,7 +38,7 @@
       "ports": {
         "clk_100mhz": [ { "direction": "in" } ],
         "reset": [ { "direction": "in" } ],
-        "clk_10hz": [ { "direction": "out" } ]
+        "clk_100hz": [ { "direction": "out" } ]
       },
       "interfaces": {
         "reset": {

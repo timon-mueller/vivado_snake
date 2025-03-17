@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sun Mar 16 13:30:41 2025
+// Date        : Mon Mar 17 20:22:24 2025
 // Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/timon/Documents/vivado_snake/project_final2.gen/sources_1/bd/design_1/ip/design_1_game_logic_0_0/design_1_game_logic_0_0_sim_netlist.v
@@ -44,7 +44,6 @@ module design_1_game_logic_0_0
   output [9:0]pellet_y;
   output [3:0]pellet_index_out;
 
-  wire \<const0> ;
   wire clk;
   wire i_switch_down;
   wire i_switch_left;
@@ -54,17 +53,11 @@ module design_1_game_logic_0_0
   wire [9:0]pellet_x_in;
   wire [9:0]pellet_y_in;
   wire rst;
-  wire [9:1]\^snake_x ;
-  wire [9:1]\^snake_y ;
+  wire [9:0]snake_x;
+  wire [9:0]snake_y;
 
   assign pellet_x[9:0] = pellet_x_in;
   assign pellet_y[9:0] = pellet_y_in;
-  assign snake_x[9:1] = \^snake_x [9:1];
-  assign snake_x[0] = \<const0> ;
-  assign snake_y[9:1] = \^snake_y [9:1];
-  assign snake_y[0] = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
   design_1_game_logic_0_0_game_logic U0
        (.Q(pellet_index_out),
         .clk(clk),
@@ -75,92 +68,81 @@ module design_1_game_logic_0_0
         .pellet_x_in(pellet_x_in),
         .pellet_y_in(pellet_y_in),
         .rst(rst),
-        .snake_x(\^snake_x ),
-        .snake_y(\^snake_y ));
+        .snake_x(snake_x),
+        .snake_y(snake_y));
 endmodule
 
 (* ORIG_REF_NAME = "game_logic" *) 
 module design_1_game_logic_0_0_game_logic
-   (snake_x,
-    snake_y,
+   (snake_y,
+    snake_x,
     Q,
-    pellet_x_in,
-    pellet_y_in,
-    i_switch_left,
-    i_switch_up,
     rst,
-    clk,
+    i_switch_up,
+    i_switch_left,
+    i_switch_right,
     i_switch_down,
-    i_switch_right);
-  output [8:0]snake_x;
-  output [8:0]snake_y;
+    clk,
+    pellet_x_in,
+    pellet_y_in);
+  output [9:0]snake_y;
+  output [9:0]snake_x;
   output [3:0]Q;
+  input rst;
+  input i_switch_up;
+  input i_switch_left;
+  input i_switch_right;
+  input i_switch_down;
+  input clk;
   input [9:0]pellet_x_in;
   input [9:0]pellet_y_in;
-  input i_switch_left;
-  input i_switch_up;
-  input rst;
-  input clk;
-  input i_switch_down;
-  input i_switch_right;
 
   wire [3:0]Q;
-  wire _carry__0_i_1_n_0;
-  wire _carry__0_i_2_n_0;
-  wire _carry__0_i_3_n_0;
-  wire _carry__0_i_4_n_0;
-  wire _carry__0_n_0;
-  wire _carry__0_n_1;
-  wire _carry__0_n_2;
-  wire _carry__0_n_3;
-  wire _carry__1_i_1_n_0;
-  wire _carry__1_i_2_n_0;
-  wire _carry__1_i_3_n_0;
-  wire _carry__1_i_4_n_0;
-  wire _carry__1_i_5_n_0;
-  wire _carry__1_n_1;
-  wire _carry__1_n_2;
-  wire _carry__1_n_3;
-  wire _carry_i_1_n_0;
-  wire _carry_i_2_n_0;
-  wire _carry_i_3_n_0;
-  wire _carry_i_4_n_0;
-  wire _carry_n_0;
-  wire _carry_n_1;
-  wire _carry_n_2;
-  wire _carry_n_3;
-  wire \_inferred__0/i__carry__0_n_0 ;
-  wire \_inferred__0/i__carry__0_n_1 ;
-  wire \_inferred__0/i__carry__0_n_2 ;
-  wire \_inferred__0/i__carry__0_n_3 ;
-  wire \_inferred__0/i__carry__1_n_1 ;
-  wire \_inferred__0/i__carry__1_n_2 ;
-  wire \_inferred__0/i__carry__1_n_3 ;
-  wire \_inferred__0/i__carry_n_0 ;
-  wire \_inferred__0/i__carry_n_1 ;
-  wire \_inferred__0/i__carry_n_2 ;
-  wire \_inferred__0/i__carry_n_3 ;
   wire clk;
+  wire \current_direction[0]_i_1_n_0 ;
+  wire \current_direction[0]_i_2_n_0 ;
+  wire \current_direction[1]_i_1_n_0 ;
+  wire \current_direction[1]_i_2_n_0 ;
+  wire \current_direction_reg_n_0_[0] ;
+  wire \current_direction_reg_n_0_[1] ;
   wire i__carry__0_i_1_n_0;
   wire i__carry__0_i_2_n_0;
-  wire i__carry__0_i_3_n_0;
-  wire i__carry__0_i_4_n_0;
-  wire i__carry__1_i_1_n_0;
-  wire i__carry__1_i_2_n_0;
-  wire i__carry__1_i_3_n_0;
-  wire i__carry__1_i_4_n_0;
-  wire i__carry__1_i_5_n_0;
   wire i__carry_i_1_n_0;
   wire i__carry_i_2_n_0;
   wire i__carry_i_3_n_0;
   wire i__carry_i_4_n_0;
+  wire i__carry_i_5_n_0;
+  wire i__carry_i_6_n_0;
+  wire i__carry_i_7_n_0;
+  wire i__carry_i_8_n_0;
   wire i_switch_down;
   wire i_switch_left;
   wire i_switch_right;
   wire i_switch_up;
+  wire pellet_index0;
+  wire pellet_index1;
+  wire pellet_index1_carry__0_i_1_n_0;
+  wire pellet_index1_carry__0_i_2_n_0;
+  wire pellet_index1_carry__0_i_3_n_0;
+  wire pellet_index1_carry__0_i_4_n_0;
+  wire pellet_index1_carry__0_i_5_n_0;
+  wire pellet_index1_carry__0_n_3;
+  wire pellet_index1_carry_i_1_n_0;
+  wire pellet_index1_carry_i_2_n_0;
+  wire pellet_index1_carry_i_3_n_0;
+  wire pellet_index1_carry_i_4_n_0;
+  wire pellet_index1_carry_i_5_n_0;
+  wire pellet_index1_carry_i_6_n_0;
+  wire pellet_index1_carry_i_7_n_0;
+  wire pellet_index1_carry_i_8_n_0;
+  wire pellet_index1_carry_i_9_n_0;
+  wire pellet_index1_carry_n_0;
+  wire pellet_index1_carry_n_1;
+  wire pellet_index1_carry_n_2;
+  wire pellet_index1_carry_n_3;
+  wire pellet_index2;
   wire pellet_index2_carry__0_i_1_n_0;
   wire pellet_index2_carry__0_i_2_n_0;
-  wire pellet_index2_carry__0_n_3;
   wire pellet_index2_carry_i_1_n_0;
   wire pellet_index2_carry_i_2_n_0;
   wire pellet_index2_carry_i_3_n_0;
@@ -173,8 +155,13 @@ module design_1_game_logic_0_0_game_logic
   wire pellet_index2_carry_n_1;
   wire pellet_index2_carry_n_2;
   wire pellet_index2_carry_n_3;
+  wire pellet_index3;
+  wire pellet_index35_in;
   wire pellet_index3_carry__0_i_1_n_0;
   wire pellet_index3_carry__0_i_2_n_0;
+  wire pellet_index3_carry__0_i_3_n_0;
+  wire pellet_index3_carry__0_i_4_n_0;
+  wire pellet_index3_carry__0_i_5_n_0;
   wire pellet_index3_carry__0_n_3;
   wire pellet_index3_carry_i_1_n_0;
   wire pellet_index3_carry_i_2_n_0;
@@ -184,334 +171,355 @@ module design_1_game_logic_0_0_game_logic
   wire pellet_index3_carry_i_6_n_0;
   wire pellet_index3_carry_i_7_n_0;
   wire pellet_index3_carry_i_8_n_0;
+  wire pellet_index3_carry_i_9_n_0;
   wire pellet_index3_carry_n_0;
   wire pellet_index3_carry_n_1;
   wire pellet_index3_carry_n_2;
   wire pellet_index3_carry_n_3;
+  wire \pellet_index3_inferred__0/i__carry_n_0 ;
+  wire \pellet_index3_inferred__0/i__carry_n_1 ;
+  wire \pellet_index3_inferred__0/i__carry_n_2 ;
+  wire \pellet_index3_inferred__0/i__carry_n_3 ;
   wire \pellet_index[0]_i_1_n_0 ;
   wire \pellet_index[1]_i_1_n_0 ;
   wire \pellet_index[2]_i_1_n_0 ;
   wire \pellet_index[3]_i_1_n_0 ;
-  wire \pellet_index[3]_i_2_n_0 ;
+  wire \pellet_index[3]_i_3_n_0 ;
   wire [9:0]pellet_x_in;
   wire [9:0]pellet_y_in;
   wire rst;
-  wire [8:0]snake_x;
-  wire snake_x_reg;
-  wire snake_x_reg0_carry__0_i_1_n_0;
-  wire snake_x_reg0_carry__0_i_2_n_0;
-  wire snake_x_reg0_carry__0_i_3_n_0;
-  wire snake_x_reg0_carry__0_i_4_n_0;
-  wire snake_x_reg0_carry__0_i_5_n_0;
-  wire snake_x_reg0_carry__0_n_0;
-  wire snake_x_reg0_carry__0_n_1;
-  wire snake_x_reg0_carry__0_n_2;
-  wire snake_x_reg0_carry__0_n_3;
-  wire snake_x_reg0_carry__0_n_4;
-  wire snake_x_reg0_carry__0_n_5;
-  wire snake_x_reg0_carry__0_n_6;
-  wire snake_x_reg0_carry__0_n_7;
-  wire snake_x_reg0_carry__1_i_1_n_0;
-  wire snake_x_reg0_carry__1_i_2_n_0;
-  wire snake_x_reg0_carry__1_n_3;
-  wire snake_x_reg0_carry__1_n_6;
-  wire snake_x_reg0_carry__1_n_7;
-  wire snake_x_reg0_carry_i_1_n_0;
-  wire snake_x_reg0_carry_i_2_n_0;
-  wire snake_x_reg0_carry_i_3_n_0;
-  wire snake_x_reg0_carry_n_0;
-  wire snake_x_reg0_carry_n_1;
-  wire snake_x_reg0_carry_n_2;
-  wire snake_x_reg0_carry_n_3;
-  wire snake_x_reg0_carry_n_4;
-  wire snake_x_reg0_carry_n_5;
-  wire snake_x_reg0_carry_n_6;
-  wire [8:0]snake_y;
-  wire snake_y_reg0_carry__0_i_1_n_0;
-  wire snake_y_reg0_carry__0_i_2_n_0;
-  wire snake_y_reg0_carry__0_i_3_n_0;
-  wire snake_y_reg0_carry__0_i_4_n_0;
-  wire snake_y_reg0_carry__0_i_5_n_0;
-  wire snake_y_reg0_carry__0_n_0;
-  wire snake_y_reg0_carry__0_n_1;
-  wire snake_y_reg0_carry__0_n_2;
-  wire snake_y_reg0_carry__0_n_3;
-  wire snake_y_reg0_carry__0_n_4;
-  wire snake_y_reg0_carry__0_n_5;
-  wire snake_y_reg0_carry__0_n_6;
-  wire snake_y_reg0_carry__0_n_7;
-  wire snake_y_reg0_carry__1_i_1_n_0;
-  wire snake_y_reg0_carry__1_i_2_n_0;
-  wire snake_y_reg0_carry__1_n_3;
-  wire snake_y_reg0_carry__1_n_6;
-  wire snake_y_reg0_carry__1_n_7;
-  wire snake_y_reg0_carry_i_1_n_0;
-  wire snake_y_reg0_carry_i_2_n_0;
-  wire snake_y_reg0_carry_i_3_n_0;
-  wire snake_y_reg0_carry_n_0;
-  wire snake_y_reg0_carry_n_1;
-  wire snake_y_reg0_carry_n_2;
-  wire snake_y_reg0_carry_n_3;
-  wire snake_y_reg0_carry_n_4;
-  wire snake_y_reg0_carry_n_5;
-  wire snake_y_reg0_carry_n_6;
+  wire [9:0]snake_x;
+  wire [9:0]snake_x_reg;
+  wire \snake_x_reg[4]_i_2_n_0 ;
+  wire \snake_x_reg[4]_i_3_n_0 ;
+  wire \snake_x_reg[4]_i_4_n_0 ;
+  wire \snake_x_reg[4]_i_5_n_0 ;
+  wire \snake_x_reg[8]_i_2_n_0 ;
+  wire \snake_x_reg[8]_i_3_n_0 ;
+  wire \snake_x_reg[8]_i_4_n_0 ;
+  wire \snake_x_reg[8]_i_5_n_0 ;
+  wire \snake_x_reg[9]_i_3_n_0 ;
+  wire \snake_x_reg[9]_i_4_n_0 ;
+  wire \snake_x_reg[9]_i_5_n_0 ;
+  wire \snake_x_reg[9]_i_6_n_0 ;
+  wire \snake_x_reg[9]_i_7_n_0 ;
+  wire \snake_x_reg[9]_i_8_n_0 ;
+  wire \snake_x_reg_reg[4]_i_1_n_0 ;
+  wire \snake_x_reg_reg[4]_i_1_n_1 ;
+  wire \snake_x_reg_reg[4]_i_1_n_2 ;
+  wire \snake_x_reg_reg[4]_i_1_n_3 ;
+  wire \snake_x_reg_reg[8]_i_1_n_0 ;
+  wire \snake_x_reg_reg[8]_i_1_n_1 ;
+  wire \snake_x_reg_reg[8]_i_1_n_2 ;
+  wire \snake_x_reg_reg[8]_i_1_n_3 ;
+  wire [9:0]snake_y;
+  wire [9:0]snake_y_reg;
+  wire \snake_y_reg[4]_i_2_n_0 ;
+  wire \snake_y_reg[4]_i_3_n_0 ;
+  wire \snake_y_reg[4]_i_4_n_0 ;
+  wire \snake_y_reg[4]_i_5_n_0 ;
+  wire \snake_y_reg[8]_i_2_n_0 ;
+  wire \snake_y_reg[8]_i_3_n_0 ;
+  wire \snake_y_reg[8]_i_4_n_0 ;
+  wire \snake_y_reg[8]_i_5_n_0 ;
   wire \snake_y_reg[9]_i_1_n_0 ;
-  wire [3:0]NLW__carry_O_UNCONNECTED;
-  wire [3:0]NLW__carry__0_O_UNCONNECTED;
-  wire [3:3]NLW__carry__1_CO_UNCONNECTED;
-  wire [3:0]NLW__carry__1_O_UNCONNECTED;
-  wire [3:0]\NLW__inferred__0/i__carry_O_UNCONNECTED ;
-  wire [3:0]\NLW__inferred__0/i__carry__0_O_UNCONNECTED ;
-  wire [3:3]\NLW__inferred__0/i__carry__1_CO_UNCONNECTED ;
-  wire [3:0]\NLW__inferred__0/i__carry__1_O_UNCONNECTED ;
+  wire \snake_y_reg[9]_i_3_n_0 ;
+  wire snake_y_reg_0;
+  wire \snake_y_reg_reg[4]_i_1_n_0 ;
+  wire \snake_y_reg_reg[4]_i_1_n_1 ;
+  wire \snake_y_reg_reg[4]_i_1_n_2 ;
+  wire \snake_y_reg_reg[4]_i_1_n_3 ;
+  wire \snake_y_reg_reg[8]_i_1_n_0 ;
+  wire \snake_y_reg_reg[8]_i_1_n_1 ;
+  wire \snake_y_reg_reg[8]_i_1_n_2 ;
+  wire \snake_y_reg_reg[8]_i_1_n_3 ;
+  wire [3:0]NLW_pellet_index1_carry_O_UNCONNECTED;
+  wire [3:2]NLW_pellet_index1_carry__0_CO_UNCONNECTED;
+  wire [3:0]NLW_pellet_index1_carry__0_O_UNCONNECTED;
   wire [3:0]NLW_pellet_index2_carry_O_UNCONNECTED;
   wire [3:1]NLW_pellet_index2_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_pellet_index2_carry__0_O_UNCONNECTED;
   wire [3:0]NLW_pellet_index3_carry_O_UNCONNECTED;
-  wire [3:1]NLW_pellet_index3_carry__0_CO_UNCONNECTED;
+  wire [3:2]NLW_pellet_index3_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_pellet_index3_carry__0_O_UNCONNECTED;
-  wire [0:0]NLW_snake_x_reg0_carry_O_UNCONNECTED;
-  wire [3:1]NLW_snake_x_reg0_carry__1_CO_UNCONNECTED;
-  wire [3:2]NLW_snake_x_reg0_carry__1_O_UNCONNECTED;
-  wire [0:0]NLW_snake_y_reg0_carry_O_UNCONNECTED;
-  wire [3:1]NLW_snake_y_reg0_carry__1_CO_UNCONNECTED;
-  wire [3:2]NLW_snake_y_reg0_carry__1_O_UNCONNECTED;
+  wire [3:0]\NLW_pellet_index3_inferred__0/i__carry_O_UNCONNECTED ;
+  wire [3:1]\NLW_pellet_index3_inferred__0/i__carry__0_CO_UNCONNECTED ;
+  wire [3:0]\NLW_pellet_index3_inferred__0/i__carry__0_O_UNCONNECTED ;
+  wire [3:0]\NLW_snake_x_reg_reg[9]_i_2_CO_UNCONNECTED ;
+  wire [3:1]\NLW_snake_x_reg_reg[9]_i_2_O_UNCONNECTED ;
+  wire [3:0]\NLW_snake_y_reg_reg[9]_i_2_CO_UNCONNECTED ;
+  wire [3:1]\NLW_snake_y_reg_reg[9]_i_2_O_UNCONNECTED ;
 
-  CARRY4 _carry
-       (.CI(1'b0),
-        .CO({_carry_n_0,_carry_n_1,_carry_n_2,_carry_n_3}),
-        .CYINIT(1'b1),
-        .DI(pellet_x_in[3:0]),
-        .O(NLW__carry_O_UNCONNECTED[3:0]),
-        .S({_carry_i_1_n_0,_carry_i_2_n_0,_carry_i_3_n_0,_carry_i_4_n_0}));
-  CARRY4 _carry__0
-       (.CI(_carry_n_0),
-        .CO({_carry__0_n_0,_carry__0_n_1,_carry__0_n_2,_carry__0_n_3}),
-        .CYINIT(1'b0),
-        .DI(pellet_x_in[7:4]),
-        .O(NLW__carry__0_O_UNCONNECTED[3:0]),
-        .S({_carry__0_i_1_n_0,_carry__0_i_2_n_0,_carry__0_i_3_n_0,_carry__0_i_4_n_0}));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \current_direction[0]_i_1 
+       (.I0(\current_direction[0]_i_2_n_0 ),
+        .I1(rst),
+        .O(\current_direction[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h6969699969996999)) 
-    _carry__0_i_1
-       (.I0(pellet_x_in[7]),
-        .I1(snake_x[6]),
-        .I2(snake_x[5]),
-        .I3(snake_x[4]),
-        .I4(snake_x[3]),
-        .I5(snake_x[2]),
-        .O(_carry__0_i_1_n_0));
-  LUT5 #(
-    .INIT(32'h66666999)) 
-    _carry__0_i_2
-       (.I0(pellet_x_in[6]),
-        .I1(snake_x[5]),
-        .I2(snake_x[2]),
-        .I3(snake_x[3]),
-        .I4(snake_x[4]),
-        .O(_carry__0_i_2_n_0));
+    .INIT(64'h55F155F050315030)) 
+    \current_direction[0]_i_2 
+       (.I0(i_switch_up),
+        .I1(i_switch_left),
+        .I2(\current_direction_reg_n_0_[0] ),
+        .I3(\current_direction_reg_n_0_[1] ),
+        .I4(i_switch_right),
+        .I5(i_switch_down),
+        .O(\current_direction[0]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \current_direction[1]_i_1 
+       (.I0(\current_direction[1]_i_2_n_0 ),
+        .I1(rst),
+        .O(\current_direction[1]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0005000455F555C4)) 
+    \current_direction[1]_i_2 
+       (.I0(i_switch_up),
+        .I1(i_switch_left),
+        .I2(\current_direction_reg_n_0_[0] ),
+        .I3(\current_direction_reg_n_0_[1] ),
+        .I4(i_switch_right),
+        .I5(i_switch_down),
+        .O(\current_direction[1]_i_2_n_0 ));
+  FDRE #(
+    .INIT(1'b1)) 
+    \current_direction_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(\current_direction[0]_i_1_n_0 ),
+        .Q(\current_direction_reg_n_0_[0] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b1)) 
+    \current_direction_reg[1] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(\current_direction[1]_i_1_n_0 ),
+        .Q(\current_direction_reg_n_0_[1] ),
+        .R(1'b0));
   LUT4 #(
-    .INIT(16'h9666)) 
-    _carry__0_i_3
-       (.I0(pellet_x_in[5]),
-        .I1(snake_x[4]),
-        .I2(snake_x[3]),
-        .I3(snake_x[2]),
-        .O(_carry__0_i_3_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    _carry__0_i_4
+    .INIT(16'h2F02)) 
+    i__carry__0_i_1
+       (.I0(pellet_x_in[8]),
+        .I1(snake_x[8]),
+        .I2(snake_x[9]),
+        .I3(pellet_x_in[9]),
+        .O(i__carry__0_i_1_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    i__carry__0_i_2
+       (.I0(pellet_x_in[8]),
+        .I1(snake_x[8]),
+        .I2(pellet_x_in[9]),
+        .I3(snake_x[9]),
+        .O(i__carry__0_i_2_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    i__carry_i_1
+       (.I0(pellet_x_in[6]),
+        .I1(snake_x[6]),
+        .I2(snake_x[7]),
+        .I3(pellet_x_in[7]),
+        .O(i__carry_i_1_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    i__carry_i_2
        (.I0(pellet_x_in[4]),
-        .I1(snake_x[3]),
-        .I2(snake_x[2]),
-        .O(_carry__0_i_4_n_0));
-  CARRY4 _carry__1
-       (.CI(_carry__0_n_0),
-        .CO({NLW__carry__1_CO_UNCONNECTED[3],_carry__1_n_1,_carry__1_n_2,_carry__1_n_3}),
+        .I1(snake_x[4]),
+        .I2(snake_x[5]),
+        .I3(pellet_x_in[5]),
+        .O(i__carry_i_2_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    i__carry_i_3
+       (.I0(pellet_x_in[2]),
+        .I1(snake_x[2]),
+        .I2(snake_x[3]),
+        .I3(pellet_x_in[3]),
+        .O(i__carry_i_3_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    i__carry_i_4
+       (.I0(pellet_x_in[0]),
+        .I1(snake_x[0]),
+        .I2(snake_x[1]),
+        .I3(pellet_x_in[1]),
+        .O(i__carry_i_4_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    i__carry_i_5
+       (.I0(pellet_x_in[6]),
+        .I1(snake_x[6]),
+        .I2(pellet_x_in[7]),
+        .I3(snake_x[7]),
+        .O(i__carry_i_5_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    i__carry_i_6
+       (.I0(pellet_x_in[4]),
+        .I1(snake_x[4]),
+        .I2(pellet_x_in[5]),
+        .I3(snake_x[5]),
+        .O(i__carry_i_6_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    i__carry_i_7
+       (.I0(pellet_x_in[2]),
+        .I1(snake_x[2]),
+        .I2(pellet_x_in[3]),
+        .I3(snake_x[3]),
+        .O(i__carry_i_7_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    i__carry_i_8
+       (.I0(pellet_x_in[0]),
+        .I1(snake_x[0]),
+        .I2(pellet_x_in[1]),
+        .I3(snake_x[1]),
+        .O(i__carry_i_8_n_0));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 pellet_index1_carry
+       (.CI(1'b0),
+        .CO({pellet_index1_carry_n_0,pellet_index1_carry_n_1,pellet_index1_carry_n_2,pellet_index1_carry_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,pellet_x_in[9:8]}),
-        .O(NLW__carry__1_O_UNCONNECTED[3:0]),
-        .S({1'b0,_carry__1_i_1_n_0,_carry__1_i_2_n_0,_carry__1_i_3_n_0}));
+        .DI({pellet_index1_carry_i_1_n_0,pellet_index1_carry_i_2_n_0,pellet_index1_carry_i_3_n_0,pellet_index1_carry_i_4_n_0}),
+        .O(NLW_pellet_index1_carry_O_UNCONNECTED[3:0]),
+        .S({pellet_index1_carry_i_5_n_0,pellet_index1_carry_i_6_n_0,pellet_index1_carry_i_7_n_0,pellet_index1_carry_i_8_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 pellet_index1_carry__0
+       (.CI(pellet_index1_carry_n_0),
+        .CO({NLW_pellet_index1_carry__0_CO_UNCONNECTED[3:2],pellet_index1,pellet_index1_carry__0_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b1,pellet_index1_carry__0_i_1_n_0}),
+        .O(NLW_pellet_index1_carry__0_O_UNCONNECTED[3:0]),
+        .S({1'b0,1'b0,pellet_index1_carry__0_i_2_n_0,pellet_index1_carry__0_i_3_n_0}));
+  LUT5 #(
+    .INIT(32'h07733110)) 
+    pellet_index1_carry__0_i_1
+       (.I0(pellet_y_in[8]),
+        .I1(pellet_y_in[9]),
+        .I2(pellet_index1_carry__0_i_4_n_0),
+        .I3(snake_y[8]),
+        .I4(snake_y[9]),
+        .O(pellet_index1_carry__0_i_1_n_0));
   LUT2 #(
     .INIT(4'h7)) 
-    _carry__1_i_1
-       (.I0(snake_x[8]),
-        .I1(_carry__1_i_4_n_0),
-        .O(_carry__1_i_1_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    _carry__1_i_2
-       (.I0(pellet_x_in[9]),
-        .I1(snake_x[8]),
-        .I2(_carry__1_i_4_n_0),
-        .O(_carry__1_i_2_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    _carry__1_i_3
-       (.I0(pellet_x_in[8]),
-        .I1(snake_x[7]),
-        .I2(_carry__1_i_5_n_0),
-        .O(_carry__1_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h8880808000000000)) 
-    _carry__1_i_4
-       (.I0(snake_x[7]),
-        .I1(snake_x[5]),
-        .I2(snake_x[4]),
-        .I3(snake_x[3]),
-        .I4(snake_x[2]),
-        .I5(snake_x[6]),
-        .O(_carry__1_i_4_n_0));
+    pellet_index1_carry__0_i_2
+       (.I0(pellet_index1_carry__0_i_5_n_0),
+        .I1(snake_y[9]),
+        .O(pellet_index1_carry__0_i_2_n_0));
+  LUT5 #(
+    .INIT(32'h29404029)) 
+    pellet_index1_carry__0_i_3
+       (.I0(pellet_y_in[8]),
+        .I1(pellet_index1_carry__0_i_4_n_0),
+        .I2(snake_y[8]),
+        .I3(snake_y[9]),
+        .I4(pellet_y_in[9]),
+        .O(pellet_index1_carry__0_i_3_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hAA800000)) 
-    _carry__1_i_5
-       (.I0(snake_x[6]),
-        .I1(snake_x[2]),
-        .I2(snake_x[3]),
-        .I3(snake_x[4]),
-        .I4(snake_x[5]),
-        .O(_carry__1_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    _carry_i_1
-       (.I0(pellet_x_in[3]),
-        .I1(snake_x[2]),
-        .O(_carry_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    _carry_i_2
-       (.I0(pellet_x_in[2]),
-        .I1(snake_x[1]),
-        .O(_carry_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    _carry_i_3
-       (.I0(pellet_x_in[1]),
-        .I1(snake_x[0]),
-        .O(_carry_i_3_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    _carry_i_4
-       (.I0(pellet_x_in[0]),
-        .O(_carry_i_4_n_0));
-  CARRY4 \_inferred__0/i__carry 
-       (.CI(1'b0),
-        .CO({\_inferred__0/i__carry_n_0 ,\_inferred__0/i__carry_n_1 ,\_inferred__0/i__carry_n_2 ,\_inferred__0/i__carry_n_3 }),
-        .CYINIT(1'b1),
-        .DI(pellet_y_in[3:0]),
-        .O(\NLW__inferred__0/i__carry_O_UNCONNECTED [3:0]),
-        .S({i__carry_i_1_n_0,i__carry_i_2_n_0,i__carry_i_3_n_0,i__carry_i_4_n_0}));
-  CARRY4 \_inferred__0/i__carry__0 
-       (.CI(\_inferred__0/i__carry_n_0 ),
-        .CO({\_inferred__0/i__carry__0_n_0 ,\_inferred__0/i__carry__0_n_1 ,\_inferred__0/i__carry__0_n_2 ,\_inferred__0/i__carry__0_n_3 }),
-        .CYINIT(1'b0),
-        .DI(pellet_y_in[7:4]),
-        .O(\NLW__inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({i__carry__0_i_1_n_0,i__carry__0_i_2_n_0,i__carry__0_i_3_n_0,i__carry__0_i_4_n_0}));
-  CARRY4 \_inferred__0/i__carry__1 
-       (.CI(\_inferred__0/i__carry__0_n_0 ),
-        .CO({\NLW__inferred__0/i__carry__1_CO_UNCONNECTED [3],\_inferred__0/i__carry__1_n_1 ,\_inferred__0/i__carry__1_n_2 ,\_inferred__0/i__carry__1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,pellet_y_in[9:8]}),
-        .O(\NLW__inferred__0/i__carry__1_O_UNCONNECTED [3:0]),
-        .S({1'b0,i__carry__1_i_1_n_0,i__carry__1_i_2_n_0,i__carry__1_i_3_n_0}));
+    pellet_index1_carry__0_i_4
+       (.I0(snake_y[7]),
+        .I1(snake_y[3]),
+        .I2(snake_y[4]),
+        .I3(snake_y[5]),
+        .I4(snake_y[6]),
+        .O(pellet_index1_carry__0_i_4_n_0));
   LUT6 #(
-    .INIT(64'h6969699969996999)) 
-    i__carry__0_i_1
-       (.I0(pellet_y_in[7]),
+    .INIT(64'h8880808000000000)) 
+    pellet_index1_carry__0_i_5
+       (.I0(snake_y[8]),
         .I1(snake_y[6]),
         .I2(snake_y[5]),
         .I3(snake_y[4]),
         .I4(snake_y[3]),
-        .I5(snake_y[2]),
-        .O(i__carry__0_i_1_n_0));
+        .I5(snake_y[7]),
+        .O(pellet_index1_carry__0_i_5_n_0));
   LUT5 #(
-    .INIT(32'h66666999)) 
-    i__carry__0_i_2
+    .INIT(32'h07733110)) 
+    pellet_index1_carry_i_1
        (.I0(pellet_y_in[6]),
-        .I1(snake_y[5]),
-        .I2(snake_y[2]),
-        .I3(snake_y[3]),
-        .I4(snake_y[4]),
-        .O(i__carry__0_i_2_n_0));
-  LUT4 #(
-    .INIT(16'h9666)) 
-    i__carry__0_i_3
-       (.I0(pellet_y_in[5]),
-        .I1(snake_y[4]),
-        .I2(snake_y[3]),
-        .I3(snake_y[2]),
-        .O(i__carry__0_i_3_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    i__carry__0_i_4
+        .I1(pellet_y_in[7]),
+        .I2(pellet_index1_carry_i_9_n_0),
+        .I3(snake_y[6]),
+        .I4(snake_y[7]),
+        .O(pellet_index1_carry_i_1_n_0));
+  LUT5 #(
+    .INIT(32'h0014D43F)) 
+    pellet_index1_carry_i_2
        (.I0(pellet_y_in[4]),
         .I1(snake_y[3]),
-        .I2(snake_y[2]),
-        .O(i__carry__0_i_4_n_0));
-  LUT2 #(
-    .INIT(4'h7)) 
-    i__carry__1_i_1
-       (.I0(snake_y[8]),
-        .I1(i__carry__1_i_4_n_0),
-        .O(i__carry__1_i_1_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    i__carry__1_i_2
-       (.I0(pellet_y_in[9]),
-        .I1(snake_y[8]),
-        .I2(i__carry__1_i_4_n_0),
-        .O(i__carry__1_i_2_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    i__carry__1_i_3
-       (.I0(pellet_y_in[8]),
-        .I1(snake_y[7]),
-        .I2(i__carry__1_i_5_n_0),
-        .O(i__carry__1_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h8880808000000000)) 
-    i__carry__1_i_4
-       (.I0(snake_y[7]),
-        .I1(snake_y[5]),
         .I2(snake_y[4]),
-        .I3(snake_y[3]),
-        .I4(snake_y[2]),
-        .I5(snake_y[6]),
-        .O(i__carry__1_i_4_n_0));
-  LUT5 #(
-    .INIT(32'hAA800000)) 
-    i__carry__1_i_5
-       (.I0(snake_y[6]),
-        .I1(snake_y[2]),
+        .I3(snake_y[5]),
+        .I4(pellet_y_in[5]),
+        .O(pellet_index1_carry_i_2_n_0));
+  LUT4 #(
+    .INIT(16'h022F)) 
+    pellet_index1_carry_i_3
+       (.I0(snake_y[2]),
+        .I1(pellet_y_in[2]),
         .I2(snake_y[3]),
-        .I3(snake_y[4]),
-        .I4(snake_y[5]),
-        .O(i__carry__1_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    i__carry_i_1
-       (.I0(pellet_y_in[3]),
-        .I1(snake_y[2]),
-        .O(i__carry_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_2
-       (.I0(pellet_y_in[2]),
-        .I1(snake_y[1]),
-        .O(i__carry_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    i__carry_i_3
-       (.I0(pellet_y_in[1]),
-        .I1(snake_y[0]),
-        .O(i__carry_i_3_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    i__carry_i_4
-       (.I0(pellet_y_in[0]),
-        .O(i__carry_i_4_n_0));
+        .I3(pellet_y_in[3]),
+        .O(pellet_index1_carry_i_3_n_0));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    pellet_index1_carry_i_4
+       (.I0(snake_y[0]),
+        .I1(pellet_y_in[0]),
+        .I2(pellet_y_in[1]),
+        .I3(snake_y[1]),
+        .O(pellet_index1_carry_i_4_n_0));
+  LUT5 #(
+    .INIT(32'h29404029)) 
+    pellet_index1_carry_i_5
+       (.I0(pellet_y_in[6]),
+        .I1(pellet_index1_carry_i_9_n_0),
+        .I2(snake_y[6]),
+        .I3(snake_y[7]),
+        .I4(pellet_y_in[7]),
+        .O(pellet_index1_carry_i_5_n_0));
+  LUT5 #(
+    .INIT(32'h40292940)) 
+    pellet_index1_carry_i_6
+       (.I0(pellet_y_in[4]),
+        .I1(snake_y[3]),
+        .I2(snake_y[4]),
+        .I3(snake_y[5]),
+        .I4(pellet_y_in[5]),
+        .O(pellet_index1_carry_i_6_n_0));
+  LUT4 #(
+    .INIT(16'h0990)) 
+    pellet_index1_carry_i_7
+       (.I0(snake_y[2]),
+        .I1(pellet_y_in[2]),
+        .I2(snake_y[3]),
+        .I3(pellet_y_in[3]),
+        .O(pellet_index1_carry_i_7_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    pellet_index1_carry_i_8
+       (.I0(snake_y[0]),
+        .I1(pellet_y_in[0]),
+        .I2(snake_y[1]),
+        .I3(pellet_y_in[1]),
+        .O(pellet_index1_carry_i_8_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hF8)) 
+    pellet_index1_carry_i_9
+       (.I0(snake_y[3]),
+        .I1(snake_y[4]),
+        .I2(snake_y[5]),
+        .O(pellet_index1_carry_i_9_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
   CARRY4 pellet_index2_carry
        (.CI(1'b0),
         .CO({pellet_index2_carry_n_0,pellet_index2_carry_n_1,pellet_index2_carry_n_2,pellet_index2_carry_n_3}),
@@ -520,9 +528,10 @@ module design_1_game_logic_0_0_game_logic
         .O(NLW_pellet_index2_carry_O_UNCONNECTED[3:0]),
         .S({pellet_index2_carry_i_5_n_0,pellet_index2_carry_i_6_n_0,pellet_index2_carry_i_7_n_0,pellet_index2_carry_i_8_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
   CARRY4 pellet_index2_carry__0
        (.CI(pellet_index2_carry_n_0),
-        .CO({NLW_pellet_index2_carry__0_CO_UNCONNECTED[3:1],pellet_index2_carry__0_n_3}),
+        .CO({NLW_pellet_index2_carry__0_CO_UNCONNECTED[3:1],pellet_index2}),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,pellet_index2_carry__0_i_1_n_0}),
         .O(NLW_pellet_index2_carry__0_O_UNCONNECTED[3:0]),
@@ -531,181 +540,245 @@ module design_1_game_logic_0_0_game_logic
     .INIT(16'h2F02)) 
     pellet_index2_carry__0_i_1
        (.I0(pellet_y_in[8]),
-        .I1(snake_y[7]),
-        .I2(snake_y[8]),
+        .I1(snake_y[8]),
+        .I2(snake_y[9]),
         .I3(pellet_y_in[9]),
         .O(pellet_index2_carry__0_i_1_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pellet_index2_carry__0_i_2
        (.I0(pellet_y_in[8]),
-        .I1(snake_y[7]),
+        .I1(snake_y[8]),
         .I2(pellet_y_in[9]),
-        .I3(snake_y[8]),
+        .I3(snake_y[9]),
         .O(pellet_index2_carry__0_i_2_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     pellet_index2_carry_i_1
        (.I0(pellet_y_in[6]),
-        .I1(snake_y[5]),
-        .I2(snake_y[6]),
+        .I1(snake_y[6]),
+        .I2(snake_y[7]),
         .I3(pellet_y_in[7]),
         .O(pellet_index2_carry_i_1_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     pellet_index2_carry_i_2
        (.I0(pellet_y_in[4]),
-        .I1(snake_y[3]),
-        .I2(snake_y[4]),
+        .I1(snake_y[4]),
+        .I2(snake_y[5]),
         .I3(pellet_y_in[5]),
         .O(pellet_index2_carry_i_2_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     pellet_index2_carry_i_3
        (.I0(pellet_y_in[2]),
-        .I1(snake_y[1]),
-        .I2(snake_y[2]),
+        .I1(snake_y[2]),
+        .I2(snake_y[3]),
         .I3(pellet_y_in[3]),
         .O(pellet_index2_carry_i_3_n_0));
-  LUT3 #(
-    .INIT(8'hB2)) 
+  LUT4 #(
+    .INIT(16'h2F02)) 
     pellet_index2_carry_i_4
        (.I0(pellet_y_in[0]),
         .I1(snake_y[0]),
-        .I2(pellet_y_in[1]),
+        .I2(snake_y[1]),
+        .I3(pellet_y_in[1]),
         .O(pellet_index2_carry_i_4_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pellet_index2_carry_i_5
        (.I0(pellet_y_in[6]),
-        .I1(snake_y[5]),
+        .I1(snake_y[6]),
         .I2(pellet_y_in[7]),
-        .I3(snake_y[6]),
+        .I3(snake_y[7]),
         .O(pellet_index2_carry_i_5_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pellet_index2_carry_i_6
        (.I0(pellet_y_in[4]),
-        .I1(snake_y[3]),
+        .I1(snake_y[4]),
         .I2(pellet_y_in[5]),
-        .I3(snake_y[4]),
+        .I3(snake_y[5]),
         .O(pellet_index2_carry_i_6_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     pellet_index2_carry_i_7
        (.I0(pellet_y_in[2]),
-        .I1(snake_y[1]),
+        .I1(snake_y[2]),
         .I2(pellet_y_in[3]),
-        .I3(snake_y[2]),
+        .I3(snake_y[3]),
         .O(pellet_index2_carry_i_7_n_0));
-  LUT3 #(
-    .INIT(8'h09)) 
+  LUT4 #(
+    .INIT(16'h9009)) 
     pellet_index2_carry_i_8
-       (.I0(pellet_y_in[1]),
+       (.I0(pellet_y_in[0]),
         .I1(snake_y[0]),
-        .I2(pellet_y_in[0]),
+        .I2(pellet_y_in[1]),
+        .I3(snake_y[1]),
         .O(pellet_index2_carry_i_8_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
   CARRY4 pellet_index3_carry
        (.CI(1'b0),
         .CO({pellet_index3_carry_n_0,pellet_index3_carry_n_1,pellet_index3_carry_n_2,pellet_index3_carry_n_3}),
-        .CYINIT(1'b1),
+        .CYINIT(1'b0),
         .DI({pellet_index3_carry_i_1_n_0,pellet_index3_carry_i_2_n_0,pellet_index3_carry_i_3_n_0,pellet_index3_carry_i_4_n_0}),
         .O(NLW_pellet_index3_carry_O_UNCONNECTED[3:0]),
         .S({pellet_index3_carry_i_5_n_0,pellet_index3_carry_i_6_n_0,pellet_index3_carry_i_7_n_0,pellet_index3_carry_i_8_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
   CARRY4 pellet_index3_carry__0
        (.CI(pellet_index3_carry_n_0),
-        .CO({NLW_pellet_index3_carry__0_CO_UNCONNECTED[3:1],pellet_index3_carry__0_n_3}),
+        .CO({NLW_pellet_index3_carry__0_CO_UNCONNECTED[3:2],pellet_index3,pellet_index3_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,pellet_index3_carry__0_i_1_n_0}),
+        .DI({1'b0,1'b0,1'b1,pellet_index3_carry__0_i_1_n_0}),
         .O(NLW_pellet_index3_carry__0_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,1'b0,pellet_index3_carry__0_i_2_n_0}));
-  LUT4 #(
-    .INIT(16'h2F02)) 
+        .S({1'b0,1'b0,pellet_index3_carry__0_i_2_n_0,pellet_index3_carry__0_i_3_n_0}));
+  LUT5 #(
+    .INIT(32'h07733110)) 
     pellet_index3_carry__0_i_1
        (.I0(pellet_x_in[8]),
-        .I1(snake_x[7]),
-        .I2(snake_x[8]),
-        .I3(pellet_x_in[9]),
-        .O(pellet_index3_carry__0_i_1_n_0));
-  LUT4 #(
-    .INIT(16'h9009)) 
-    pellet_index3_carry__0_i_2
-       (.I0(pellet_x_in[8]),
-        .I1(snake_x[7]),
-        .I2(pellet_x_in[9]),
+        .I1(pellet_x_in[9]),
+        .I2(pellet_index3_carry__0_i_4_n_0),
         .I3(snake_x[8]),
+        .I4(snake_x[9]),
+        .O(pellet_index3_carry__0_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h7)) 
+    pellet_index3_carry__0_i_2
+       (.I0(pellet_index3_carry__0_i_5_n_0),
+        .I1(snake_x[9]),
         .O(pellet_index3_carry__0_i_2_n_0));
-  LUT4 #(
-    .INIT(16'h2F02)) 
+  LUT5 #(
+    .INIT(32'h29404029)) 
+    pellet_index3_carry__0_i_3
+       (.I0(pellet_x_in[8]),
+        .I1(pellet_index3_carry__0_i_4_n_0),
+        .I2(snake_x[8]),
+        .I3(snake_x[9]),
+        .I4(pellet_x_in[9]),
+        .O(pellet_index3_carry__0_i_3_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hAA800000)) 
+    pellet_index3_carry__0_i_4
+       (.I0(snake_x[7]),
+        .I1(snake_x[3]),
+        .I2(snake_x[4]),
+        .I3(snake_x[5]),
+        .I4(snake_x[6]),
+        .O(pellet_index3_carry__0_i_4_n_0));
+  LUT6 #(
+    .INIT(64'h8880808000000000)) 
+    pellet_index3_carry__0_i_5
+       (.I0(snake_x[8]),
+        .I1(snake_x[6]),
+        .I2(snake_x[5]),
+        .I3(snake_x[4]),
+        .I4(snake_x[3]),
+        .I5(snake_x[7]),
+        .O(pellet_index3_carry__0_i_5_n_0));
+  LUT5 #(
+    .INIT(32'h07733110)) 
     pellet_index3_carry_i_1
        (.I0(pellet_x_in[6]),
-        .I1(snake_x[5]),
-        .I2(snake_x[6]),
-        .I3(pellet_x_in[7]),
+        .I1(pellet_x_in[7]),
+        .I2(pellet_index3_carry_i_9_n_0),
+        .I3(snake_x[6]),
+        .I4(snake_x[7]),
         .O(pellet_index3_carry_i_1_n_0));
-  LUT4 #(
-    .INIT(16'h2F02)) 
+  LUT5 #(
+    .INIT(32'h0014D43F)) 
     pellet_index3_carry_i_2
        (.I0(pellet_x_in[4]),
         .I1(snake_x[3]),
         .I2(snake_x[4]),
-        .I3(pellet_x_in[5]),
+        .I3(snake_x[5]),
+        .I4(pellet_x_in[5]),
         .O(pellet_index3_carry_i_2_n_0));
   LUT4 #(
-    .INIT(16'h2F02)) 
+    .INIT(16'h022F)) 
     pellet_index3_carry_i_3
-       (.I0(pellet_x_in[2]),
-        .I1(snake_x[1]),
-        .I2(snake_x[2]),
+       (.I0(snake_x[2]),
+        .I1(pellet_x_in[2]),
+        .I2(snake_x[3]),
         .I3(pellet_x_in[3]),
         .O(pellet_index3_carry_i_3_n_0));
-  LUT3 #(
-    .INIT(8'hB2)) 
-    pellet_index3_carry_i_4
-       (.I0(pellet_x_in[0]),
-        .I1(snake_x[0]),
-        .I2(pellet_x_in[1]),
-        .O(pellet_index3_carry_i_4_n_0));
   LUT4 #(
-    .INIT(16'h9009)) 
+    .INIT(16'h2F02)) 
+    pellet_index3_carry_i_4
+       (.I0(snake_x[0]),
+        .I1(pellet_x_in[0]),
+        .I2(pellet_x_in[1]),
+        .I3(snake_x[1]),
+        .O(pellet_index3_carry_i_4_n_0));
+  LUT5 #(
+    .INIT(32'h29404029)) 
     pellet_index3_carry_i_5
        (.I0(pellet_x_in[6]),
-        .I1(snake_x[5]),
-        .I2(pellet_x_in[7]),
-        .I3(snake_x[6]),
+        .I1(pellet_index3_carry_i_9_n_0),
+        .I2(snake_x[6]),
+        .I3(snake_x[7]),
+        .I4(pellet_x_in[7]),
         .O(pellet_index3_carry_i_5_n_0));
-  LUT4 #(
-    .INIT(16'h9009)) 
+  LUT5 #(
+    .INIT(32'h40292940)) 
     pellet_index3_carry_i_6
        (.I0(pellet_x_in[4]),
         .I1(snake_x[3]),
-        .I2(pellet_x_in[5]),
-        .I3(snake_x[4]),
+        .I2(snake_x[4]),
+        .I3(snake_x[5]),
+        .I4(pellet_x_in[5]),
         .O(pellet_index3_carry_i_6_n_0));
   LUT4 #(
-    .INIT(16'h9009)) 
+    .INIT(16'h0990)) 
     pellet_index3_carry_i_7
-       (.I0(pellet_x_in[2]),
-        .I1(snake_x[1]),
-        .I2(snake_x[2]),
+       (.I0(snake_x[2]),
+        .I1(pellet_x_in[2]),
+        .I2(snake_x[3]),
         .I3(pellet_x_in[3]),
         .O(pellet_index3_carry_i_7_n_0));
-  LUT3 #(
-    .INIT(8'h09)) 
+  LUT4 #(
+    .INIT(16'h9009)) 
     pellet_index3_carry_i_8
-       (.I0(pellet_x_in[1]),
-        .I1(snake_x[0]),
-        .I2(pellet_x_in[0]),
+       (.I0(snake_x[0]),
+        .I1(pellet_x_in[0]),
+        .I2(snake_x[1]),
+        .I3(pellet_x_in[1]),
         .O(pellet_index3_carry_i_8_n_0));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hF8)) 
+    pellet_index3_carry_i_9
+       (.I0(snake_x[3]),
+        .I1(snake_x[4]),
+        .I2(snake_x[5]),
+        .O(pellet_index3_carry_i_9_n_0));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \pellet_index3_inferred__0/i__carry 
+       (.CI(1'b0),
+        .CO({\pellet_index3_inferred__0/i__carry_n_0 ,\pellet_index3_inferred__0/i__carry_n_1 ,\pellet_index3_inferred__0/i__carry_n_2 ,\pellet_index3_inferred__0/i__carry_n_3 }),
+        .CYINIT(1'b1),
+        .DI({i__carry_i_1_n_0,i__carry_i_2_n_0,i__carry_i_3_n_0,i__carry_i_4_n_0}),
+        .O(\NLW_pellet_index3_inferred__0/i__carry_O_UNCONNECTED [3:0]),
+        .S({i__carry_i_5_n_0,i__carry_i_6_n_0,i__carry_i_7_n_0,i__carry_i_8_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \pellet_index3_inferred__0/i__carry__0 
+       (.CI(\pellet_index3_inferred__0/i__carry_n_0 ),
+        .CO({\NLW_pellet_index3_inferred__0/i__carry__0_CO_UNCONNECTED [3:1],pellet_index35_in}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,i__carry__0_i_1_n_0}),
+        .O(\NLW_pellet_index3_inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
+        .S({1'b0,1'b0,1'b0,i__carry__0_i_2_n_0}));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \pellet_index[0]_i_1 
        (.I0(Q[0]),
         .O(\pellet_index[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h2C3C)) 
     \pellet_index[1]_i_1 
@@ -714,7 +787,7 @@ module design_1_game_logic_0_0_game_logic
         .I2(Q[0]),
         .I3(Q[3]),
         .O(\pellet_index[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \pellet_index[2]_i_1 
@@ -722,377 +795,454 @@ module design_1_game_logic_0_0_game_logic
         .I1(Q[1]),
         .I2(Q[0]),
         .O(\pellet_index[2]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h0020)) 
+  LUT6 #(
+    .INIT(64'hBFFFFFFFAAAAAAAA)) 
     \pellet_index[3]_i_1 
-       (.I0(pellet_index3_carry__0_n_3),
-        .I1(\_inferred__0/i__carry__1_n_1 ),
-        .I2(pellet_index2_carry__0_n_3),
-        .I3(_carry__1_n_1),
+       (.I0(rst),
+        .I1(pellet_index1),
+        .I2(pellet_index35_in),
+        .I3(pellet_index3),
+        .I4(pellet_index2),
+        .I5(\snake_x_reg[9]_i_3_n_0 ),
         .O(\pellet_index[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \pellet_index[3]_i_2 
+       (.I0(pellet_index1),
+        .I1(pellet_index35_in),
+        .I2(pellet_index3),
+        .I3(pellet_index2),
+        .O(pellet_index0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h6F80)) 
-    \pellet_index[3]_i_2 
+    \pellet_index[3]_i_3 
        (.I0(Q[2]),
         .I1(Q[1]),
         .I2(Q[0]),
         .I3(Q[3]),
-        .O(\pellet_index[3]_i_2_n_0 ));
+        .O(\pellet_index[3]_i_3_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \pellet_index_reg[0] 
        (.C(clk),
-        .CE(\pellet_index[3]_i_1_n_0 ),
+        .CE(pellet_index0),
         .D(\pellet_index[0]_i_1_n_0 ),
         .Q(Q[0]),
-        .R(rst));
+        .R(\pellet_index[3]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \pellet_index_reg[1] 
        (.C(clk),
-        .CE(\pellet_index[3]_i_1_n_0 ),
+        .CE(pellet_index0),
         .D(\pellet_index[1]_i_1_n_0 ),
         .Q(Q[1]),
-        .R(rst));
+        .R(\pellet_index[3]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \pellet_index_reg[2] 
        (.C(clk),
-        .CE(\pellet_index[3]_i_1_n_0 ),
+        .CE(pellet_index0),
         .D(\pellet_index[2]_i_1_n_0 ),
         .Q(Q[2]),
-        .R(rst));
+        .R(\pellet_index[3]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \pellet_index_reg[3] 
        (.C(clk),
-        .CE(\pellet_index[3]_i_1_n_0 ),
-        .D(\pellet_index[3]_i_2_n_0 ),
+        .CE(pellet_index0),
+        .D(\pellet_index[3]_i_3_n_0 ),
         .Q(Q[3]),
-        .R(rst));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 snake_x_reg0_carry
-       (.CI(1'b0),
-        .CO({snake_x_reg0_carry_n_0,snake_x_reg0_carry_n_1,snake_x_reg0_carry_n_2,snake_x_reg0_carry_n_3}),
-        .CYINIT(1'b0),
-        .DI({snake_x[2:0],1'b0}),
-        .O({snake_x_reg0_carry_n_4,snake_x_reg0_carry_n_5,snake_x_reg0_carry_n_6,NLW_snake_x_reg0_carry_O_UNCONNECTED[0]}),
-        .S({snake_x_reg0_carry_i_1_n_0,snake_x_reg0_carry_i_2_n_0,snake_x_reg0_carry_i_3_n_0,1'b0}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 snake_x_reg0_carry__0
-       (.CI(snake_x_reg0_carry_n_0),
-        .CO({snake_x_reg0_carry__0_n_0,snake_x_reg0_carry__0_n_1,snake_x_reg0_carry__0_n_2,snake_x_reg0_carry__0_n_3}),
-        .CYINIT(1'b0),
-        .DI({snake_x[5:4],snake_x_reg0_carry__0_i_1_n_0,i_switch_left}),
-        .O({snake_x_reg0_carry__0_n_4,snake_x_reg0_carry__0_n_5,snake_x_reg0_carry__0_n_6,snake_x_reg0_carry__0_n_7}),
-        .S({snake_x_reg0_carry__0_i_2_n_0,snake_x_reg0_carry__0_i_3_n_0,snake_x_reg0_carry__0_i_4_n_0,snake_x_reg0_carry__0_i_5_n_0}));
+        .R(\pellet_index[3]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    snake_x_reg0_carry__0_i_1
-       (.I0(i_switch_left),
-        .O(snake_x_reg0_carry__0_i_1_n_0));
+    \snake_x_reg[0]_i_1 
+       (.I0(snake_x[0]),
+        .O(snake_x_reg[0]));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_x_reg0_carry__0_i_2
-       (.I0(snake_x[5]),
-        .I1(snake_x[6]),
-        .O(snake_x_reg0_carry__0_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    snake_x_reg0_carry__0_i_3
+    \snake_x_reg[4]_i_2 
        (.I0(snake_x[4]),
-        .I1(snake_x[5]),
-        .O(snake_x_reg0_carry__0_i_3_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    snake_x_reg0_carry__0_i_4
-       (.I0(i_switch_left),
-        .I1(snake_x[4]),
-        .O(snake_x_reg0_carry__0_i_4_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    snake_x_reg0_carry__0_i_5
-       (.I0(i_switch_left),
         .I1(snake_x[3]),
-        .O(snake_x_reg0_carry__0_i_5_n_0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 snake_x_reg0_carry__1
-       (.CI(snake_x_reg0_carry__0_n_0),
-        .CO({NLW_snake_x_reg0_carry__1_CO_UNCONNECTED[3:1],snake_x_reg0_carry__1_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,snake_x[6]}),
-        .O({NLW_snake_x_reg0_carry__1_O_UNCONNECTED[3:2],snake_x_reg0_carry__1_n_6,snake_x_reg0_carry__1_n_7}),
-        .S({1'b0,1'b0,snake_x_reg0_carry__1_i_1_n_0,snake_x_reg0_carry__1_i_2_n_0}));
+        .O(\snake_x_reg[4]_i_2_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_x_reg0_carry__1_i_1
+    \snake_x_reg[4]_i_3 
+       (.I0(snake_x[2]),
+        .I1(snake_x[3]),
+        .O(\snake_x_reg[4]_i_3_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_x_reg[4]_i_4 
+       (.I0(snake_x[1]),
+        .I1(snake_x[2]),
+        .O(\snake_x_reg[4]_i_4_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_x_reg[4]_i_5 
+       (.I0(snake_x[1]),
+        .I1(\current_direction_reg_n_0_[0] ),
+        .O(\snake_x_reg[4]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_x_reg[8]_i_2 
        (.I0(snake_x[7]),
         .I1(snake_x[8]),
-        .O(snake_x_reg0_carry__1_i_1_n_0));
+        .O(\snake_x_reg[8]_i_2_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_x_reg0_carry__1_i_2
+    \snake_x_reg[8]_i_3 
        (.I0(snake_x[6]),
         .I1(snake_x[7]),
-        .O(snake_x_reg0_carry__1_i_2_n_0));
+        .O(\snake_x_reg[8]_i_3_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_x_reg0_carry_i_1
-       (.I0(snake_x[2]),
-        .I1(i_switch_left),
-        .O(snake_x_reg0_carry_i_1_n_0));
+    \snake_x_reg[8]_i_4 
+       (.I0(snake_x[5]),
+        .I1(snake_x[6]),
+        .O(\snake_x_reg[8]_i_4_n_0 ));
   LUT2 #(
-    .INIT(4'h6)) 
-    snake_x_reg0_carry_i_2
-       (.I0(snake_x[1]),
-        .I1(i_switch_left),
-        .O(snake_x_reg0_carry_i_2_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    snake_x_reg0_carry_i_3
-       (.I0(snake_x[0]),
-        .O(snake_x_reg0_carry_i_3_n_0));
-  LUT4 #(
-    .INIT(16'h0054)) 
+    .INIT(4'h9)) 
+    \snake_x_reg[8]_i_5 
+       (.I0(snake_x[4]),
+        .I1(snake_x[5]),
+        .O(\snake_x_reg[8]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
     \snake_x_reg[9]_i_1 
-       (.I0(i_switch_down),
-        .I1(i_switch_left),
-        .I2(i_switch_right),
-        .I3(i_switch_up),
-        .O(snake_x_reg));
+       (.I0(rst),
+        .I1(\snake_x_reg[9]_i_3_n_0 ),
+        .O(snake_y_reg_0));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \snake_x_reg[9]_i_3 
+       (.I0(\snake_x_reg[9]_i_5_n_0 ),
+        .I1(\snake_x_reg[9]_i_6_n_0 ),
+        .O(\snake_x_reg[9]_i_3_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_x_reg[9]_i_4 
+       (.I0(snake_x[8]),
+        .I1(snake_x[9]),
+        .O(\snake_x_reg[9]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFEECCC00000000)) 
+    \snake_x_reg[9]_i_5 
+       (.I0(\snake_x_reg[9]_i_7_n_0 ),
+        .I1(snake_x[8]),
+        .I2(snake_x[6]),
+        .I3(pellet_index3_carry_i_9_n_0),
+        .I4(snake_x[7]),
+        .I5(snake_x[9]),
+        .O(\snake_x_reg[9]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFC8800000)) 
+    \snake_x_reg[9]_i_6 
+       (.I0(\snake_x_reg[9]_i_8_n_0 ),
+        .I1(snake_y[8]),
+        .I2(snake_y[6]),
+        .I3(pellet_index1_carry_i_9_n_0),
+        .I4(snake_y[7]),
+        .I5(snake_y[9]),
+        .O(\snake_x_reg[9]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFEFFFFFFFFFFFF)) 
+    \snake_x_reg[9]_i_7 
+       (.I0(snake_x[0]),
+        .I1(snake_x[1]),
+        .I2(snake_x[2]),
+        .I3(snake_x[5]),
+        .I4(snake_x[4]),
+        .I5(snake_x[3]),
+        .O(\snake_x_reg[9]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hFE0000FF00FF00FF)) 
+    \snake_x_reg[9]_i_8 
+       (.I0(snake_y[2]),
+        .I1(snake_y[1]),
+        .I2(snake_y[0]),
+        .I3(snake_y[5]),
+        .I4(snake_y[4]),
+        .I5(snake_y[3]),
+        .O(\snake_x_reg[9]_i_8_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \snake_x_reg_reg[0] 
+       (.C(clk),
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[0]),
+        .Q(snake_x[0]),
+        .R(snake_y_reg_0));
   FDRE #(
     .INIT(1'b0)) 
     \snake_x_reg_reg[1] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry_n_6),
-        .Q(snake_x[0]),
-        .R(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[1]),
+        .Q(snake_x[1]),
+        .R(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_x_reg_reg[2] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry_n_5),
-        .Q(snake_x[1]),
-        .S(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[2]),
+        .Q(snake_x[2]),
+        .S(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_x_reg_reg[3] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry_n_4),
-        .Q(snake_x[2]),
-        .S(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[3]),
+        .Q(snake_x[3]),
+        .S(snake_y_reg_0));
   FDRE #(
     .INIT(1'b0)) 
     \snake_x_reg_reg[4] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry__0_n_7),
-        .Q(snake_x[3]),
-        .R(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[4]),
+        .Q(snake_x[4]),
+        .R(snake_y_reg_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \snake_x_reg_reg[4]_i_1 
+       (.CI(1'b0),
+        .CO({\snake_x_reg_reg[4]_i_1_n_0 ,\snake_x_reg_reg[4]_i_1_n_1 ,\snake_x_reg_reg[4]_i_1_n_2 ,\snake_x_reg_reg[4]_i_1_n_3 }),
+        .CYINIT(snake_x[0]),
+        .DI({snake_x[3:1],\current_direction_reg_n_0_[0] }),
+        .O(snake_x_reg[4:1]),
+        .S({\snake_x_reg[4]_i_2_n_0 ,\snake_x_reg[4]_i_3_n_0 ,\snake_x_reg[4]_i_4_n_0 ,\snake_x_reg[4]_i_5_n_0 }));
   FDSE #(
     .INIT(1'b1)) 
     \snake_x_reg_reg[5] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry__0_n_6),
-        .Q(snake_x[4]),
-        .S(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[5]),
+        .Q(snake_x[5]),
+        .S(snake_y_reg_0));
   FDRE #(
     .INIT(1'b0)) 
     \snake_x_reg_reg[6] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry__0_n_5),
-        .Q(snake_x[5]),
-        .R(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[6]),
+        .Q(snake_x[6]),
+        .R(snake_y_reg_0));
   FDRE #(
     .INIT(1'b0)) 
     \snake_x_reg_reg[7] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry__0_n_4),
-        .Q(snake_x[6]),
-        .R(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[7]),
+        .Q(snake_x[7]),
+        .R(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_x_reg_reg[8] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry__1_n_7),
-        .Q(snake_x[7]),
-        .S(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[8]),
+        .Q(snake_x[8]),
+        .S(snake_y_reg_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \snake_x_reg_reg[8]_i_1 
+       (.CI(\snake_x_reg_reg[4]_i_1_n_0 ),
+        .CO({\snake_x_reg_reg[8]_i_1_n_0 ,\snake_x_reg_reg[8]_i_1_n_1 ,\snake_x_reg_reg[8]_i_1_n_2 ,\snake_x_reg_reg[8]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI(snake_x[7:4]),
+        .O(snake_x_reg[8:5]),
+        .S({\snake_x_reg[8]_i_2_n_0 ,\snake_x_reg[8]_i_3_n_0 ,\snake_x_reg[8]_i_4_n_0 ,\snake_x_reg[8]_i_5_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \snake_x_reg_reg[9] 
        (.C(clk),
-        .CE(snake_x_reg),
-        .D(snake_x_reg0_carry__1_n_6),
-        .Q(snake_x[8]),
-        .R(rst));
+        .CE(\current_direction_reg_n_0_[1] ),
+        .D(snake_x_reg[9]),
+        .Q(snake_x[9]),
+        .R(snake_y_reg_0));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 snake_y_reg0_carry
-       (.CI(1'b0),
-        .CO({snake_y_reg0_carry_n_0,snake_y_reg0_carry_n_1,snake_y_reg0_carry_n_2,snake_y_reg0_carry_n_3}),
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \snake_x_reg_reg[9]_i_2 
+       (.CI(\snake_x_reg_reg[8]_i_1_n_0 ),
+        .CO(\NLW_snake_x_reg_reg[9]_i_2_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
-        .DI({snake_y[2:0],1'b0}),
-        .O({snake_y_reg0_carry_n_4,snake_y_reg0_carry_n_5,snake_y_reg0_carry_n_6,NLW_snake_y_reg0_carry_O_UNCONNECTED[0]}),
-        .S({snake_y_reg0_carry_i_1_n_0,snake_y_reg0_carry_i_2_n_0,snake_y_reg0_carry_i_3_n_0,1'b0}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 snake_y_reg0_carry__0
-       (.CI(snake_y_reg0_carry_n_0),
-        .CO({snake_y_reg0_carry__0_n_0,snake_y_reg0_carry__0_n_1,snake_y_reg0_carry__0_n_2,snake_y_reg0_carry__0_n_3}),
-        .CYINIT(1'b0),
-        .DI({snake_y[5:4],snake_y_reg0_carry__0_i_1_n_0,i_switch_up}),
-        .O({snake_y_reg0_carry__0_n_4,snake_y_reg0_carry__0_n_5,snake_y_reg0_carry__0_n_6,snake_y_reg0_carry__0_n_7}),
-        .S({snake_y_reg0_carry__0_i_2_n_0,snake_y_reg0_carry__0_i_3_n_0,snake_y_reg0_carry__0_i_4_n_0,snake_y_reg0_carry__0_i_5_n_0}));
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\NLW_snake_x_reg_reg[9]_i_2_O_UNCONNECTED [3:1],snake_x_reg[9]}),
+        .S({1'b0,1'b0,1'b0,\snake_x_reg[9]_i_4_n_0 }));
   LUT1 #(
     .INIT(2'h1)) 
-    snake_y_reg0_carry__0_i_1
-       (.I0(i_switch_up),
-        .O(snake_y_reg0_carry__0_i_1_n_0));
+    \snake_y_reg[0]_i_1 
+       (.I0(snake_y[0]),
+        .O(snake_y_reg[0]));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_y_reg0_carry__0_i_2
-       (.I0(snake_y[5]),
-        .I1(snake_y[6]),
-        .O(snake_y_reg0_carry__0_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    snake_y_reg0_carry__0_i_3
+    \snake_y_reg[4]_i_2 
        (.I0(snake_y[4]),
-        .I1(snake_y[5]),
-        .O(snake_y_reg0_carry__0_i_3_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    snake_y_reg0_carry__0_i_4
-       (.I0(i_switch_up),
-        .I1(snake_y[4]),
-        .O(snake_y_reg0_carry__0_i_4_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    snake_y_reg0_carry__0_i_5
-       (.I0(i_switch_up),
         .I1(snake_y[3]),
-        .O(snake_y_reg0_carry__0_i_5_n_0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 snake_y_reg0_carry__1
-       (.CI(snake_y_reg0_carry__0_n_0),
-        .CO({NLW_snake_y_reg0_carry__1_CO_UNCONNECTED[3:1],snake_y_reg0_carry__1_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,snake_y[6]}),
-        .O({NLW_snake_y_reg0_carry__1_O_UNCONNECTED[3:2],snake_y_reg0_carry__1_n_6,snake_y_reg0_carry__1_n_7}),
-        .S({1'b0,1'b0,snake_y_reg0_carry__1_i_1_n_0,snake_y_reg0_carry__1_i_2_n_0}));
+        .O(\snake_y_reg[4]_i_2_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_y_reg0_carry__1_i_1
+    \snake_y_reg[4]_i_3 
+       (.I0(snake_y[2]),
+        .I1(snake_y[3]),
+        .O(\snake_y_reg[4]_i_3_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_y_reg[4]_i_4 
+       (.I0(snake_y[1]),
+        .I1(snake_y[2]),
+        .O(\snake_y_reg[4]_i_4_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_y_reg[4]_i_5 
+       (.I0(snake_y[1]),
+        .I1(\current_direction_reg_n_0_[0] ),
+        .O(\snake_y_reg[4]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_y_reg[8]_i_2 
        (.I0(snake_y[7]),
         .I1(snake_y[8]),
-        .O(snake_y_reg0_carry__1_i_1_n_0));
+        .O(\snake_y_reg[8]_i_2_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_y_reg0_carry__1_i_2
+    \snake_y_reg[8]_i_3 
        (.I0(snake_y[6]),
         .I1(snake_y[7]),
-        .O(snake_y_reg0_carry__1_i_2_n_0));
+        .O(\snake_y_reg[8]_i_3_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    snake_y_reg0_carry_i_1
-       (.I0(snake_y[2]),
-        .I1(i_switch_up),
-        .O(snake_y_reg0_carry_i_1_n_0));
+    \snake_y_reg[8]_i_4 
+       (.I0(snake_y[5]),
+        .I1(snake_y[6]),
+        .O(\snake_y_reg[8]_i_4_n_0 ));
   LUT2 #(
-    .INIT(4'h6)) 
-    snake_y_reg0_carry_i_2
-       (.I0(snake_y[1]),
-        .I1(i_switch_up),
-        .O(snake_y_reg0_carry_i_2_n_0));
+    .INIT(4'h9)) 
+    \snake_y_reg[8]_i_5 
+       (.I0(snake_y[4]),
+        .I1(snake_y[5]),
+        .O(\snake_y_reg[8]_i_5_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    snake_y_reg0_carry_i_3
-       (.I0(snake_y[0]),
-        .O(snake_y_reg0_carry_i_3_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
     \snake_y_reg[9]_i_1 
-       (.I0(i_switch_up),
-        .I1(i_switch_down),
+       (.I0(\current_direction_reg_n_0_[1] ),
         .O(\snake_y_reg[9]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h9)) 
+    \snake_y_reg[9]_i_3 
+       (.I0(snake_y[8]),
+        .I1(snake_y[9]),
+        .O(\snake_y_reg[9]_i_3_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \snake_y_reg_reg[0] 
+       (.C(clk),
+        .CE(\snake_y_reg[9]_i_1_n_0 ),
+        .D(snake_y_reg[0]),
+        .Q(snake_y[0]),
+        .R(snake_y_reg_0));
   FDRE #(
     .INIT(1'b0)) 
     \snake_y_reg_reg[1] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry_n_6),
-        .Q(snake_y[0]),
-        .R(rst));
+        .D(snake_y_reg[1]),
+        .Q(snake_y[1]),
+        .R(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_y_reg_reg[2] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry_n_5),
-        .Q(snake_y[1]),
-        .S(rst));
+        .D(snake_y_reg[2]),
+        .Q(snake_y[2]),
+        .S(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_y_reg_reg[3] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry_n_4),
-        .Q(snake_y[2]),
-        .S(rst));
+        .D(snake_y_reg[3]),
+        .Q(snake_y[3]),
+        .S(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_y_reg_reg[4] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry__0_n_7),
-        .Q(snake_y[3]),
-        .S(rst));
+        .D(snake_y_reg[4]),
+        .Q(snake_y[4]),
+        .S(snake_y_reg_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \snake_y_reg_reg[4]_i_1 
+       (.CI(1'b0),
+        .CO({\snake_y_reg_reg[4]_i_1_n_0 ,\snake_y_reg_reg[4]_i_1_n_1 ,\snake_y_reg_reg[4]_i_1_n_2 ,\snake_y_reg_reg[4]_i_1_n_3 }),
+        .CYINIT(snake_y[0]),
+        .DI({snake_y[3:1],\current_direction_reg_n_0_[0] }),
+        .O(snake_y_reg[4:1]),
+        .S({\snake_y_reg[4]_i_2_n_0 ,\snake_y_reg[4]_i_3_n_0 ,\snake_y_reg[4]_i_4_n_0 ,\snake_y_reg[4]_i_5_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \snake_y_reg_reg[5] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry__0_n_6),
-        .Q(snake_y[4]),
-        .R(rst));
+        .D(snake_y_reg[5]),
+        .Q(snake_y[5]),
+        .R(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_y_reg_reg[6] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry__0_n_5),
-        .Q(snake_y[5]),
-        .S(rst));
+        .D(snake_y_reg[6]),
+        .Q(snake_y[6]),
+        .S(snake_y_reg_0));
   FDSE #(
     .INIT(1'b1)) 
     \snake_y_reg_reg[7] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry__0_n_4),
-        .Q(snake_y[6]),
-        .S(rst));
+        .D(snake_y_reg[7]),
+        .Q(snake_y[7]),
+        .S(snake_y_reg_0));
   FDRE #(
     .INIT(1'b0)) 
     \snake_y_reg_reg[8] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry__1_n_7),
-        .Q(snake_y[7]),
-        .R(rst));
+        .D(snake_y_reg[8]),
+        .Q(snake_y[8]),
+        .R(snake_y_reg_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \snake_y_reg_reg[8]_i_1 
+       (.CI(\snake_y_reg_reg[4]_i_1_n_0 ),
+        .CO({\snake_y_reg_reg[8]_i_1_n_0 ,\snake_y_reg_reg[8]_i_1_n_1 ,\snake_y_reg_reg[8]_i_1_n_2 ,\snake_y_reg_reg[8]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI(snake_y[7:4]),
+        .O(snake_y_reg[8:5]),
+        .S({\snake_y_reg[8]_i_2_n_0 ,\snake_y_reg[8]_i_3_n_0 ,\snake_y_reg[8]_i_4_n_0 ,\snake_y_reg[8]_i_5_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \snake_y_reg_reg[9] 
        (.C(clk),
         .CE(\snake_y_reg[9]_i_1_n_0 ),
-        .D(snake_y_reg0_carry__1_n_6),
-        .Q(snake_y[8]),
-        .R(rst));
+        .D(snake_y_reg[9]),
+        .Q(snake_y[9]),
+        .R(snake_y_reg_0));
+  (* ADDER_THRESHOLD = "35" *) 
+  (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
+  CARRY4 \snake_y_reg_reg[9]_i_2 
+       (.CI(\snake_y_reg_reg[8]_i_1_n_0 ),
+        .CO(\NLW_snake_y_reg_reg[9]_i_2_CO_UNCONNECTED [3:0]),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\NLW_snake_y_reg_reg[9]_i_2_O_UNCONNECTED [3:1],snake_y_reg[9]}),
+        .S({1'b0,1'b0,1'b0,\snake_y_reg[9]_i_3_n_0 }));
 endmodule
 `ifndef GLBL
 `define GLBL
