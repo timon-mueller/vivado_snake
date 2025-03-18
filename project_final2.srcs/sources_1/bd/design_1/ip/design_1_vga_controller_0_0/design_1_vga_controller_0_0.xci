@@ -38,6 +38,7 @@
       "ports": {
         "clk": [ { "direction": "in" } ],
         "rst": [ { "direction": "in" } ],
+        "toggle_logo": [ { "direction": "in" } ],
         "snake_x": [ { "direction": "in", "size_left": "9", "size_right": "0" } ],
         "snake_y": [ { "direction": "in", "size_left": "9", "size_right": "0" } ],
         "pellet_x": [ { "direction": "in", "size_left": "9", "size_right": "0" } ],

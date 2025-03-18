@@ -57,6 +57,7 @@ ENTITY design_1_vga_controller_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
     rst : IN STD_LOGIC;
+    toggle_logo : IN STD_LOGIC;
     snake_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     snake_y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
     pellet_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -77,6 +78,7 @@ ARCHITECTURE design_1_vga_controller_0_0_arch OF design_1_vga_controller_0_0 IS
     PORT (
       clk : IN STD_LOGIC;
       rst : IN STD_LOGIC;
+      toggle_logo : IN STD_LOGIC;
       snake_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       snake_y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
       pellet_x : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -100,6 +102,7 @@ BEGIN
     PORT MAP (
       clk => clk,
       rst => rst,
+      toggle_logo => toggle_logo,
       snake_x => snake_x,
       snake_y => snake_y,
       pellet_x => pellet_x,

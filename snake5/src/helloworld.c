@@ -6,6 +6,7 @@
 #include "sleep.h"
 
 // AXI GPIO Adresse aus dem Bild
+#define AXI_BRAM_0 0x40000000
 #define AXI_GPIO_0 0x41200000
 #define AXI_GPIO_1 0x41210000
 
@@ -21,6 +22,8 @@ int main() {
     u32 last_pellet_index = 20;
     u32 pellet_x = 0;
     u32 pellet_y = 0;
+
+    u32 print_when_zero = 0;
 
     while(1) {
         u32 gpio_value = Xil_In32(AXI_GPIO_0); // 32-bit Wert auslesen
@@ -44,16 +47,25 @@ int main() {
 
 			// Schreibe den neuen Wert in AXI GPIO 1
 			Xil_Out32(AXI_GPIO_1, new_pellet_value);
+			xil_printf("neuer Pellet Wert");
+			xil_printf("pellet_x: %d\r\n", pellet_x);
+			xil_printf("pellet_y: %d\r\n", pellet_y);
+			//test bram write
+			//Xil_Out32(AXI_BRAM_0, new_pellet_value);
         }
 
-        xil_printf("AXI GPIO Wert: 0x%08X\r\n", gpio_value);
-        xil_printf("snake_x: %d\r\n", snake_x);
-        xil_printf("snake_y: %d\r\n", snake_y);
-        xil_printf("pellet_index: %d\r\n", pellet_index);
+		if (print_when_zero == 0) {
+			xil_printf("AXI GPIO Wert: 0x%08X\r\n", gpio_value);
+			xil_printf("snake_x: %d\r\n", snake_x);
+			xil_printf("snake_y: %d\r\n", snake_y);
+			xil_printf("pellet_index: %d\r\n", pellet_index);
+		}
+		print_when_zero = print_when_zero + 1 % 50;
 
-        usleep(500000); // 500ms warten
+        usleep(50000); // 50ms warten
     }
 
     cleanup_platform();
     return 0;
 }
+

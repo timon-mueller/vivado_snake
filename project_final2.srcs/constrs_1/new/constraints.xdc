@@ -20,6 +20,8 @@ set_property -dict { PACKAGE_PIN N18 IOSTANDARD TMDS_33 } [get_ports hdmi_tx_0_t
 set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { reset_rtl_0 }];
 ## Game Reset button 
 set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33 } [get_ports { rst_0 }];
+## Game Reset button 
+set_property -dict { PACKAGE_PIN T12   IOSTANDARD LVCMOS33 } [get_ports { toggle_logo_0 }];
 
 #Movement switches
 set_property -dict {PACKAGE_PIN W14 IOSTANDARD LVCMOS33 } [get_ports {i_switch_up_0}];

@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
---Date        : Mon Mar 17 20:21:57 2025
+--Date        : Tue Mar 18 16:48:42 2025
 --Host        : ASUS-TUF-A15 running 64-bit Ubuntu 24.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1109,7 +1109,8 @@ entity design_1 is
     i_switch_right_0 : in STD_LOGIC;
     i_switch_up_0 : in STD_LOGIC;
     reset_rtl_0 : in STD_LOGIC;
-    rst_0 : in STD_LOGIC
+    rst_0 : in STD_LOGIC;
+    toggle_logo_0 : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=14,numNonXlnxBlks=1,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=7,da_clkrst_cnt=15,da_ps7_cnt=2,synth_mode=OOC_per_IP}";
@@ -1296,22 +1297,6 @@ architecture STRUCTURE of design_1 is
     gpio_io_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_axi_gpio_1_0;
-  component design_1_vga_controller_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    snake_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    snake_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    pellet_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    hsync : out STD_LOGIC;
-    vsync : out STD_LOGIC;
-    video_active : out STD_LOGIC;
-    red : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    green : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    blue : out STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component design_1_vga_controller_0_0;
   component design_1_seven_segment_display_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -1345,6 +1330,23 @@ architecture STRUCTURE of design_1 is
     clk_100hz : out STD_LOGIC
   );
   end component design_1_game_clock_0_0;
+  component design_1_vga_controller_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
+    toggle_logo : in STD_LOGIC;
+    snake_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    snake_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_x : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    pellet_y : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    hsync : out STD_LOGIC;
+    vsync : out STD_LOGIC;
+    video_active : out STD_LOGIC;
+    red : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    green : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    blue : out STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component design_1_vga_controller_0_0;
   signal axi_gpio_1_gpio_io_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal clk_wiz_0_clk_out100 : STD_LOGIC;
   signal clk_wiz_0_clk_out125 : STD_LOGIC;
@@ -1468,6 +1470,7 @@ architecture STRUCTURE of design_1 is
   signal test_axi_gpio_0_gpio_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal test_axi_gpio_0_pellet_x : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal test_axi_gpio_0_pellet_y : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal toggle_logo_0_1 : STD_LOGIC;
   signal vga_controller_0_blue : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal vga_controller_0_green : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal vga_controller_0_hsync : STD_LOGIC;
@@ -1530,6 +1533,7 @@ begin
   i_switch_up_0_1 <= i_switch_up_0;
   reset_rtl_0_1 <= reset_rtl_0;
   rst_0_1 <= rst_0;
+  toggle_logo_0_1 <= toggle_logo_0;
 axi_gpio_0: component design_1_axi_gpio_0_0
      port map (
       gpio_io_i(31 downto 0) => test_axi_gpio_0_gpio_out(31 downto 0),
@@ -1825,6 +1829,7 @@ vga_controller_0: component design_1_vga_controller_0_0
       rst => '0',
       snake_x(9 downto 0) => game_logic_0_snake_x(9 downto 0),
       snake_y(9 downto 0) => game_logic_0_snake_y(9 downto 0),
+      toggle_logo => toggle_logo_0_1,
       video_active => vga_controller_0_video_active,
       vsync => vga_controller_0_vsync
     );

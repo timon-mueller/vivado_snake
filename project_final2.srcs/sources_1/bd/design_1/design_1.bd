@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDC72331BB1055CAC",
+      "boundary_crc": "0xA80CCAEE1A1EB87B",
       "device": "xc7z007sclg400-1",
       "gen_directory": "../../../../project_final2.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -27,10 +27,10 @@
       "seven_segment_clock_0": "",
       "test_axi_gpio_0": "",
       "axi_gpio_1": "",
-      "vga_controller_0": "",
       "seven_segment_display_0": "",
       "game_logic_0": "",
-      "game_clock_0": ""
+      "game_clock_0": "",
+      "vga_controller_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -282,6 +282,9 @@
             "value": "ACTIVE_HIGH"
           }
         }
+      },
+      "toggle_logo_0": {
+        "direction": "I"
       }
     },
     "components": {
@@ -1801,89 +1804,6 @@
           }
         }
       },
-      "vga_controller_0": {
-        "vlnv": "xilinx.com:module_ref:vga_controller:1.0",
-        "xci_name": "design_1_vga_controller_0_0",
-        "xci_path": "ip/design_1_vga_controller_0_0/design_1_vga_controller_0_0.xci",
-        "inst_hier_path": "vga_controller_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "vga_controller",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "25000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "snake_x": {
-            "direction": "I",
-            "left": "9",
-            "right": "0"
-          },
-          "snake_y": {
-            "direction": "I",
-            "left": "9",
-            "right": "0"
-          },
-          "pellet_x": {
-            "direction": "I",
-            "left": "9",
-            "right": "0"
-          },
-          "pellet_y": {
-            "direction": "I",
-            "left": "9",
-            "right": "0"
-          },
-          "hsync": {
-            "direction": "O"
-          },
-          "vsync": {
-            "direction": "O"
-          },
-          "video_active": {
-            "direction": "O"
-          },
-          "red": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "green": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "blue": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
       "seven_segment_display_0": {
         "vlnv": "xilinx.com:module_ref:seven_segment_display:1.0",
         "xci_name": "design_1_seven_segment_display_0_0",
@@ -2052,6 +1972,92 @@
           },
           "clk_100hz": {
             "direction": "O"
+          }
+        }
+      },
+      "vga_controller_0": {
+        "vlnv": "xilinx.com:module_ref:vga_controller:1.0",
+        "xci_name": "design_1_vga_controller_0_0",
+        "xci_path": "ip/design_1_vga_controller_0_0/design_1_vga_controller_0_0.xci",
+        "inst_hier_path": "vga_controller_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "vga_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "toggle_logo": {
+            "direction": "I"
+          },
+          "snake_x": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "snake_y": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pellet_x": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "pellet_y": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "hsync": {
+            "direction": "O"
+          },
+          "vsync": {
+            "direction": "O"
+          },
+          "video_active": {
+            "direction": "O"
+          },
+          "red": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "green": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "blue": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
           }
         }
       }
@@ -2278,6 +2284,12 @@
         "ports": [
           "test_axi_gpio_0/pellet_y",
           "game_logic_0/pellet_y_in"
+        ]
+      },
+      "toggle_logo_0_1": {
+        "ports": [
+          "toggle_logo_0",
+          "vga_controller_0/toggle_logo"
         ]
       },
       "vga_controller_0_blue": {
